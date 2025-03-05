@@ -3,7 +3,16 @@ $light-clr: #fafafa
 $grey-clr: #9d9d9d
 $main: #F84519
 $base: 4
+$borderRadius: 12px
 $letterspace: 0.016em
+// --------------------------
+body
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+    min-height: 100vh
+    padding-bottom: 120px
+    scroll-behavior: smooth
 main
     position: relative
     width: 100%
@@ -23,7 +32,7 @@ main
     flex-wrap: wrap
     animation: slide .6s cubic-bezier(0.2, 0.6, 0.2, 1)
     animation-fill-mode: backwards
-    width: 100%
+    width: 90%
     gap: calc( $base * 5px)
     margin: calc( $base * 8px) 0
     @media screen and ( min-width: 768px )
@@ -44,14 +53,12 @@ main
         color: $dark-clr
         background: linear-gradient(0deg,rgba($light-clr ,0 ), rgba($light-clr ,0.1 ))
         box-shadow: 0px 0px calc( $base * 1px) rgba($dark-clr, 0.08), 0px calc( $base * 2px) 12px rgba($dark-clr, 0.08)
-        border-radius: calc( $base * 5px)
+        border-radius: $borderRadius
         padding: calc( $base * 6px) 16px
         .wrapper-title
             font-size: calc( $base * 5px)
             margin-bottom: calc( $base * 5px)
-            font-weight: normal
             p
-                font-weight: 300
                 font-size: calc( $base * 4px)
                 line-height: 150%
                 margin: calc( $base * 2px) 0
@@ -74,7 +81,7 @@ main
         transition: box-shadow 0.2s linear
         gap: 16px
         font-size: 1rem
-        line-height: 40px
+        line-height: 32px
         .arrow
             width: 16px
             height: 8px
@@ -85,7 +92,7 @@ main
         &:hover
             border-color: $light-clr
             color: $light-clr
-            box-shadow: 0 0 0 4px rgba(157, 157, 157, 0.1), 0 0 0 8px rgba(157, 157, 157, 0.09)
+            box-shadow: 0 0 0 4px rgba($dark-clr, 0.1), 0 0 0 8px rgba($dark-clr, 0.02)
             .arrow
                 border-color: $light-clr
                 transform: rotate(-20deg) skew(45deg)
@@ -114,7 +121,7 @@ main
         width: 50px
         aspect-ratio: 1/1
         object-fit: contain
-        border-radius: calc( $base * 3.5px )
+        border-radius: $borderRadius
         box-shadow: 0 4px 12px rgba($grey-clr ,0.5 )
     h2
         font-size: calc( $base * 6px )
@@ -208,7 +215,7 @@ main
             justify-content: center
         li
             padding: calc( $base * 1px) calc( $base * 2px)
-            border-radius: calc( $base * 2px)
+            border-radius: $borderRadius
             width: 100%
             a
                 width: 100%
@@ -216,3 +223,38 @@ main
                 a
                     color: $main
                     font-weight: 500
+// project
+.project
+    .project-box
+        display: block
+        background-color: rgba($grey-clr ,0.1 )
+        border-radius: $borderRadius
+    .project-content
+        display: flex
+        justify-content: flex-start
+        align-items: flex-start
+        column-gap: calc( $base * 2px)
+        margin-top: calc( $base * 4px)
+        .project-pic
+            position: relative
+            img
+                width: 40px
+                aspect-ratio: 1 / 1
+                object-fit: contain
+                border-radius: $borderRadius
+        .project-detail
+            color: $dark-clr
+            line-height: 12px
+            > p
+                font-size: 16px
+                line-height: 20px
+                margin: 0
+                padding: 0
+                letter-spacing: $letterspace
+            > span
+                font-size: 12px
+                line-height: 20px
+                color: $grey-clr
+                letter-spacing: $letterspace
+                overflow: hidden
+                white-space: nowrap
