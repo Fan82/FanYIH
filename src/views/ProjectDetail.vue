@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper" v-if="project">
-    <div class="title">
-      <img class="project-img" :src="project.logo" :alt="project.name" />
-      <h2>{{ project.name }}</h2>
+    <div class="project intro">
+      <img :src="project.logo" :alt="`${project.name} logo`" />
+      <p>{{ project.name }}</p>
       <span>{{ project.detail }}</span>
       <button class="btn modal-trigger" data-target="modal1">Apps</button>
     </div>

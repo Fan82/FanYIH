@@ -147,11 +147,6 @@ section {
   outline: 0
 }
 
-p {
-  margin-top: 0;
-  margin-bottom: 1rem
-}
-
 abbr[data-bs-original-title],
 abbr[title] {
   -webkit-text-decoration: underline dotted;
@@ -162,7 +157,6 @@ abbr[title] {
 }
 
 address {
-  margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit
 }

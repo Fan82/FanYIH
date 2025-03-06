@@ -5,6 +5,33 @@ $main: #F84519
 $base: 4px
 $borderRadius: 12px
 $letterspace: 0.016em
+$imgBox: 0 4px 12px rgba(157, 157, 157, 0.5)
+
+@mixin imgDefault
+    object-fit: cover
+    aspect-ratio: 1/1
+
+@mixin picImg
+    width: 42px
+    border-radius: $borderRadius
+    box-shadow: $imgBox
+@mixin infoSpan
+    display: block
+    font-size: 12px
+    line-height: 16px
+    color: $grey-clr
+    letter-spacing: $letterspace
+    text-overflow: ellipsis
+    white-space: nowrap
+@mixin infoP
+    // font-weight: 600
+    font-size: 16px
+    display: block
+@mixin infoType
+    position: relative
+    font-size: calc( $base * 4 )
+    line-height: 32px
+
 // --------------------------
 body
     width: 100%
@@ -15,14 +42,6 @@ body
     padding-bottom: 120px
     scroll-behavior: smooth
     background-color: $light-clr
-// main
-//     position: relative
-//     width: 100%
-//     margin-top: 10vh
-//     flex-direction: column
-//     display: flex
-//     justify-content: space-around
-//     align-items: center
 
 // layout
 .wrapper
@@ -37,13 +56,6 @@ body
     width: 100%
     gap: calc( $base * 7)
     padding: calc( $base * 5 )
-    @media screen and ( min-width: 768px )
-        flex-direction: row
-        display: flex
-        align-items: flex-start
-        justify-content: space-around
-        .wrapper-box
-            width: 45% !important
 
     .wrapper-box
         width: 100%
@@ -116,14 +128,8 @@ body
         position: relative
         display: block
         margin: 0 auto
-        width: 50px
-        aspect-ratio: 1/1
-        object-fit: contain
-        border-radius: $borderRadius
-        box-shadow: 0 4px 12px rgba($grey-clr ,0.5 )
-    // h2
-    //     font-size: calc( $base * 6 )
-    //     padding: calc( $base * 8) 5% 0
+        @include imgDefault
+        @mixin picImg
     p
         margin-top: calc( $base * 2)
         line-height: normal
@@ -218,31 +224,22 @@ nav
     width: 100%
     > img
         width: 130px
-        aspect-ratio: 1 / 1
         border-radius: calc( $borderRadius * 20 )
-        object-fit: cover
+        @include imgDefault
     span
-        display: block
-        font-size: 12px
-        line-height: 16px
-        color: $grey-clr
-        letter-spacing: $letterspace
-        text-overflow: ellipsis
-        white-space: nowrap
+        @include infoSpan
     h1
         font-size: 32px
         line-height: 36px
         margin: calc( $base * 5) 0 calc( $base * 2 ) 0
     h2
-        font-size: 16px
-        line-height: 28px
+        @include infoP
         font-weight: normal
         color: rgba($dark-clr ,0.5 )
         margin: calc( $base * 2 ) 0
-        letter-spacing: calc( $letterspace * 2 )
     h3
         font-size: 20px
-        margin: 0 0 calc( $base * 4 ) 0
+        margin: calc( $base * 4 ) 0
     .project-box
         display: block
         background: linear-gradient(0deg, rgba($grey-clr ,0.2 ), rgba($light-clr ,0.2 ))
@@ -253,75 +250,65 @@ nav
         .project-pic
             position: absolute
             img
-                width: 42px
-                border-radius: $borderRadius
-                box-shadow: 0 0 0px 1px rgba($dark-clr, .05)
-                padding: 2px
+                @include picImg
+
         .project-detail
             color: $dark-clr
-            line-height: 12px
+            line-height: 26px
             padding-left: 54px
             p
-                font-size: 16px
-                font-weight: 600
-                // letter-spacing: $letterspace
-                display: block
+                @include infoP
+
         strong
             display: inline-block
             padding-right: $base
         p
-            font-size: 18px
-            line-height: 24px
-            margin: 0
-            padding: 0
+            @include infoP
+
         img
             width: 95px
-            aspect-ratio: 1 / 1
-            object-fit: contain
+            @include imgDefault
+
         ul
-            font-size: 16px
+            @include infoP
             padding-left: calc( $base * 5 )
             li
-                position: relative
-                font-size: calc( $base * 4 )
-                line-height: 32px
+                @include infoType
                 &::before
-                    content: ''
+                    content: ""
                     display: inline-block
-                    width: 3px
-                    height: 3px
+                    width: $base
+                    height: $base
                     background-color: $dark-clr
                     vertical-align: middle
                     margin-right: $base
                     border-radius: $base
+                    position: absolute
+                    left: -14px
+                    top: 50%
+                    transform: translateY(-50%)
                 &:has(.job-title)
                     margin-bottom: calc( $base * 5 )
-                    // &::before
-                    //     display: none
                     .job-title
+                        @include infoP
                         display: inline-block
-                        font-size: 18px
-                        line-height: 24px
-                        letter-spacing: $letterspace
                     small
-                        color: $dark-clr
-                        font-size: 13px
-                        font-weight: normal
+                        font-size: calc( $base * 3 )
+                        display: inline-block
                         margin: 0 calc( $base * 2 )
-                        &::before
-                            content: ""
-                            position: relative
-                            background-color: $dark-clr
-                            display: inline-block
-                            width: 6px
-                            height: 6px
-                            border-radius: calc( $borderRadius * 4 )
-                            margin: 2px 8px
+
         &:has(.project-detail)
             position: absolute
             margin: 0
             left: calc( $base * 2 )
             bottom: calc( $base * 2 )
+    &.intro
+        img
+            @include picImg
+        p
+            @include infoP
+        span
+            @include infoSpan
 
 // 動態滾動效果
 @keyframes slideDown
