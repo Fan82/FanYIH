@@ -1,11 +1,12 @@
 <template>
-  <div class="title">
-    <div>User Design. Interfaces.
-      <br> Front-End.
-      <br> Systems. Strategy.
-    </div>
-  </div>
   <div class="wrapper">
+    <div class="title" :class="{ 'title--scrolled': isScrolled }">
+      Design.
+      <br>
+      Code.
+      <br>
+      Systems. Strategy.
+    </div>
     <div class="wrapper-box">
       <div class="wrapper-title">
         About
@@ -44,6 +45,22 @@ export default {
   name: 'Home',
   components: {
     ProjectList, // 註冊 ProjectList 組件
+  },
+  data() {
+    return {
+      isScrolled: false,
+    };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.isScrolled = window.scrollY > 30;  // 根據滾動高度來調整
+    },
   },
 };
 </script>

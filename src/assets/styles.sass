@@ -2,7 +2,7 @@ $dark-clr: #050206
 $light-clr: #fafafa
 $grey-clr: #9d9d9d
 $main: #F84519
-$base: 4
+$base: 4px
 $borderRadius: 12px
 $letterspace: 0.016em
 // --------------------------
@@ -11,16 +11,17 @@ body
     max-width: 1200px
     margin: 0 auto
     min-height: 100vh
+    padding-top: 60px
     padding-bottom: 120px
     scroll-behavior: smooth
-main
-    position: relative
-    width: 100%
-    margin-top: 10vh
-    flex-direction: column
-    display: flex
-    justify-content: space-around
-    align-items: center
+// main
+//     position: relative
+//     width: 100%
+//     margin-top: 10vh
+//     flex-direction: column
+//     display: flex
+//     justify-content: space-around
+//     align-items: center
 
 // layout
 .wrapper
@@ -32,9 +33,9 @@ main
     flex-wrap: wrap
     animation: slide .6s cubic-bezier(0.2, 0.6, 0.2, 1)
     animation-fill-mode: backwards
-    width: 90%
-    gap: calc( $base * 5px)
-    margin: calc( $base * 8px) 0
+    width: 100%
+    gap: calc( $base * 7)
+    padding: calc( $base * 5 )
     @media screen and ( min-width: 768px )
         flex-direction: row
         display: flex
@@ -52,16 +53,16 @@ main
         justify-content: space-around
         color: $dark-clr
         background: linear-gradient(0deg,rgba($light-clr ,0 ), rgba($light-clr ,0.1 ))
-        box-shadow: 0px 0px calc( $base * 1px) rgba($dark-clr, 0.08), 0px calc( $base * 2px) 12px rgba($dark-clr, 0.08)
+        box-shadow: 0px 0px calc( $base * 1) rgba($dark-clr, 0.08), 0px calc( $base * 2) 12px rgba($dark-clr, 0.08)
         border-radius: $borderRadius
-        padding: calc( $base * 6px) 16px
+        padding: calc( $base * 6) 16px
         .wrapper-title
-            font-size: calc( $base * 5px)
-            margin-bottom: calc( $base * 5px)
+            font-size: calc( $base * 5)
+            margin-bottom: calc( $base * 5)
             p
-                font-size: calc( $base * 4px)
+                font-size: calc( $base * 4)
                 line-height: 150%
-                margin: calc( $base * 2px) 0
+                margin: calc( $base * 2) 0
                 height: 46px
                 overflow: hidden
                 text-overflow: ellipsis
@@ -71,8 +72,8 @@ main
     .button
         width: auto
         white-space: nowrap
-        border-radius: 24px
-        padding: 2px 12px
+        border-radius: 50px
+        padding: 6px 16px
         background: $dark-clr
         display: inline-flex
         justify-content: center
@@ -99,21 +100,16 @@ main
 // 大標題
 .title
     position: relative
-    width: 100%
-    text-align: left
     display: block
-    > div
-        animation: slide .6s cubic-bezier(0.2, 0.6, 0.2, 1)
-        animation-fill-mode: backwards
-        color: $dark-clr
-        font-size: 2rem
-        line-height: 140%
-        font-weight: 600
-        text-transform: capitalize
-        padding: calc( $base * $base * 2px) 5% 0
-        @media screen and ( min-width: 768px )
-            font-size: 3.5rem
-            line-height: 150%
+    width: 100%
+    color: $dark-clr
+    font-size: 2rem
+    font-weight: 600
+    padding: $base 0
+    animation: slideDown 0.6s cubic-bezier(0.2, 0.6, 0.2, 1)
+    transition: transform .15s linear
+    &.title--scrolled
+        transform: translateY(10px) // 往下微調
     img
         position: relative
         display: block
@@ -124,36 +120,35 @@ main
         border-radius: $borderRadius
         box-shadow: 0 4px 12px rgba($grey-clr ,0.5 )
     h2
-        font-size: calc( $base * 6px )
-        padding: calc( $base * $base * 2px) 5% 0
+        font-size: calc( $base * 6 )
+        padding: calc( $base * 8) 5% 0
     span
         max-width: 300px
         padding: 0
         margin: 0
         // white-space: pre-line
         color: $grey-clr
-        font-size: calc( $base * 3px)
+        font-size: calc( $base * 3)
 // logo區
 .top
     position: fixed
     width: 100%
     max-width: 1200px
     top: 0
-    padding: 20px
+    padding: 10px 20px
     display: flex
     justify-content: space-between
     align-items: center
-    mix-blend-mode: luminosity
-    -webkit-mix-mix-blend-mode: luminosity
     z-index: 100
-    backdrop-filter: blur(16px) opacity(0.8)
-    -webkit-backdrop-filter: blur(16px) opacity(0.8)
+    backdrop-filter: blur(14px)
+    -webkit-backdrop-filter: blur(14px)
+    background-color: rgba($light-clr, .05)
+    box-shadow: 0 1px 0px rgba($dark-clr, .04)
     a.logo
         font-weight: 400
         font-size: 1.375rem
         color: $dark-clr
-        &:hover
-            text-decoration: underline
+        text-decoration: underline
     nav
         a
             line-height: 40px
@@ -162,99 +157,159 @@ main
 // 下方聯繫按鈕
 .footer_nav
     position: fixed
-    bottom: calc( $base * 5px)
+    bottom: calc( $base * 5)
     left: 50%
     transform: translateX(-50%)
-    width: calc( $base * 50px)
+    width: calc( $base * 50)
     display: flex
     align-items: center
     justify-content: center
     height: 50px
     border-radius: 50px
-    backdrop-filter: blur(16px)
-    -webkit-backdrop-filter: blur(16px)
-    background: rgba($light-clr, .1)
-    border: 1px solid rgba($light-clr, .1)
-    box-shadow: 0 calc( $base * 1px) calc( $base * 2px) #6d6d6d1a
-    z-index: 1000
-    .link
-        position: relative
-        white-space: nowrap
-        text-align: center
-        color: $dark-clr
-        text-transform: capitalize
-        line-height: 50px
-        width: 100%
-        height: 100%
-        transition: 0.2s ease-in-out
-        cursor: pointer
-        border-radius: 50px
-        display: flex
-        align-items: center
-        justify-content: center
-        &:hover,
-        &:active,
-        &:focus
-            color: $main
+    backdrop-filter: blur(14px)
+    -webkit-backdrop-filter: blur(14px)
+    background-color: rgba($light-clr, .05)
+    cursor: pointer
+    box-shadow: 0 4px 8px rgba($dark-clr, 0.1)
+    z-index: 100
+    &:hover,
+    &:active,
+    &:focus
+        background-color: rgba($dark-clr, 0.5)
+        color: $light-clr
+        .link
             font-weight: 600
-
     .contact-menu
         position: absolute
-        bottom: 65px
+        bottom: 60px
         width: 100%
         background: $light-clr
-        display: none
-        border-radius: calc( $base * 2px)
-        padding: calc( $base * 1px) calc( $base * 2px)
-        box-shadow: 0px 0px 5px rgba($light-clr, 0.05), 0px 10px calc( $base * 5px) rgba($light-clr, 0.05)
+        border-radius: calc( $base * 2)
+        padding: calc( $base * 2)
+        box-shadow: 0px 0px 5px rgba($light-clr, 0.05), 0px 10px calc( $base * 5) rgba($light-clr, 0.05)
         z-index: 10
-        &.open
-            flex-direction: column
-            display: flex
-            align-items: center
-            justify-content: center
-        li
-            padding: calc( $base * 1px) calc( $base * 2px)
-            border-radius: $borderRadius
+        a
+            display: block
+            padding: calc( $base * 2)
+            border-radius: 4px
             width: 100%
-            a
-                width: 100%
+            text-align: center
             &:hover
-                a
-                    color: $main
-                    font-weight: 500
-// project
+                color: $main
+                font-weight: 500
+// project, about
 .project
+    width: 100%
+    > img
+        width: 130px
+        aspect-ratio: 1 / 1
+        border-radius: 100%
+        object-fit: cover
+    span
+        display: block
+        font-size: 12px
+        line-height: 16px
+        color: $grey-clr
+        letter-spacing: $letterspace
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+    h1
+        font-size: 32px
+        line-height: 36px
+        margin: calc( $base * 5) 0 calc( $base * 2 ) 0
+    h2
+        font-size: 16px
+        line-height: 28px
+        font-weight: normal
+        color: rgba($dark-clr ,0.5 )
+        margin: calc( $base * 2 ) 0
+        letter-spacing: calc( $letterspace * 2 )
+    h3
+        font-size: 20px
+        margin: 0 0 calc( $base * 4 ) 0
     .project-box
         display: block
         background-color: rgba($grey-clr ,0.1 )
         border-radius: $borderRadius
+    .project-box
+        margin-bottom: calc( $base * 3)
     .project-content
-        display: flex
-        justify-content: flex-start
-        align-items: flex-start
-        column-gap: calc( $base * 2px)
-        margin-top: calc( $base * 4px)
+        position: relative
+        margin-bottom: calc( $base * 7 )
         .project-pic
-            position: relative
+            position: absolute
             img
-                width: 40px
-                aspect-ratio: 1 / 1
-                object-fit: contain
+                width: 42px
                 border-radius: $borderRadius
+                box-shadow: 0 0 0px 1px rgba($dark-clr, .05)
+                padding: 2px
         .project-detail
             color: $dark-clr
             line-height: 12px
-            > p
+            padding-left: 54px
+            p
                 font-size: 16px
-                line-height: 20px
-                margin: 0
-                padding: 0
-                letter-spacing: $letterspace
-            > span
-                font-size: 12px
-                line-height: 20px
-                color: $grey-clr
-                letter-spacing: $letterspace
-                overflow: hidden
-                white-space: nowrap
+                font-weight: 600
+                // letter-spacing: $letterspace
+                display: block
+        strong
+            display: inline-block
+            padding-right: $base
+        p
+            font-size: 18px
+            line-height: 24px
+            margin: 0
+            padding: 0
+        img
+            width: 95px
+            aspect-ratio: 1 / 1
+            object-fit: contain
+        ul
+            font-size: 16px
+            padding-left: calc( $base * 5 )
+            li
+                position: relative
+                font-size: calc( $base * 4 )
+                line-height: 32px
+                &::before
+                    content: ''
+                    display: inline-block
+                    width: 3px
+                    height: 3px
+                    background-color: $dark-clr
+                    vertical-align: middle
+                    margin-right: $base
+                    border-radius: $base
+                &:has(.job-title)
+                    margin-bottom: calc( $base * 5 )
+                    &::before
+                        display: none
+                    .job-title
+                        display: inline-block
+                        font-size: 18px
+                        line-height: 24px
+                        letter-spacing: $letterspace
+                    small
+                        color: $grey-clr
+                        font-size: 13px
+                        font-weight: normal
+                        margin: 0 calc( $base * 2 )
+                        &::before
+                            content: ""
+                            position: relative
+                            background: $grey-clr
+                            display: inline-block
+                            width: 6px
+                            height: 6px
+                            border-radius: 10px
+                            margin: 2px 8px
+
+// .project-modules
+// 動態滾動效果
+@keyframes slideDown
+    0%
+        transform: translateY(-30px) // 開始位置：上方
+
+    100%
+        transform: translateY(0) // 結束位置：正常位置

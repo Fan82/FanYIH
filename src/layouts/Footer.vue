@@ -1,17 +1,28 @@
 <template>
-  <a href="javascript:void(0)" class="footer_nav">
-    <div href="javascript:void(0)" class="link contact">Contact</div>
-    <ul class="contact-menu">
-      <li class="contact-item"><a href="tel:+886-955876802">Phone</a></li>
-      <li class="contact-item"><a href="mailto:fys840802@gmail.com?subject=工作上能有合作愉快的工作需求">email</a></li>
-      <li class="contact-item"><a href="https://www.linkedin.com/in/fanyihsuan/">LinkedIn</a></li>
-      <li class="contact-item"><a href="https://www.behance.net/congee_88">behance</a></li>
-    </ul>
+  <a href="javascript:void(0)" class="footer_nav" @click="toggleMenu">
+    <div class="link contact">Contact</div>
+    <div v-show="isMenuVisible" class="contact-menu">
+      <a href="tel:+886-955876802">Phone</a>
+      <a href="mailto:fys840802@gmail.com?subject=Looking forward to see you soon">Email</a>
+      <a href="https://www.linkedin.com/in/fanyihsuan/">LinkedIn</a>
+      <a href="https://www.behance.net/congee_88">Behance</a>
+    </div>
   </a>
 </template>
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  data() {
+    return {
+      isMenuVisible: false,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuVisible = !this.isMenuVisible;
+    },
+  },
+
 };
 </script>

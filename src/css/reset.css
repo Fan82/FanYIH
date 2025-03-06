@@ -114,7 +114,8 @@ video {
   padding: 0;
   border: none;
   font-size: 100%;
-  vertical-align: baseline
+  vertical-align: baseline;
+  outline: none;
 }
 
 html {
@@ -146,55 +147,6 @@ section {
   outline: 0
 }
 
-
-h1 {
-  font-size: calc(1.375rem + 1.5vw)
-}
-
-@media (min-width:1200px) {
-  h1 {
-    font-size: 2.5rem
-  }
-}
-
-h2 {
-  font-size: calc(1.325rem + .9vw)
-}
-
-@media (min-width:1200px) {
-  h2 {
-    font-size: 2rem
-  }
-}
-
-h3 {
-  font-size: calc(1.3rem + .6vw)
-}
-
-@media (min-width:1200px) {
-  h3 {
-    font-size: 1.75rem
-  }
-}
-
-h4 {
-  font-size: calc(1.275rem + .3vw)
-}
-
-@media (min-width:1200px) {
-  h4 {
-    font-size: 1.5rem
-  }
-}
-
-h5 {
-  font-size: 1.25rem
-}
-
-h6 {
-  font-size: 1rem
-}
-
 p {
   margin-top: 0;
   margin-bottom: 1rem
@@ -215,23 +167,9 @@ address {
   line-height: inherit
 }
 
-ol,
-ul {
-  padding-left: 2rem
-}
-
-dl,
-ol,
-ul {
-  margin-top: 0;
-  margin-bottom: 1rem
-}
-
-ol ol,
-ol ul,
-ul ol,
-ul ul {
-  margin-bottom: 0
+ol li,
+ul li {
+  list-style-type: none;
 }
 
 nav li {
@@ -239,68 +177,18 @@ nav li {
   padding: 0
 }
 
-nav li::before {
-  content: "​"
-}
-
-dt {
-  font-weight: 700
-}
-
-dd {
-  margin-bottom: .5rem;
-  margin-left: 0
-}
-
-blockquote {
-  margin: 0 0 1rem
-}
-
-b,
-strong {
-  font-weight: bolder
-}
-
 small {
   font-size: .875em
 }
 
-mark {
-  padding: .2em;
-  background-color: currentColor
-}
-
-sub,
-sup {
-  position: relative;
-  font-size: .75em;
-  line-height: 0;
-  vertical-align: baseline
-}
-
-sub {
-  bottom: -.25em
-}
-
-sup {
-  top: -.5em
-}
-
 a {
   cursor: pointer;
-  color: #3333e1;
+  color: #050206;
   background-color: transparent;
   text-decoration: none
 }
 
-a:hover {
-  color: #3434e0;
-  text-decoration: underline
-}
 
-a:focus {
-  outline: thin dotted
-}
 
 a:not([href]):not([class]):hover,
 a:not([href]):not(class) {

@@ -1,8 +1,8 @@
 <template>
   <div class="top">
-    <a href="./index.html" class="logo">
+    <router-link to="/" class="logo">
       Fan YIHsuan
-    </a>
+    </router-link>
     <nav>
       <router-link to="/about">about</router-link>
     </nav>
