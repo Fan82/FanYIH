@@ -12,11 +12,9 @@
       <a :href="resumeUrl" class="button" download="resume.pdf">Resume</a>
     </div>
     <div class="project">
-      <div class="project-content">
-        <p>With 4+ years of UI/ UX design experience and 3 years in commercial design, I specialize in user experience
-          optimization, design system development, and front-end collaboration. I excel at executing projects
-          independently while thriving in team environments to enhance product quality.</p>
-      </div>
+      <p>With 4+ years of UI/ UX design experience and 3 years in commercial design, I specialize in user experience
+        optimization, design system development, and front-end collaboration. I excel at executing projects
+        independently while thriving in team environments to enhance product quality.</p>
       <div class="project-content">
         <h3>Skills</h3>
         <ul>
@@ -55,6 +53,11 @@
             <div class="job-title">Web Designer</div>
             <small class="company">CBES Co., Ltd.</small>
             <span class="duration">Feb 2019 - Mar 2021</span>
+          </li>
+          <li>
+            <div class="job-title">Art Teacher</div>
+            <small class="company">Global ART Co., Ltd.</small>
+            <span class="duration">Sep 2017 - Feb 2018</span>
           </li>
         </ul>
       </div>

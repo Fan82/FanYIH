@@ -14,6 +14,7 @@ body
     padding-top: 60px
     padding-bottom: 120px
     scroll-behavior: smooth
+    background-color: $light-clr
 // main
 //     position: relative
 //     width: 100%
@@ -52,7 +53,7 @@ body
         align-items: flex-start
         justify-content: space-around
         color: $dark-clr
-        background: linear-gradient(0deg,rgba($light-clr ,0 ), rgba($light-clr ,0.1 ))
+        background-image: linear-gradient(0deg,rgba($light-clr ,0 ), rgba($light-clr ,0.1 ))
         box-shadow: 0px 0px calc( $base * 1) rgba($dark-clr, 0.08), 0px calc( $base * 2) 12px rgba($dark-clr, 0.08)
         border-radius: $borderRadius
         padding: calc( $base * 6) 16px
@@ -74,7 +75,7 @@ body
         white-space: nowrap
         border-radius: 50px
         padding: 6px 16px
-        background: $dark-clr
+        background-color: $dark-clr
         display: inline-flex
         justify-content: center
         align-items: center
@@ -87,7 +88,7 @@ body
             width: 16px
             height: 8px
             transform: skew(45deg)
-            transition: all 0.5s
+            transition: all 0.2s linear
             border-bottom: 2px solid $light-clr
             border-right: 2px solid $light-clr
         &:hover
@@ -103,11 +104,12 @@ body
     display: block
     width: 100%
     color: $dark-clr
-    font-size: 2rem
-    font-weight: 600
-    padding: $base 0
+    font-size: calc( $base * 10 )
+    font-weight: bold
+    line-height: calc( $base * 14 )
+    letter-spacing: $letterspace
     animation: slideDown 0.6s cubic-bezier(0.2, 0.6, 0.2, 1)
-    transition: transform .15s linear
+    transition: transform 0.2s linear
     &.title--scrolled
         transform: translateY(10px) // 往下微調
     img
@@ -119,16 +121,17 @@ body
         object-fit: contain
         border-radius: $borderRadius
         box-shadow: 0 4px 12px rgba($grey-clr ,0.5 )
-    h2
-        font-size: calc( $base * 6 )
-        padding: calc( $base * 8) 5% 0
-    span
-        max-width: 300px
-        padding: 0
-        margin: 0
-        // white-space: pre-line
-        color: $grey-clr
-        font-size: calc( $base * 3)
+    // h2
+    //     font-size: calc( $base * 6 )
+    //     padding: calc( $base * 8) 5% 0
+    p
+        margin-top: calc( $base * 2)
+        line-height: normal
+        letter-spacing: $letterspace
+        color: $dark-clr
+        font-weight: 100
+        line-height: calc( $base * 10)
+        font-size: calc( $base * 6)
 // logo區
 .top
     position: fixed
@@ -145,15 +148,26 @@ body
     background-color: rgba($light-clr, .05)
     box-shadow: 0 1px 0px rgba($dark-clr, .04)
     a.logo
-        font-weight: 400
+        font-weight: 300
         font-size: 1.375rem
         color: $dark-clr
-        text-decoration: underline
-    nav a
+        line-height: 40px
+        // text-decoration: underline
+nav
+    a
         line-height: calc( $base * 10 )
         color: $dark-clr
         font-size: calc( $base * 4 )
-        padding: calc( $base * 2 )
+        padding: calc( $base * 2.5 ) calc( $base * 3.5 )
+        background-color: rgba($grey-clr ,0.1 )
+        border-radius: calc( $borderRadius * 4 )
+        transition: all 0.2s linear
+        margin: 0 0 0 $base
+        &:hover,
+        &:active,
+        &:focus
+            background-color: $dark-clr
+            color: $light-clr
 
 // 下方聯繫按鈕
 .footer_nav
@@ -166,7 +180,7 @@ body
     align-items: center
     justify-content: center
     height: 50px
-    border-radius: 50px
+    border-radius: calc( $borderRadius * 4 )
     backdrop-filter: blur(14px)
     -webkit-backdrop-filter: blur(14px)
     background-color: rgba($light-clr, .05)
@@ -184,7 +198,7 @@ body
         position: absolute
         bottom: 60px
         width: 100%
-        background: $light-clr
+        background-color: $light-clr
         border-radius: calc( $base * 2)
         padding: calc( $base * 2)
         box-shadow: 0px 0px 5px rgba($light-clr, 0.05), 0px 10px calc( $base * 5) rgba($light-clr, 0.05)
@@ -192,7 +206,7 @@ body
         a
             display: block
             padding: calc( $base * 2)
-            border-radius: 4px
+            border-radius: $base
             width: 100%
             text-align: center
             &:hover
@@ -200,11 +214,12 @@ body
                 font-weight: 500
 // project, about
 .project
+    position: relative
     width: 100%
     > img
         width: 130px
         aspect-ratio: 1 / 1
-        border-radius: 100%
+        border-radius: calc( $borderRadius * 20 )
         object-fit: cover
     span
         display: block
@@ -212,7 +227,6 @@ body
         line-height: 16px
         color: $grey-clr
         letter-spacing: $letterspace
-        overflow: hidden
         text-overflow: ellipsis
         white-space: nowrap
     h1
@@ -231,10 +245,8 @@ body
         margin: 0 0 calc( $base * 4 ) 0
     .project-box
         display: block
-        background-color: rgba($grey-clr ,0.1 )
+        background: linear-gradient(0deg, rgba($grey-clr ,0.2 ), rgba($light-clr ,0.2 ))
         border-radius: $borderRadius
-    .project-box
-        margin-bottom: calc( $base * 3)
     .project-content
         position: relative
         margin-bottom: calc( $base * 7 )
@@ -284,29 +296,33 @@ body
                     border-radius: $base
                 &:has(.job-title)
                     margin-bottom: calc( $base * 5 )
-                    &::before
-                        display: none
+                    // &::before
+                    //     display: none
                     .job-title
                         display: inline-block
                         font-size: 18px
                         line-height: 24px
                         letter-spacing: $letterspace
                     small
-                        color: $grey-clr
+                        color: $dark-clr
                         font-size: 13px
                         font-weight: normal
                         margin: 0 calc( $base * 2 )
                         &::before
                             content: ""
                             position: relative
-                            background: $grey-clr
+                            background-color: $dark-clr
                             display: inline-block
                             width: 6px
                             height: 6px
-                            border-radius: 10px
+                            border-radius: calc( $borderRadius * 4 )
                             margin: 2px 8px
+        &:has(.project-detail)
+            position: absolute
+            margin: 0
+            left: calc( $base * 2 )
+            bottom: calc( $base * 2 )
 
-// .project-modules
 // 動態滾動效果
 @keyframes slideDown
     0%

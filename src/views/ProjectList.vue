@@ -9,7 +9,7 @@ import projects from "@/data/projects.js"; // 引入專案資料
 
 export default {
   components: {
-    Project,
+    Project
   },
   data() {
     return {

@@ -1,37 +1,15 @@
 <template>
   <div class="wrapper">
     <div class="title" :class="{ 'title--scrolled': isScrolled }">
-      Design.
+      UI/ UX Design.
       <br>
-      Code.
+      Front-End.
       <br>
-      Systems. Strategy.
-    </div>
-    <div class="wrapper-box">
-      <div class="wrapper-title">
-        About
-        <p>
-          UI Designer
-          <br>
-          Frontend Developer
-        </p>
-      </div>
-      <router-link to="/about" class="button">
-        more
-        <div class="arrow"></div>
-      </router-link>
-    </div>
-    <div class="wrapper-box">
-      <div class="wrapper-title">
-        Design Project
-        <p>
-          A digital artisan specializing in the creation of aesthetically pleasing user interfaces.
-        </p>
-      </div>
-      <router-link to="/projects" class="button">
-        more
-        <div class="arrow"></div>
-      </router-link>
+      Systems.
+      <p>Bringing dreams to life,
+        <br>
+        one design at a time
+      </p>
     </div>
   </div>
   <ProjectList />
