@@ -1,9 +1,10 @@
 // src/router/index.js
+// 用@ >> 絕對路徑
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import About from "../views/About.vue";
-import Project from "../views/ProjectList.vue";
-import ProjectDetail from "../views/ProjectDetail.vue";
+import Home from "@/views/Home.vue";
+import About from "@/views/About.vue";
+import Project from "@/views/ProjectList.vue";
+import ProjectDetail from "@/views/ProjectDetail.vue";
 
 const routes = [
   { path: "/", name: "Home", component: Home },
