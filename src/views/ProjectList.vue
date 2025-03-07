@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper flex">
+  <div class="wrapper">
     <Project v-for="project in projects" :key="project.id" :project="project" />
   </div>
 </template>

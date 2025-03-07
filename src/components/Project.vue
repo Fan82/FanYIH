@@ -1,5 +1,6 @@
 <template>
   <div class="project">
+    <small>UX/UI Case Study</small>
     <router-link :to="`/projects/${project.id}`" class="project-box block">
       <img class="project-img" :src="project.image" :alt="project.name" />
     </router-link>

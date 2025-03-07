@@ -1,22 +1,17 @@
 <template>
   <div class="grid">
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_1.png" />
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_2.png" />
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_3.png" />
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_4.png" />
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_5.png" />
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_6.png" />
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_7.png" />
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_8.png" />
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_9.png" />
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_10.png" />
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_11.png" />
-    <img class="project-img" src="../assets/projectimg/FLIGHT/page/page_12.png" />
+    <img v-for="(image, index) in images" :key="index" class="project-img" :src="image" alt="Project screen" />
   </div>
 </template>
 
 <script>
 export default {
-  props: ["images"],
+  props: ["projectId"], // 透過 props 傳入專案 ID
+  computed: {
+    images() {
+      const basePath = `../src/assets/projectimg/${this.projectId}/page/`;
+      return Array.from({ length: 11 }, (_, i) => `${basePath}page_${i + 1}.png`);
+    },
+  },
 };
 </script>

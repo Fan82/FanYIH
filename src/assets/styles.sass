@@ -11,8 +11,8 @@ $grid: grid
 $block: block
 $inlineBlock: inline-block
 
-@mixin imgDefault
-    object-fit: cover
+@mixin imgDefault($objectFit)
+    object-fit: $objectFit
     aspect-ratio: 1/1
 
 @mixin picImg
@@ -27,6 +27,7 @@ $inlineBlock: inline-block
     letter-spacing: $letterspace
     text-overflow: ellipsis
     white-space: nowrap
+    overflow: hidden
 
 @mixin infoP
     font-size: 16px
@@ -34,7 +35,8 @@ $inlineBlock: inline-block
 @mixin infoType
     position: relative
     font-size: calc( $base * 4 )
-    line-height: 32px
+    line-height: 28px
+    font-weight: 400
 
 @mixin button($background, $color, $backgroundHover, $colorHover)
     white-space: nowrap
@@ -76,10 +78,10 @@ body
     position: relative
     width: 100%
     // display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    flex-wrap: wrap
+    // flex-direction: column
+    // justify-content: center
+    // align-items: center
+    // flex-wrap: wrap
     animation: slide .6s cubic-bezier(0.2, 0.6, 0.2, 1)
     animation-fill-mode: backwards
     gap: calc( $base * 7)
@@ -87,7 +89,7 @@ body
 .button
     @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
 
-// 大標題
+// 大標題 ------------------------------------------------------------
 .title
     position: relative
     // display: block
@@ -109,14 +111,14 @@ body
         font-weight: 100
         line-height: calc( $base * 10)
         font-size: calc( $base * 6)
-// logo區
+
+// logo區 ------------------------------------------------------------
 .top
     position: fixed
     width: 100%
     max-width: 1200px
     top: 0
     padding: 10px 20px
-    // display: flex
     justify-content: space-between
     align-items: center
     z-index: 100
@@ -129,14 +131,12 @@ body
         font-size: 1.375rem
         color: $dark-clr
         line-height: 40px
-// 選單
+// component ------------------------------------------------------------
 nav
     a
         @include button(#fff, $dark-clr, $dark-clr, $light-clr)
-    //     a
-    //         @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
 
-// 下方聯繫按鈕
+// 下方聯繫按鈕 ------------------------------------------------------------
 .footer_nav
     position: fixed
     bottom: calc( $base * 5)
@@ -183,12 +183,13 @@ nav
 .project
     position: relative
     width: 100%
+    letter-spacing: $letterspace
+
     > img
         width: 130px
         border-radius: calc( $borderRadius * 20 )
-        @include imgDefault
+        @include imgDefault(cover)
     span
-        // display: block
         @include infoSpan
     h1
         font-size: 32px
@@ -201,11 +202,23 @@ nav
         margin: calc( $base * 2.5 ) 0
     h3
         font-size: 20px
-        margin: calc( $base * 4 ) 0
+        margin: calc( $base * 2 ) 0 calc( $base * 3 ) 0
+        padding: calc( $base * 2 ) 0
+        border-bottom: .5px solid rgba($dark-clr ,0.5 )
+    > small
+        position: absolute
+        top: $base
+        left: calc( $base * 2 )
+        background-color: rgba($grey-clr ,0.1 )
+        font-size: calc( $base * 2 )
+        padding: $base
+        border-radius: $base
+        line-height: normal
     .project-box
         // display: block
         background: linear-gradient(0deg, rgba($grey-clr ,0.2 ), rgba($light-clr ,0.2 ))
         border-radius: $borderRadius
+
     .project-content
         position: relative
         margin-bottom: calc( $base * 7 )
@@ -217,53 +230,68 @@ nav
         .project-detail
             color: $dark-clr
             line-height: 26px
-            padding-left: 54px
+            padding-left: 50px
+
         p
             @include infoP
 
         img
             width: 95px
-            @include imgDefault
+            @include imgDefault(contain)
 
-        ul
+        ul, ol
             @include infoP
             padding-left: calc( $base * 5 )
             li
                 @include infoType
-                &::before
-                    content: ""
-                    display: $inlineBlock
-                    width: $base
-                    height: $base
-                    background-color: $dark-clr
-                    vertical-align: middle
-                    margin-right: $base
-                    border-radius: $base
-                    position: absolute
-                    left: -14px
-                    top: 50%
-                    transform: translateY(-50%)
-                &:has(.job-title)
-                    margin-bottom: calc( $base * 5 )
-                    .job-title
-                        @include infoP
-                        font-weight: 500
-                    small
-                        margin: 0 calc( $base * 2 )
+                margin: calc( $base * 2 ) 0
+                small
+                    margin: 0 calc( $base * 2 )
+        ul
+            > li::before
+                content: ""
+                display: $inlineBlock
+                width: $base
+                height: $base
+                background-color: $dark-clr
+                vertical-align: middle
+                margin-right: $base
+                border-radius: $base
+                position: absolute
+                left: -14px
+                top: 12px
 
         &:has(.project-detail)
             position: absolute
             margin: 0
             left: calc( $base * 2 )
             bottom: calc( $base * 2 )
+            max-width: calc(100% - 20px)
+    .keyLabel
+        @include infoP
+        font-weight: 600
+
+    @for $i from 1 through 10
+        ol
+            li:nth-child(#{$i})::before
+                content: "#{$i}."
+                margin-right: $base
+                @include infoSpan
+                color: $dark-clr
+                position: absolute
+                left: -17px
+                top: 7px
+
     &.intro
-        text-align: center
         img
+            @include imgDefault(contain)
             @include picImg
         p
-            @include infoP
+            margin: calc( $base * 2.5 ) 0 $base
+        //     @include infoP
         span
-            @include infoSpan
+            white-space: pre-wrap
+        //     @include infoSpan
 .tab-content
     width: 100%
     > div

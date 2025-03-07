@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper flex">
+  <div class="wrapper">
     <div class="title block" :class="{ 'title--scrolled': isScrolled }">
       UI/ UX Design.
       <br>

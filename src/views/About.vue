@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper flex">
+  <div class="wrapper">
     <div class="project">
       <img :src="profileImage" alt="Profile Image">
       <h1>Fan YiHsuan</h1>
@@ -40,24 +40,24 @@
         <h3>Work Experience</h3>
         <ul class="block">
           <li>
-            <div class="job-title inlineBlock">UI Designer</div>
-            <small class="company">NEUTEC Co., Ltd.</small>
-            <span class="duration block">Feb 2022 - Feb 2025</span>
+            <div class="keyLabel inlineBlock">UI Designer</div>
+            <small>NEUTEC Co., Ltd.</small>
+            <span class="block">Feb 2022 - Feb 2025</span>
           </li>
           <li>
-            <div class="job-title inlineBlock">UI Designer</div>
-            <small class="company">GOTRUST Co., Ltd.</small>
-            <span class="duration block">Apr 2021 - Feb 2022</span>
+            <div class="keyLabel inlineBlock">UI Designer</div>
+            <small>GOTRUST Co., Ltd.</small>
+            <span class="block">Apr 2021 - Feb 2022</span>
           </li>
           <li>
-            <div class="job-title inlineBlock">Web Designer</div>
-            <small class="company">CBES Co., Ltd.</small>
-            <span class="duration block">Feb 2019 - Mar 2021</span>
+            <div class="keyLabel inlineBlock">Web Designer</div>
+            <small>CBES Co., Ltd.</small>
+            <span class="block">Feb 2019 - Mar 2021</span>
           </li>
           <li>
-            <div class="job-title inlineBlock">Art Teacher</div>
-            <small class="company">Global ART Co., Ltd.</small>
-            <span class="duration block">Sep 2017 - Feb 2018</span>
+            <div class="keyLabel inlineBlock">Art Teacher</div>
+            <small>Global ART Co., Ltd.</small>
+            <span class="block">Sep 2017 - Feb 2018</span>
           </li>
         </ul>
       </div>
