@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="title block" :class="{ 'title--scrolled': isScrolled }">
+    <div class="title block" :class="{ 'slide-scrolled': isScrolled }">
       UI/ UX Design.
       <br>
       Front-End.

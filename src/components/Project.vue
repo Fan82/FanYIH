@@ -2,7 +2,7 @@
   <div class="project">
     <small>UX/UI Case Study</small>
     <router-link :to="`/projects/${project.id}`" class="project-box block">
-      <img class="project-img" :src="project.image" :alt="project.name" />
+      <img class="project-img" :src="project.image" :alt="project.name" :class="{ 'slide-scrolled': isScrolled }" />
     </router-link>
     <div class="project-content">
       <div class="project-pic">
@@ -22,6 +22,22 @@ export default {
     project: {
       type: Object,
       required: true,
+    },
+  },
+  data() {
+    return {
+      isScrolled: false,
+    };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.isScrolled = window.scrollY > 30;  // 根據滾動高度來調整
     },
   },
 };
