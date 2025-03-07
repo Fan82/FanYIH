@@ -10,4 +10,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"), // 設定 `@` 代表 `src` 目錄
     },
   },
+  server: {
+    host: true,
+  },
 });

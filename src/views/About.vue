@@ -1,12 +1,12 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper flex">
     <div class="project">
       <img :src="profileImage" alt="Profile Image">
       <h1>Fan YiHsuan</h1>
-      <h2>
+      <h2 class="block">
         UI/ UX Designer | Front-End Developer |
       </h2>
-      <h2>
+      <h2 class="block">
         Graphic Designer
       </h2>
       <a :href="resumeUrl" class="button" download="resume.pdf">Resume</a>
@@ -17,7 +17,7 @@
         independently while thriving in team environments to enhance product quality.</p>
       <div class="project-content">
         <h3>Skills</h3>
-        <ul>
+        <ul class="block">
           <li>UI/UX Design</li>
           <li>HTML / CSS / JavaScript / Vue</li>
           <li>Responsive Web Design (RWD)</li>
@@ -28,7 +28,7 @@
 
       <div class="project-content">
         <h3>Tools</h3>
-        <ul>
+        <ul class="block">
           <li>VS Code</li>
           <li>Figma / Sketch / Adobe XD</li>
           <li>Jira</li>
@@ -38,32 +38,32 @@
 
       <div class="project-content">
         <h3>Work Experience</h3>
-        <ul>
+        <ul class="block">
           <li>
-            <div class="job-title">UI Designer</div>
+            <div class="job-title inlineBlock">UI Designer</div>
             <small class="company">NEUTEC Co., Ltd.</small>
-            <span class="duration">Feb 2022 - Feb 2025</span>
+            <span class="duration block">Feb 2022 - Feb 2025</span>
           </li>
           <li>
-            <div class="job-title">UI Designer</div>
+            <div class="job-title inlineBlock">UI Designer</div>
             <small class="company">GOTRUST Co., Ltd.</small>
-            <span class="duration">Apr 2021 - Feb 2022</span>
+            <span class="duration block">Apr 2021 - Feb 2022</span>
           </li>
           <li>
-            <div class="job-title">Web Designer</div>
+            <div class="job-title inlineBlock">Web Designer</div>
             <small class="company">CBES Co., Ltd.</small>
-            <span class="duration">Feb 2019 - Mar 2021</span>
+            <span class="duration block">Feb 2019 - Mar 2021</span>
           </li>
           <li>
-            <div class="job-title">Art Teacher</div>
+            <div class="job-title inlineBlock">Art Teacher</div>
             <small class="company">Global ART Co., Ltd.</small>
-            <span class="duration">Sep 2017 - Feb 2018</span>
+            <span class="duration block">Sep 2017 - Feb 2018</span>
           </li>
         </ul>
       </div>
       <div class="project-content">
         <h3>Languages</h3>
-        <ul>
+        <ul class="block">
           <li>English</li>
           <li>Mandarin</li>
         </ul>

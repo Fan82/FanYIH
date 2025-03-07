@@ -1,21 +1,24 @@
 <template>
-  <div class="wrapper" v-if="project">
+  <div class="wrapper flex" v-if="project">
     <div class="project intro">
       <img :src="project.logo" :alt="`${project.name} logo`" />
-      <p>{{ project.name }}</p>
-      <span>{{ project.detail }}</span>
-      <button class="btn modal-trigger" data-target="modal1">Apps</button>
+      <p class="block">{{ project.name }}</p>
+      <span class="block">{{ project.detail }}</span>
+      <!-- <button class="btn modal-trigger" data-target="modal1">Apps</button> -->
     </div>
 
     <!-- Tab 選單 -->
-    <div class="tab">
-      <a href="javascript:void(0)" class="btn-tab" :class="{ active: activeTab === 'UI Screen' }"
-        @click="activeTab = 'UI Screen'"> UI Screen </a>
-      <a href="javascript:void(0)" class="btn-tab" :class="{ active: activeTab === 'Wireframe' }"
-        @click="activeTab = 'Wireframe'"> Wireframe </a>
-      <a href="javascript:void(0)" class="btn-tab" :class="{ active: activeTab === 'Flow Tree' }"
-        @click="activeTab = 'Flow Tree'"> Flow Tree </a>
-    </div>
+    <nav class="tab">
+      <a href="javascript:void(0)" :class="{ active: activeTab === 'UI Screen' }" @click="activeTab = 'UI Screen'">
+        UI Screen
+      </a>
+      <a href="javascript:void(0)" :class="{ active: activeTab === 'Wireframe' }" @click="activeTab = 'Wireframe'">
+        Wireframe
+      </a>
+      <a href="javascript:void(0)" :class="{ active: activeTab === 'Flow Tree' }" @click="activeTab = 'Flow Tree'">
+        Flow Tree
+      </a>
+    </nav>
 
     <!-- Tab 內容區，使用元件 -->
     <div class="tab-content">

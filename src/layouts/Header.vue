@@ -21,7 +21,7 @@ export default {
 };
 </script> -->
 <template>
-  <div class="top">
+  <div class="top flex">
     <router-link to="/" class="logo">
       Fan YIHsuan
     </router-link>
@@ -37,10 +37,10 @@ export default {
   name: 'Header',
   computed: {
     showAboutLink() {
-      return this.$route.path === '/' || this.$route.path === '/projects';
+      return this.$route.path !== "/about";
     },
     showProjectLink() {
-      return this.$route.path === '/' || this.$route.path === '/about';
+      return this.$route.path !== "/projects";
     },
   },
 };
