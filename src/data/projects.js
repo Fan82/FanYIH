@@ -4,8 +4,8 @@ export default [
     name: "Flight Booking Web",
     detail:
       "A user-friendly flight booking experience designed to streamline searching, selecting, and purchasing airline tickets",
-    image: "../src/assets/projectimg/bookFlight/MockUp.png",
-    logo: "../src/assets/projectimg/bookFlight/logo.png",
+    image: "../src/assets/images/projects/bookFlight/MockUp.png",
+    logo: "../src/assets/images/projects/bookFlight/logo.png",
     content: {
       background:
         "Travelers often find flight booking systems overly complex and difficult to navigate. This project aims to simplify the process by providing a streamlined and intuitive booking experience.",
@@ -48,8 +48,8 @@ export default [
     id: "easyBank",
     name: "Easy Bank",
     detail: "Bank anywhere, with your phone",
-    image: "../src/assets/projectimg/easyBank/MockUp.png",
-    logo: "../src/assets/projectimg/easyBank/logo.png",
+    image: "../src/assets/images/projects/easyBank/MockUp.png",
+    logo: "../src/assets/images/projects/easyBank/logo.png",
     content: {
       background:
         "Traditional banking methods are often inconvenient and time-consuming. This project aims to provide a seamless digital banking experience, allowing users to manage their finances anytime, anywhere.",
@@ -94,8 +94,8 @@ export default [
     name: "Public Transportation",
     detail:
       "Enhancing urban mobility with an efficient transport booking system",
-    image: "../src/assets/projectimg/publicTransp/MockUp.png",
-    logo: "../src/assets/projectimg/publicTransp/logo.png",
+    image: "../src/assets/images/projects/publicTransp/MockUp.png",
+    logo: "../src/assets/images/projects/publicTransp/logo.png",
     content: {
       background:
         "Public transportation users often experience difficulties in route planning, ticket purchasing, and real-time tracking. This project aims to simplify and optimize the public transport booking process.",
@@ -138,8 +138,8 @@ export default [
     id: "goTravel",
     name: "Let's Travel",
     detail: "Time to experience a different life",
-    image: "../src/assets/projectimg/goTravel/MockUp.png",
-    logo: "../src/assets/projectimg/goTravel/logo.png",
+    image: "../src/assets/images/projects/goTravel/MockUp.png",
+    logo: "../src/assets/images/projects/goTravel/logo.png",
     content: {
       background:
         "Planning trips can be overwhelming due to scattered travel information and lack of itinerary management tools. This project aims to simplify travel planning with a user-friendly platform.",
@@ -183,8 +183,8 @@ export default [
     id: "worldGaming",
     name: "World Gaming",
     detail: "A new virtual world where you take control",
-    image: "../src/assets/projectimg/worldGaming/MockUp.png",
-    logo: "../src/assets/projectimg/worldGaming/logo.png",
+    image: "../src/assets/images/projects/worldGaming/MockUp.png",
+    logo: "../src/assets/images/projects/worldGaming/logo.png",
     content: {
       background:
         "Modern gamers seek immersive experiences that blend realism with creativity. This project introduces a virtual world where players can shape their own adventures.",
@@ -227,8 +227,8 @@ export default [
     id: "betGaming",
     name: "Bet Gaming",
     detail: "Trust your instincts and play smart",
-    image: "../src/assets/projectimg/betGaming/MockUp.png",
-    logo: "../src/assets/projectimg/betGaming/logo.png",
+    image: "../src/assets/images/projects/betGaming/MockUp.png",
+    logo: "../src/assets/images/projects/betGaming/logo.png",
     content: {
       background:
         "The online betting industry requires a balance between excitement and responsible gaming. This project enhances the betting experience with an intuitive and engaging interface.",

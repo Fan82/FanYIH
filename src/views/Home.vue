@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="title block" :class="{ 'slide-scrolled': isScrolled }">
+    <div :class="{ 'slide-scrolled': isScrolled }">
       UI/ UX Design.
       <br>
       Front-End.
@@ -42,3 +42,28 @@ export default {
   },
 };
 </script>
+<style lang="sass" scoped>
+  @use '@/assets/styles/_mixins.sass' as *
+  @use '@/assets/styles/_variables.sass' as *
+
+  .wrapper
+    > div
+      position: relative
+      width: 100%
+      color: $dark-clr
+      font-size: calc($base * 10)
+      font-weight: bold
+      line-height: calc($base * 14)
+      letter-spacing: $letterspace
+      @include slideDown
+      display: block
+
+      p
+        margin-top: calc($base * 2)
+        line-height: normal
+        letter-spacing: $letterspace
+        color: $dark-clr
+        font-weight: 100
+        line-height: calc($base * 10)
+        font-size: calc($base * 6)
+</style>

@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper" v-if="project">
-    <div class="project intro">
+    <div class="project">
       <img :src="project.logo" :alt="`${project.name} logo`" />
-      <p class="block">{{ project.name }}</p>
-      <span class="block">{{ project.detail }}</span>
+      <p>{{ project.name }}</p>
+      <span>{{ project.detail }}</span>
     </div>
 
     <!-- Tab 選單 -->
@@ -48,3 +48,21 @@ export default {
   },
 };
 </script>
+
+<style lang="sass" scoped>
+  @use '@/assets/styles/_mixins.sass' as *
+  @use '@/assets/styles/_variables.sass' as *
+
+  p, span
+    display: block
+  nav
+    margin: calc( $base * 6 ) auto
+  .project
+      img
+          @include imgDefault(contain)
+          @include picImg
+      p
+          margin: calc( $base * 2.5 ) 0 $base
+      span
+          white-space: pre-wrap
+</style>

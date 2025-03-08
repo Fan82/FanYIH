@@ -1,27 +1,5 @@
-<!-- <template>
-  <div class="top">
-    <router-link to="/" class="logo">
-      Fan YIHsuan
-    </router-link>
-    <nav v-if="showNav">
-      <router-link to="/about" v-if="$route.path === '/projects'">about</router-link>
-      <router-link to="/projects" v-if="$route.path === '/about'">project</router-link>
-    </nav>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'Header',
-  computed: {
-    showNav() {
-      return this.$route.path !== "/" && this.$route.path !== "/home";
-    }
-  }
-};
-</script> -->
 <template>
-  <div class="top flex">
+  <div class="top">
     <router-link to="/" class="logo">
       Fan YIHsuan
     </router-link>

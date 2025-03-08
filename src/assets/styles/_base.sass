@@ -1,0 +1,26 @@
+@use 'mixins' as *
+@use 'variables' as *
+
+body
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+    min-height: 100vh
+    padding-top: 60px
+    padding-bottom: 120px
+    scroll-behavior: smooth
+    background-color: $light-clr
+
+// ---------------------------------------
+.wrapper
+    position: relative
+    width: 100%
+    padding: calc( $base * 5 )
+.button
+    @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
+.flex
+    display: $flex
+.grid
+    display: $grid
+h2, h3
+    display: block

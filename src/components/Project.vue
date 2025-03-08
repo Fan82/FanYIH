@@ -1,7 +1,7 @@
 <template>
   <div class="project">
     <small>UX/UI Case Study</small>
-    <router-link :to="`/projects/${project.id}`" class="project-box block">
+    <router-link :to="`/projects/${project.id}`" class="project-box">
       <img class="project-img" :src="project.image" :alt="project.name" :class="{ 'slide-scrolled': isScrolled }" />
     </router-link>
     <div class="project-content">
@@ -9,8 +9,8 @@
         <img :src="project.logo" :alt="`${project.name} logo`" />
       </div>
       <div class="project-detail">
-        <p class="block">{{ project.name }}</p>
-        <span class="block">{{ project.detail }}</span>
+        <p>{{ project.name }}</p>
+        <span>{{ project.detail }}</span>
       </div>
     </div>
   </div>
@@ -42,3 +42,20 @@ export default {
   },
 };
 </script>
+
+<style lang="sass" scoped>
+  @use '@/assets/styles/_mixins.sass' as *
+  @use '@/assets/styles/_variables.sass' as *
+  .project
+     small
+        position: absolute
+        top: $base
+        left: calc( $base * 2 )
+        background-color: rgba($grey-clr ,0.1 )
+        font-size: calc( $base * 2 )
+        padding: $base
+        border-radius: $base
+        line-height: normal
+  p, span
+    display: block
+</style>
