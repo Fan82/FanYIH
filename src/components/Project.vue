@@ -47,15 +47,21 @@ export default {
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
   .project
-     small
-        position: absolute
-        top: $base
-        left: calc( $base * 2 )
-        background-color: rgba($grey-clr ,0.1 )
-        font-size: calc( $base * 2 )
-        padding: $base
-        border-radius: $base
-        line-height: normal
+    .project-content
+      position: absolute
+      margin: 0
+      left: calc( $base * 2 )
+      bottom: calc( $base * 2 )
+      max-width: calc(100% - 20px)
+    small
+      position: absolute
+      top: $base
+      left: calc( $base * 2 )
+      background-color: rgba($grey-clr ,0.1 )
+      font-size: calc( $base * 2 )
+      padding: $base
+      border-radius: $base
+      line-height: normal
   p, span
     display: block
 </style>

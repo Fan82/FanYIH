@@ -100,9 +100,20 @@ export default {
 
   .project
     img
-        width: 130px
-        border-radius: calc( $borderRadius * 20 )
-        @include imgDefault(cover)
+      width: 100%
+      border-radius: $borderRadius 
+      @include imgDefault(cover)
+    // img
+    //     width: 130px
+    //     border-radius: calc( $borderRadius * 20 )
+    //     @include imgDefault(cover)
+    @media (min-width: 500px)
+      padding-left: 340px
+      img
+        position: absolute
+        left: 0
+        top: 0
+        max-width: 300px
   ul, span
     display: block
 </style>

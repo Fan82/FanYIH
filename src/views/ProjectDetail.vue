@@ -65,4 +65,5 @@ export default {
           margin: calc( $base * 2.5 ) 0 $base
       span
           white-space: pre-wrap
+  
 </style>

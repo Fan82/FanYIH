@@ -1,6 +1,11 @@
 @use 'mixins' as *
 @use 'variables' as *
-
+// ------------------------------------------------------------------
+.wrapper.grid
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    gap: 20px
+    @media (min-width: 500px)
+        grid-template-columns: repeat(auto-fit, minmax(calc(100% / 2 - 60px), 1fr))
 // logo區 ------------------------------------------------------------
 .top
     position: fixed
@@ -68,8 +73,10 @@
             @include infoP
 
         img
+            position: relative
             width: 95px
             @include imgDefault(contain)
+            border-radius: 0
 
         ul, ol
             @include infoP
@@ -97,13 +104,6 @@
                     display: inline-block
                     @include infoP
                     font-weight: 600
-
-        &:has(.project-detail)
-            position: absolute
-            margin: 0
-            left: calc( $base * 2 )
-            bottom: calc( $base * 2 )
-            max-width: calc(100% - 20px)
 
     @for $i from 1 through 10
         ol
