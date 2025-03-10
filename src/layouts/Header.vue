@@ -47,5 +47,9 @@ export default {
           font-size: 1.375rem
           color: $dark-clr
           line-height: 40px
+          &:hover,
+          &:focus-visible,
+          &:active
+            text-decoration: underline
           
 </style>
