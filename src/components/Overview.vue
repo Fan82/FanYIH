@@ -33,11 +33,14 @@ export default {
     },
 };
 </script>
-
 <style lang="sass" scoped>
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
 
+  p
+    margin: calc( $base * 1 ) 0 calc( $base * 6 )
+    font-weight: 200
   ul
     display: block
+
 </style>

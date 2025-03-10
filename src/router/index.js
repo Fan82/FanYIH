@@ -20,7 +20,14 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes, // 這裡只留一個 routes 陣列
+  scrollBehavior(to, from, savedPosition) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ top: 0, behavior: "smooth" });
+      }, 10);
+    });
+  },
 });
 
 export default router;

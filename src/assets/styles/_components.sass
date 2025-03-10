@@ -1,57 +1,13 @@
 @use 'mixins' as *
 @use 'variables' as *
-.button
-    @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
+// .button
+//     @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
 
 // component ------------------------------------------------------------
 nav
     a
         @include button(#fff, $dark-clr, $dark-clr, $light-clr)
-
-// 下方聯繫按鈕 ------------------------------------------------------------
-.footer_nav
-    position: fixed
-    bottom: calc( $base * 5)
-    left: 50%
-    transform: translateX(-50%)
-    width: calc( $base * 50)
-    display: flex
-    align-items: center
-    justify-content: center
-    height: 50px
-    border-radius: calc( $borderRadius * 4 )
-    backdrop-filter: blur(14px)
-    -webkit-backdrop-filter: blur(14px)
-    background-color: rgba($light-clr, .05)
-    cursor: pointer
-    box-shadow: 0 4px 8px rgba($dark-clr, 0.1)
-    z-index: 100
-    &:hover,
-    &:active,
-    &:focus
-        background-color: rgba($dark-clr, 0.5)
-        color: $light-clr
-        .link
-            font-weight: 600
-    .contact-menu
-        position: absolute
-        bottom: 60px
-        width: 100%
-        background-color: $light-clr
-        border-radius: calc( $base * 2)
-        padding: calc( $base * 2)
-        box-shadow: 0px 0px 5px rgba($light-clr, 0.05), 0px 10px calc( $base * 5) rgba($light-clr, 0.05)
-        z-index: 10
-        a
-            display: block
-            padding: calc( $base * 2)
-            border-radius: $base
-            width: 100%
-            text-align: center
-            &:hover
-                color: $main
-                font-weight: 500
-
+        margin-right: calc( $base * 2 )
 .slide-scrolled
     transform: translateY(-35px)
 // 動態滾動效果

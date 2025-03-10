@@ -5,10 +5,8 @@
       <img class="project-img" :src="project.image" :alt="project.name" :class="{ 'slide-scrolled': isScrolled }" />
     </router-link>
     <div class="project-content">
-      <div class="project-pic">
-        <img :src="project.logo" :alt="`${project.name} logo`" />
-      </div>
-      <div class="project-detail">
+      <img :src="project.logo" :alt="`${project.name} logo`" />
+      <div>
         <p>{{ project.name }}</p>
         <span>{{ project.detail }}</span>
       </div>
@@ -47,12 +45,27 @@ export default {
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
   .project
+    cursor: pointer
     .project-content
       position: absolute
       margin: 0
-      left: calc( $base * 2 )
-      bottom: calc( $base * 2 )
-      max-width: calc(100% - 20px)
+      padding: calc( $base * 2 )
+      left: 0
+      bottom: 0
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      gap: calc( $base * 2 )
+      width: 100%
+      cursor: pointer
+
+      > div
+        max-width: calc(100% - 50px)
+      img
+          @include picImg(40px)
+          background-color: $light-clr
+          cursor: pointer
+
     small
       position: absolute
       top: $base

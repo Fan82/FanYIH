@@ -5,7 +5,6 @@
       <p>{{ project.name }}</p>
       <span>{{ project.detail }}</span>
     </div>
-
     <!-- Tab 選單 -->
     <nav>
       <a href="javascript:void(0)" :class="{ active: activeTab === 'UI Screen' }" @click="activeTab = 'UI Screen'">
@@ -15,7 +14,6 @@
         Overview
       </a>
     </nav>
-
     <!-- Tab 內容區，使用元件 -->
     <div class="tab-content">
       <UIScreen v-if="activeTab === 'UI Screen'" :images="project.uiScreens" :projectId="project.id" />
@@ -56,14 +54,38 @@ export default {
   p, span
     display: block
   nav
-    margin: calc( $base * 6 ) auto
+    margin: calc( $base * 2 ) auto calc( $base * 6 )
+    a
+      padding: calc( $base * 2 ) calc( $base * 3.2 )
   .project
-      img
-          @include imgDefault(contain)
-          @include picImg
-      p
-          margin: calc( $base * 2.5 ) 0 $base
-      span
-          white-space: pre-wrap
+    img
+      @include imgDefault(contain)
+      @include picImg(55px)
+    p
+      font-size: 20px
+      font-weight: 400
+      margin: calc( $base * 2 ) 0 $base
+    span
+        white-space: pre-wrap
+  @media (min-width: 500px)
+    .wrapper
+      .project
+        margin: calc( $base * 1 ) auto calc( $base * 5 ) auto
+        padding-left: 70px
+        img
+          position: absolute
+          left: 0
+          top: 0
+        p 
+          font-weight: 600
+        span
+          font-size: 14px
+      .tab-content
+        .project
+          padding: 0
+  @media (min-width: 1020px)
+    .wrapper
+      .project
+        margin-bottom: calc( $base * 8 )
   
 </style>

@@ -1,20 +1,28 @@
 <template>
   <div class="wrapper">
-    <div class="project">
+    <div>
       <img :src="profileImage" alt="Profile Image">
       <h1>Fan YiHsuan</h1>
       <h2>
-        UI/ UX Designer | Front-End Developer |
-      </h2>
-      <h2>
+        UI/ UX Designer |
+        Front-End Developer |
         Graphic Designer
       </h2>
-      <a :href="resumeUrl" class="button" download="resume.pdf">Resume</a>
+      <a :href="resumeUrl" download="resume.pdf">Resume</a>
     </div>
     <div class="project">
-      <p>With 4+ years of UI/ UX design experience and 3 years in commercial design, I specialize in user experience
-        optimization, design system development, and front-end collaboration. I excel at executing projects
-        independently while thriving in team environments to enhance product quality.</p>
+      <p>With 4+ years of UI/UX design experience and 3 years in commercial design, I specialize in user experience
+        optimization, design system development, and front-end collaboration. I am passionate about creating intuitive,
+        user-centered designs that seamlessly combine functionality and aesthetics. I excel at executing projects
+        independently while thriving in team environments to enhance product quality.
+        <br>
+        <br>
+        My expertise includes using tools like Figma and Adobe XD, as well as front-end technologies such as HTML, Vue,
+        and JavaScript to bring
+        designs to life. I take pride in optimizing user flows and creating consistent, scalable design systems that
+        ensure long-term product success. Throughout my career, I have successfully led and contributed to several
+        projects that improved user engagement and streamlined complex interfaces.
+      </p>
       <div class="project-content">
         <h3>Skills</h3>
         <ul>
@@ -98,22 +106,44 @@ export default {
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
 
-  .project
-    img
-      width: 100%
-      border-radius: $borderRadius 
-      @include imgDefault(cover)
-    // img
-    //     width: 130px
-    //     border-radius: calc( $borderRadius * 20 )
-    //     @include imgDefault(cover)
-    @media (min-width: 500px)
-      padding-left: 340px
-      img
-        position: absolute
-        left: 0
-        top: 0
-        max-width: 300px
+  img
+    width: 100%
+    border-radius: $borderRadius 
+    @include imgDefault(cover)
+    
   ul, span
     display: block
+  h1
+      font-size: 32px
+      margin: calc( $base * 5) 0 calc( $base * 2 ) 0
+  h2
+      @include infoSpan
+      font-weight: normal
+      line-height: calc( $base * 6 )
+      margin: calc( $base * 1.5 ) 0 calc( $base * 2.5 ) 0
+      white-space: break-spaces
+      font-style: italic
+      width: 80%
+  h3
+      font-size: 20px
+      margin: calc( $base * 2 ) 0 calc( $base * 3 ) 0
+      padding: calc( $base * 2 ) 0
+      border-bottom: .5px solid rgba($dark-clr ,0.5 )
+  a
+      @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
+  @media (min-width: 500px)
+    .project
+      padding-left: 280px
+    .wrapper
+      > div
+        &:first-of-type           
+          position: absolute
+          top: 40px
+          left: 20px
+          z-index: 3
+          pointer-events: none
+          img
+            max-width: 240px
+        a
+          pointer-events: auto
 </style>
