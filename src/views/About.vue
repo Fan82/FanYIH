@@ -27,8 +27,8 @@
         <h3>Skills</h3>
         <ul>
           <li>UI/UX Design</li>
-          <li>HTML / CSS / JavaScript / Vue</li>
-          <li>Responsive Web Design (RWD)</li>
+          <li>HTML / CSS / Vue / JavaScript</li>
+          <li>Responsive Web Design</li>
           <li>Wireframing & Prototyping</li>
           <li>Design System Development</li>
         </ul>
@@ -37,9 +37,9 @@
       <div class="project-content">
         <h3>Tools</h3>
         <ul>
-          <li>VS Code</li>
-          <li>Figma / Sketch / Adobe XD</li>
-          <li>Jira</li>
+          <li>VSCode</li>
+          <li>Figma / Adobe XD</li>
+          <li>Jira / GitHub</li>
           <li>Illustrator / Photoshop</li>
         </ul>
       </div>
