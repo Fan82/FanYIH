@@ -22,5 +22,5 @@ export default defineConfig({
       "**/*.svg",
     ],
   },
-  base: "/fan_web/", // <<== 這裡一定要加，對應你的 GitHub Pages 路徑
+  base: "/fan/", // <<== 這裡一定要加，對應你的 GitHub Pages 路徑
 });
