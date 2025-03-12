@@ -13,6 +13,6 @@ export default defineConfig({
   server: {
     host: true,
   },
-  base: process.env.NODE_ENV === "production" ? "/fan/" : "/", // 根據開發環境設置 base 路徑
-  // 其他配置保持不變
+  base: "/fan/", // 如果你的 repo 名叫 fan，則應該設定為這樣
+  // 其他設定保持不變
 });
