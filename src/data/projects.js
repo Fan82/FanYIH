@@ -1,5 +1,43 @@
 export default [
   {
+    id: "takeTask",
+    name: "World Gaming",
+    detail: "A new virtual world where you take control",
+    image: "../src/assets/images/projects/takeTask/MockUp.png",
+    logo: "../src/assets/images/projects/takeTask/logo.png",
+    content: {
+      background:
+        "Modern professionals and students seek efficient ways to manage tasks and boost productivity. This project introduces an intelligent task management app that automates task generation, prioritization, and organization, helping users stay on top of their goals.",
+      problem:
+        "Many to-do list apps only provide basic checklist functionality, lacking intelligent task categorization and priority recommendations. As a result, users struggle to effectively manage their time and workflow.",
+      designProcess: [
+        {
+          title: "Task Management Research & UX Strategy",
+          description:
+            "Analyzed successful productivity and task management apps to design an intuitive and efficient user experience.",
+        },
+        {
+          title: "Wireframe & Prototype",
+          description:
+            "Created interactive prototypes to optimize task creation, priority setting, and automation features.",
+        },
+        {
+          title: "UI Design",
+          details: [
+            "Designed a clean and user-friendly interface with a focus on usability and clarity.",
+            "Integrated AI-powered suggestions for task prioritization and scheduling.",
+          ],
+        },
+        {
+          title: "User Testing & Improvements",
+          details: [
+            "Conducted usability tests and iterated on UI elements based on user feedback to enhance task management efficiency.",
+          ],
+        },
+      ],
+    },
+  },
+  {
     id: "bookFlight",
     name: "Flight Booking Web",
     detail:
@@ -179,50 +217,6 @@ export default [
     },
   },
 
-  // {
-  //   id: "worldGaming",
-  //   name: "World Gaming",
-  //   detail: "A new virtual world where you take control",
-  //   image: "../src/assets/images/projects/worldGaming/MockUp.png",
-  //   logo: "../src/assets/images/projects/worldGaming/logo.png",
-  //   content: {
-  //     background:
-  //       "Modern gamers seek immersive experiences that blend realism with creativity. This project introduces a virtual world where players can shape their own adventures.",
-  //     problem:
-  //       "Players often find open-world games too complex or lacking intuitive UI for exploration and interaction.",
-  //     designProcess: [
-  //       {
-  //         title: "Game Research & UI Strategy",
-  //         description:
-  //           "Analyzed successful open-world games to design an engaging user experience.",
-  //       },
-  //       {
-  //         title: "Wireframe & Prototype",
-  //         description:
-  //           "Created prototypes to optimize navigation, inventory management, and interactions.",
-  //       },
-  //       {
-  //         title: "UI Design",
-  //         details: [
-  //           "Designed an immersive gaming interface with high-quality graphics.",
-  //           "Integrated easy-to-access HUD elements for better gameplay control.",
-  //         ],
-  //       },
-  //       {
-  //         title: "Front-End Development",
-  //         details: [
-  //           "Developed UI components using HTML, CSS, and JavaScript.",
-  //           "Optimized performance for smooth rendering in gaming environments.",
-  //         ],
-  //       },
-  //       {
-  //         title: "User Testing & Improvements",
-  //         description:
-  //           "Conducted playtests and iterated on UI elements to enhance the player experience.",
-  //       },
-  //     ],
-  //   },
-  // },
   // {
   //   id: "betGaming",
   //   name: "Bet Gaming",
