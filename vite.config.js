@@ -13,6 +13,4 @@ export default defineConfig({
   server: {
     host: true,
   },
-  base: "/fan/", // 如果你的 repo 名叫 fan，則應該設定為這樣
-  // 其他設定保持不變
 });
