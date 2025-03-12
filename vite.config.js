@@ -13,14 +13,4 @@ export default defineConfig({
   server: {
     host: true,
   },
-  build: {
-    assetsInclude: [
-      "**/*.png",
-      "**/*.jpg",
-      "**/*.jpeg",
-      "**/*.gif",
-      "**/*.svg",
-    ],
-  },
-  base: "/fan/", // <<== 這裡一定要加，對應你的 GitHub Pages 路徑
 });
