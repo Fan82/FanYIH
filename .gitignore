@@ -2,7 +2,6 @@
 node_modules/
 
 # 忽略編譯輸出的文件
-dist/
 build/
 
 # 忽略 IDE 配置文件
