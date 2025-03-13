@@ -1,7 +1,7 @@
 export default [
   {
     id: "takeTask",
-    name: "World Gaming",
+    name: "Take Task",
     detail: "A new virtual world where you take control",
     image: "../src/assets/images/projects/takeTask/MockUp.png",
     logo: "../src/assets/images/projects/takeTask/logo.png",
