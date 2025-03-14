@@ -2,6 +2,7 @@
 node_modules/
 
 # 忽略編譯輸出的文件
+dist/
 build/
 
 # 忽略 IDE 配置文件
@@ -9,6 +10,9 @@ build/
 
 # 忽略操作系統生成的文件
 .DS_Store
+# local env files
+.env.local
+.env.*.local
 
 # 如果是 Monorepo（多專案）結構，確保不會忽略專案內的 package.json
 # **錯誤**：不應該忽略整個專案的 package.json
@@ -22,3 +26,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

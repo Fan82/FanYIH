@@ -1,18 +1,18 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import path from "path"; // 確保引入 path 模組
+import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"), // 設定 `@` 代表 `src` 目錄
+      "@": path.resolve(__dirname, "src"), // `@` 代表 `src` 目錄
     },
   },
   server: {
-    host: true,
+    host: "0.0.0.0", // 允許 LAN 訪問
+    port: 5173, // 指定開發伺服器端口（可修改）
   },
-  base: process.env.NODE_ENV === "production" ? "/fan/" : "/", // 根據開發環境設置 base 路徑
-  // 其他配置保持不變
+  base: process.env.NODE_ENV === "production" ? "/FanYiHsuan_vue/" : "/", // 根據環境設置 base 路徑
 });
