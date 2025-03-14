@@ -1,7 +1,7 @@
 export default [
   {
     id: "takeTask",
-    name: "Track tasks and collaborate on progress",
+    name: "Track Tasks",
     detail:
       "Automatically create tasks from your user account's calendar, mail, text messaging, or other everyday applications.",
     image: "../src/assets/images/projects/takeTask/MockUp.png",
