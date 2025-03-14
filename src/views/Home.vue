@@ -6,10 +6,6 @@
       Front-End.
       <br>
       Systems.
-      <p>Bringing dreams to life,
-        <br>
-        one design at a time
-      </p>
     </div>
   </div>
   <ProjectList />
@@ -58,32 +54,13 @@ export default {
       @include slideDown
       display: block
 
-      p
-        margin-top: calc($base * 2)
-        letter-spacing: $letterspace
-        color: $dark-clr
-        font-weight: 100
-        line-height: calc($base * 10)
-        font-size: calc($base * 6)
     @media (min-width: 500px) and (max-width: 1019px)
       div
           font-size: calc($base * 15)
           line-height: 110%
-          p
-            position: absolute
-            bottom: 0px
-            right: 0
-            font-size: 30px
-            line-height: 145%
 
     @media (min-width: 1020px) 
       div
         font-size: calc($base * 25)
         line-height: 110%
-        p
-          position: absolute
-          bottom: 0px
-          right: 0
-          font-size: 50px
-          line-height: 145%
 </style>

@@ -19,8 +19,7 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
         ├── /router / 路由
         │    ├── index.js
         ├── /assets / 樣式圖片
-        │    ├── styles/
-        │    │    ├── reset.css           
+        │    ├── styles/        
         │    │    ├── styles.sass    # sass   
         ├── /public / 不變的靜態資源 (不會被 Vite 打包)
         │    ├── /projects            # 各專案圖片
