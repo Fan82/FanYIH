@@ -4,6 +4,7 @@ export default [
     name: "Take Task",
     detail: "A new virtual world where you take control",
     image: "../src/assets/images/projects/takeTask/MockUp.png",
+    flowImage: "../src/assets/images/projects/takeTask/userFlow.png",
     logo: "../src/assets/images/projects/takeTask/logo.png",
     content: {
       background:
@@ -43,6 +44,7 @@ export default [
     detail:
       "A user-friendly flight booking experience designed to streamline searching, selecting, and purchasing airline tickets",
     image: "../src/assets/images/projects/bookFlight/MockUp.png",
+    flowImage: "../src/assets/images/projects/bookFlight/userFlow.png",
     logo: "../src/assets/images/projects/bookFlight/logo.png",
     content: {
       background:
@@ -87,6 +89,7 @@ export default [
     name: "Easy Bank",
     detail: "Bank anywhere, with your phone",
     image: "../src/assets/images/projects/easyBank/MockUp.png",
+    flowImage: "../src/assets/images/projects/easyBank/userFlow.png",
     logo: "../src/assets/images/projects/easyBank/logo.png",
     content: {
       background:
@@ -133,6 +136,7 @@ export default [
     detail:
       "Enhancing urban mobility with an efficient transport booking system",
     image: "../src/assets/images/projects/publicTransp/MockUp.png",
+    flowImage: "../src/assets/images/projects/publicTransp/userFlow.png",
     logo: "../src/assets/images/projects/publicTransp/logo.png",
     content: {
       background:
@@ -177,6 +181,7 @@ export default [
     name: "Let's Travel",
     detail: "Time to experience a different life",
     image: "../src/assets/images/projects/goTravel/MockUp.png",
+    flowImage: "../src/assets/images/projects/goTravel/userFlow.png",
     logo: "../src/assets/images/projects/goTravel/logo.png",
     content: {
       background:
