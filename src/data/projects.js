@@ -4,9 +4,9 @@ export default [
     name: "Track Tasks",
     detail:
       "Automatically create tasks from your user account's calendar, mail, text messaging, or other everyday applications.",
-    image: "../src/assets/images/projects/takeTask/MockUp.png",
-    flowImage: "../src/assets/images/projects/takeTask/userFlow.png",
-    logo: "../src/assets/images/projects/takeTask/logo.png",
+    image: "../src/public/projects/takeTask/MockUp.png",
+    flowImage: "../src/public/projects/takeTask/userFlow.png",
+    logo: "../src/public/projects/takeTask/logo.png",
     content: {
       background:
         "Modern professionals and students seek efficient ways to manage tasks and boost productivity. This project introduces an intelligent task management app that automates task generation, prioritization, and organization, helping users stay on top of their goals.",
@@ -50,9 +50,9 @@ export default [
     name: "Flight Booking Web",
     detail:
       "A user-friendly flight booking experience designed to streamline searching, selecting, and purchasing airline tickets",
-    image: "../src/assets/images/projects/bookFlight/MockUp.png",
-    flowImage: "../src/assets/images/projects/bookFlight/userFlow.png",
-    logo: "../src/assets/images/projects/bookFlight/logo.png",
+    image: "../src/public/projects/bookFlight/MockUp.png",
+    flowImage: "../src/public/projects/bookFlight/userFlow.png",
+    logo: "../src/public/projects/bookFlight/logo.png",
     content: {
       background:
         "Travelers often find flight booking systems overly complex and difficult to navigate. This project aims to simplify the process by providing a streamlined and intuitive booking experience.",
@@ -95,9 +95,9 @@ export default [
     id: "easyBank",
     name: "Easy Bank",
     detail: "Bank anywhere, with your phone",
-    image: "../src/assets/images/projects/easyBank/MockUp.png",
-    flowImage: "../src/assets/images/projects/easyBank/userFlow.png",
-    logo: "../src/assets/images/projects/easyBank/logo.png",
+    image: "../src/public/projects/easyBank/MockUp.png",
+    flowImage: "../src/public/projects/easyBank/userFlow.png",
+    logo: "../src/public/projects/easyBank/logo.png",
     content: {
       background:
         "Traditional banking methods are often inconvenient and time-consuming. This project aims to provide a seamless digital banking experience, allowing users to manage their finances anytime, anywhere.",
@@ -142,9 +142,9 @@ export default [
     name: "Public Transportation",
     detail:
       "Enhancing urban mobility with an efficient transport booking system",
-    image: "../src/assets/images/projects/publicTransp/MockUp.png",
-    flowImage: "../src/assets/images/projects/publicTransp/userFlow.png",
-    logo: "../src/assets/images/projects/publicTransp/logo.png",
+    image: "../src/public/projects/publicTransp/MockUp.png",
+    flowImage: "../src/public/projects/publicTransp/userFlow.png",
+    logo: "../src/public/projects/publicTransp/logo.png",
     content: {
       background:
         "Public transportation users often experience difficulties in route planning, ticket purchasing, and real-time tracking. This project aims to simplify and optimize the public transport booking process.",
@@ -187,9 +187,9 @@ export default [
     id: "goTravel",
     name: "Let's Travel",
     detail: "Time to experience a different life",
-    image: "../src/assets/images/projects/goTravel/MockUp.png",
-    flowImage: "../src/assets/images/projects/goTravel/userFlow.png",
-    logo: "../src/assets/images/projects/goTravel/logo.png",
+    image: "../src/public/projects/goTravel/MockUp.png",
+    flowImage: "../src/public/projects/goTravel/userFlow.png",
+    logo: "../src/public/projects/goTravel/logo.png",
     content: {
       background:
         "Planning trips can be overwhelming due to scattered travel information and lack of itinerary management tools. This project aims to simplify travel planning with a user-friendly platform.",

@@ -19,11 +19,26 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
         ├── /router / 路由
         │    ├── index.js
         ├── /assets / 樣式圖片
-        │    ├── projectimg          # 專案圖片
-        │    ├── favicon.ico         # ico
-        │    ├── styles.sass         # sass        
-        ├── /css
-        │    ├── reset.css           
+        │    ├── styles/
+        │    │    ├── reset.css           
+        │    │    ├── styles.sass    # sass   
+        ├── /public / 不變的靜態資源 (不會被 Vite 打包)
+        │    ├── /projects            # 各專案圖片
+        │    │   │   ├── /project1
+        │    │   │   │   ├── / pages
+        │    │   │   │   │   ├── pages1.png
+        │    │   │   │   │   ├── pages2.png
+        │    │   │   │   │   ├── pages3.png
+        │    │   │   ├── /project2
+        │    │   │   │   ├── / pages
+        │    │   │   │   │   ├── pages1.png
+        │    │   │   │   │   ├── pages2.png
+        │    │   │   │   │   ├── pages3.png
+        │    ├── files/
+        │    │    ├── resume.pdf
+        │    ├── favicon.ico          # ico
+        │    ├── main.png             # 大頭照
+        │    ├── googleCertificate.png    # 履歷照
         ├── /data /
         │    ├── projects.js   #存放專案資訊
         ├── App.vue                  

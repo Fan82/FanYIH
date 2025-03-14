@@ -86,9 +86,9 @@
 </template>
 
 <script>
-import profileImage from '@/assets//images/main.png';
-import googleCertificate from '@/assets//images/googleCertificate.webp';
-const resumeUrl = new URL('@/assets/files/resume.pdf', import.meta.url).href;
+import profileImage from '@/public/main.png';
+import googleCertificate from '@/public/googleCertificate.webp';
+const resumeUrl = new URL('@/public/files/resume.pdf', import.meta.url).href;
 
 export default {
   name: 'About',
