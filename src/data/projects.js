@@ -1,5 +1,50 @@
 export default [
   {
+    id: "takeTask",
+    name: "Track tasks and collaborate on progress",
+    detail:
+      "Automatically create tasks from your user account's calendar, mail, text messaging, or other everyday applications.",
+    image: "../src/assets/images/projects/takeTask/MockUp.png",
+    logo: "../src/assets/images/projects/takeTask/logo.png",
+    content: {
+      background:
+        "Modern professionals and students seek efficient ways to manage tasks and boost productivity. This project introduces an intelligent task management app that automates task generation, prioritization, and organization, helping users stay on top of their goals.",
+      problem:
+        "Many to-do list apps only provide basic checklist functionality, lacking intelligent task categorization and priority recommendations. As a result, users struggle to effectively manage their time and workflow.",
+      designProcess: [
+        {
+          title: "ask Management Research & UX Strategy",
+          description:
+            "Analyzed successful productivity and task management apps to design an intuitive and efficient user experience.",
+        },
+        {
+          title: "Wireframe & Prototype",
+          description:
+            "Created interactive prototypes to optimize task creation, priority setting, and automation features.",
+        },
+        {
+          title: "UI Design",
+          details: [
+            "Designed a clean and user-friendly interface with a focus on usability and clarity.",
+            "Integrated AI-powered suggestions for task prioritization and scheduling.",
+          ],
+        },
+        {
+          title: "Front-End Development",
+          details: [
+            "Developed interactive UI components using HTML, CSS, and JavaScript.",
+            "Optimized performance for smooth task updates and automation processes.",
+          ],
+        },
+        {
+          title: "User Testing & Optimization",
+          description:
+            "Conducted usability tests and iterated on UI elements based on user feedback to enhance task management efficiency.",
+        },
+      ],
+    },
+  },
+  {
     id: "bookFlight",
     name: "Flight Booking Web",
     detail:

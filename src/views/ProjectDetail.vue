@@ -13,11 +13,15 @@
       <a href="javascript:void(0)" :class="{ active: activeTab === 'Overview' }" @click="activeTab = 'Overview'">
         Overview
       </a>
+      <a href="javascript:void(0)" :class="{ active: activeTab === 'User Flow' }" @click="activeTab = 'User Flow'">
+        User Flow
+      </a>
     </nav>
     <!-- Tab 內容區，使用元件 -->
     <div class="tab-content">
       <UIScreen v-if="activeTab === 'UI Screen'" :images="project.uiScreens" :projectId="project.id" />
       <Overview v-if="activeTab === 'Overview'" :projectId="project.id" />
+      <UserFlow v-if="activeTab === 'User Flow'" :project="project" />
     </div>
   </div>
 </template>
@@ -26,9 +30,10 @@
 import projects from "@/data/projects.js";
 import UIScreen from "@/components/UIScreen.vue";
 import Overview from "@/components/Overview.vue";
+import UserFlow from "@/components/UserFlow.vue";
 
 export default {
-  components: { UIScreen, Overview },
+  components: { UIScreen, Overview, UserFlow },
   data() {
     return {
       activeTab: "UI Screen",
