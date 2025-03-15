@@ -4,11 +4,12 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "",
+  base: "/FanYiHsuan_vue/",
   plugins: [vue()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"), // `@` 代表 `src` 目錄
+      vue: "vue/dist/vue.esm-bundler.js",
     },
   },
   server: {
