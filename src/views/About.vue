@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import profileImage from '@/public/main.png';
+import profileImage from '@/public/main.webp';
 import googleCertificate from '@/public/googleCertificate.webp';
 const resumeUrl = new URL('@/public/files/resume.pdf', import.meta.url).href;
 
@@ -107,7 +107,7 @@ export default {
   @use '@/assets/styles/_variables.sass' as *
 
   img
-    width: 100%
+    width: 40%
     border-radius: $borderRadius 
     @include imgDefault(cover)
     

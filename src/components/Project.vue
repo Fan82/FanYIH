@@ -58,9 +58,10 @@ export default {
       gap: calc( $base * 2 )
       width: 100%
       cursor: pointer
-
+      
       > div
         max-width: calc(100% - 50px)
+
       img
           @include picImg(40px)
           background-color: $light-clr
@@ -77,4 +78,5 @@ export default {
       line-height: normal
   p, span
     display: block
+    transition: all 0.2s linear
 </style>

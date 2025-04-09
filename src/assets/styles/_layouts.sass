@@ -13,6 +13,14 @@
     width: 100%
     letter-spacing: $letterspace
     margin: calc( $base * 5 ) 0
+    &:hover
+        .project-img
+            transform: scale(1.1)
+            transform-origin: center center
+        .project-content
+            span
+                white-space: pre-wrap
+
     span
         @include infoSpan
     .project-box
@@ -34,6 +42,7 @@
             width: 95px
             @include imgDefault(contain)
             border-radius: 0
+            transition: all 0.2s linear
 
         ul, ol
             @include infoP
