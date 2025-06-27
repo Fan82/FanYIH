@@ -5,8 +5,12 @@
       <h1>Fan YiHsuan</h1>
       <h2>
         UI/ UX Designer |
+      </h2>
+      <h2>
         Front-End Developer |
-        Graphic Designer
+      </h2>
+      <h2>
+        Graphic Designer |
       </h2>
       <a :href="resumeUrl" download="resume.pdf">Resume</a>
     </div>
@@ -123,7 +127,8 @@ export default {
       margin: calc( $base * 1.5 ) 0 calc( $base * 2.5 ) 0
       white-space: break-spaces
       font-style: italic
-      width: 80%
+      // width: 80%
+      opacity: 0.5
   h3
       font-size: 20px
       margin: calc( $base * 2 ) 0 calc( $base * 3 ) 0
@@ -131,19 +136,30 @@ export default {
       border-bottom: .5px solid rgba($dark-clr ,0.5 )
   a
       @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
+  span
+    font-size: 12px
   @media (min-width: 500px)
-    .project
-      padding-left: 280px
     .wrapper
+      display: flex
       > div
-        &:first-of-type           
-          position: absolute
-          top: 40px
-          left: 20px
-          z-index: 3
-          pointer-events: none
+        &:first-of-type
+          width: 20%
           img
-            max-width: 240px
-        a
-          pointer-events: auto
+            width: 70%
+            max-width: 200px
+    .project
+      margin: 0
+    //   padding-left: 280px
+    // .wrapper
+    //   > div
+    //     &:first-of-type           
+    //       position: absolute
+    //       top: 40px
+    //       left: 20px
+    //       z-index: 3
+    //       pointer-events: none
+    //       img
+    //         max-width: 240px
+    //     a
+    //       pointer-events: auto
 </style>

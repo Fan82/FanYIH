@@ -2,7 +2,7 @@
   <div class="project">
     <small>UX/UI Case Study</small>
     <router-link :to="`/projects/${project.id}`" class="project-box">
-      <img class="project-img" :src="project.image" :alt="project.name" :class="{ 'slide-scrolled': isScrolled }" />
+      <img class="project-img" :src="project.image" :alt="project.name" />
     </router-link>
     <div class="project-content">
       <img :src="project.logo" :alt="`${project.name} logo`" />
@@ -46,7 +46,33 @@ export default {
   @use '@/assets/styles/_variables.sass' as *
   .project
     cursor: pointer
+    // &:hover
+    //     &::before
+    //         opacity: 1
+    //     &::after
+    //         opacity: 0.3
+    // &::before,
+    // &::after
+    //     content: ''
+    //     position: absolute
+    //     display: block
+    //     border-radius: $borderRadius
+    //     top: 0
+    //     left: 0
+    //     width: 100%
+    //     height: 100%
+    //     transition: opacity 400ms cubic-bezier(0.215, 0.61, 0.355, 1)
+    //     backdrop-filter: blur(8px)
+    //     background-color: rgba(0,0,0,0)
+    //     opacity: 0
+    //     -webkit-backdrop-filter: blur(8px)
+    //     z-index: 1
+    //     pointer-events: none
+    // &::after
+    //     opacity: 0
+    //     background-color: #000000
     .project-content
+      // opacity: 0
       position: absolute
       margin: 0
       padding: calc( $base * 2 )

@@ -13,23 +13,21 @@
     width: 100%
     letter-spacing: $letterspace
     margin: calc( $base * 5 ) 0
-    &:hover
-        .project-img
-            transform: scale(1.1)
-            transform-origin: center center
-        .project-content
-            span
-                white-space: pre-wrap
 
     span
+        text-overflow: ellipsis
+        overflow: hidden
+        white-space: nowrap
         @include infoSpan
     .project-box
         display: block
         background: linear-gradient(0deg, rgba($grey-clr ,0.2 ), rgba($light-clr ,0.2 ))
         border-radius: $borderRadius
     .project-img
-        @include slideDown
+        // @include slideDown
         cursor: pointer
+        transition: filter 0.2s, transform 0.4s
+        transition-delay: 0.2s
 
     .project-content
         position: relative
@@ -53,6 +51,8 @@
 
                 small
                     margin: 0 calc( $base * 2 )
+                    font-size: 10px
+                    opacity: 0.5
         ul
             > li::before
                 content: ""

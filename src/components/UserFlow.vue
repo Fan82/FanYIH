@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="project-img" :src="project.flowImage" :alt="project.name" :class="{ 'slide-scrolled': isScrolled }" />
+    <img class="project-img" :src="project.flowImage" :alt="project.name" />
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div>
+    <div :class="{ 'slide-scrolled': isScrolled }">
       UI/ UX Design.
       <br>
       Front-End.
