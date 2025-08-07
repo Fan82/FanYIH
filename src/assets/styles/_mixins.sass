@@ -7,10 +7,9 @@
 @mixin picImg($width)
     width: $width
     border-radius: $borderRadius
-    box-shadow: $imgBox
 
 @mixin infoSpan
-    line-height: 16px
+    line-height: 32px
     letter-spacing: $letterspace
 
 @mixin infoP
@@ -26,11 +25,11 @@
     position: relative
     white-space: nowrap
     border-radius: 50px
-    padding: 6px calc( $base * 3.5 )
+    padding: calc( $base * 2.5 )
     background-color: $background
     color: $color
     font-size: 1rem
-    line-height: calc( $base * 8 )
+    line-height: calc( $base * 4 )
     box-shadow: inset 0 0 0 .2px rgba($dark-clr, 0.2)
     z-index: 2
     &:hover,

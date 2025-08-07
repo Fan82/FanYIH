@@ -13,18 +13,16 @@
     width: 100%
     letter-spacing: $letterspace
     margin: calc( $base * 5 ) 0
-
+    @media (max-width: 1000px)
+        margin: calc( $base * 8 ) 0
     span
-        text-overflow: ellipsis
-        overflow: hidden
-        white-space: nowrap
+        // text-overflow: ellipsis
+        // overflow: hidden
+        // white-space: nowrap
         @include infoSpan
     .project-box
         display: block
-        background: linear-gradient(0deg, rgba($grey-clr ,0.2 ), rgba($light-clr ,0.2 ))
-        border-radius: $borderRadius
     .project-img
-        // @include slideDown
         cursor: pointer
         transition: filter 0.2s, transform 0.4s
         transition-delay: 0.2s

@@ -1,6 +1,5 @@
 <template>
   <div class="project">
-    <small>UX/UI Case Study</small>
     <router-link :to="`/projects/${project.id}`" class="project-box">
       <img class="project-img" :src="project.image" :alt="project.name" />
     </router-link>
@@ -46,63 +45,81 @@ export default {
   @use '@/assets/styles/_variables.sass' as *
   .project
     cursor: pointer
-    // &:hover
-    //     &::before
-    //         opacity: 1
-    //     &::after
-    //         opacity: 0.3
-    // &::before,
-    // &::after
-    //     content: ''
-    //     position: absolute
-    //     display: block
-    //     border-radius: $borderRadius
-    //     top: 0
-    //     left: 0
-    //     width: 100%
-    //     height: 100%
-    //     transition: opacity 400ms cubic-bezier(0.215, 0.61, 0.355, 1)
-    //     backdrop-filter: blur(8px)
-    //     background-color: rgba(0,0,0,0)
-    //     opacity: 0
-    //     -webkit-backdrop-filter: blur(8px)
-    //     z-index: 1
-    //     pointer-events: none
-    // &::after
-    //     opacity: 0
-    //     background-color: #000000
+    text-align: center
+    background-color: #fff
+    border-radius: calc( $base * 10 )
+    &::before
+      content:''
+      position: absolute
+      top: 0
+      left: 0
+      display: none
+      width: 100%
+      height: 100%
+      background-color: rgba($dark-clr, 0.7)
+      border-radius: calc( $base * 10 )
+      backdrop-filter: blur(5px)
+      transition: all 0.5s ease
+      pointer-events: none
+      cursor: none
+      z-index: 1
+    &:hover
+      &::before
+        display: block
+      .project-content
+        bottom: 10%
+        transform: translateY(-50%)
+        opacity: 1
+        z-index: 2
+    @media (max-width: 1000px)
+      border-radius: 0
+      &::before
+        border-radius: 0
+      &:hover
+        .project-content
+          transform: translateY(0)
+
+    .project-img
+      width: 60%
+      margin: 0 auto
     .project-content
-      // opacity: 0
       position: absolute
       margin: 0
       padding: calc( $base * 2 )
       left: 0
       bottom: 0
-      display: flex
-      justify-content: flex-start
-      align-items: center
-      gap: calc( $base * 2 )
       width: 100%
-      cursor: pointer
-      
-      > div
-        max-width: calc(100% - 50px)
+      transform: translateY(100%)
+      opacity: 0
+      transition: all 0.5s ease
+      transition-delay: .1s
+      color: $light-clr
+      pointer-events: none
+      cursor: none
 
       img
-          @include picImg(40px)
-          background-color: $light-clr
+          @include picImg(60px)
           cursor: pointer
+      p
+        font-size: calc( $base * 8 )
+        margin: calc( $base * 4 ) 0
+      span
+        display: block
+        width: 50%
+        margin: 0 auto
+        font-weight: lighter
+        letter-spacing: calc($base * 0.1)
+        font-size: calc( $base * 6 )
+      @media (max-width: 1000px)
+        span, p
+          font-size: calc( $base * 3 )
+          width: 100%
+          letter-spacing: calc($base * 0.01)
+          line-height: normal
+        p
+          margin: calc($base * 2) 0
+        img
+          @include picImg(45px)
 
-    small
-      position: absolute
-      top: $base
-      left: calc( $base * 2 )
-      background-color: rgba($grey-clr ,0.1 )
-      font-size: calc( $base * 2 )
-      padding: $base
-      border-radius: $base
-      line-height: normal
-  p, span
-    display: block
-    transition: all 0.2s linear
+
 </style>

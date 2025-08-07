@@ -2,17 +2,19 @@
   <div class="wrapper">
     <div>
       <img :src="profileImage" alt="Profile Image">
-      <h1>Fan YiHsuan</h1>
-      <h2>
-        UI/ UX Designer |
-      </h2>
-      <h2>
-        Front-End Developer |
-      </h2>
-      <h2>
-        Graphic Designer |
-      </h2>
-      <a :href="resumeUrl" download="resume.pdf">Resume</a>
+      <div>
+        <h1>Fan YiHsuan</h1>
+        <h2>
+          UI/ UX Designer |
+        </h2>
+        <h2>
+          Front-End Developer |
+        </h2>
+        <h2>
+          Graphic Designer |
+        </h2>
+        <a :href="resumeUrl" download="resume.pdf">Resume</a>
+      </div>
     </div>
     <div class="project">
       <p>With 4+ years of UI/UX design experience and 3 years in commercial design, I specialize in user experience
@@ -21,9 +23,9 @@
         independently while thriving in team environments to enhance product quality.
         <br>
         <br>
-        My expertise includes using tools like Figma and Adobe XD, as well as front-end technologies such as HTML, Vue,
-        and JavaScript to bring
-        designs to life. I take pride in optimizing user flows and creating consistent, scalable design systems that
+        My expertise includes using tools like Figma and Adobe XD, as well as front-end technologies such as React, Vue,
+        and JavaScript to bring designs to life. I take pride in optimizing user flows and creating consistent, scalable
+        design systems that
         ensure long-term product success. Throughout my career, I have successfully led and contributed to several
         projects that improved user engagement and streamlined complex interfaces.
       </p>
@@ -31,7 +33,7 @@
         <h3>Skills</h3>
         <ul>
           <li>UI/UX Design</li>
-          <li>HTML / CSS / Vue / JavaScript</li>
+          <li>HTML / CSS / Vue / React / JavaScript</li>
           <li>Responsive Web Design</li>
           <li>Wireframing & Prototyping</li>
           <li>Design System Development</li>
@@ -42,7 +44,7 @@
         <h3>Tools</h3>
         <ul>
           <li>VSCode</li>
-          <li>Figma / Adobe XD</li>
+          <li>Figma</li>
           <li>Jira / GitHub</li>
           <li>Illustrator / Photoshop</li>
         </ul>
@@ -109,26 +111,33 @@ export default {
 <style lang="sass" scoped>
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
-
+  .wrapper
+    padding: 0 calc($base * 4)
   img
-    width: 40%
-    border-radius: $borderRadius 
+    border-radius: calc($borderRadius * 100)
     @include imgDefault(cover)
-    
+    width: 120px
+    ~ div
+      display: inline-block
+      vertical-align: bottom
+      margin-left: calc($base * 2)
   ul, span
     display: block
   h1
-      font-size: 32px
-      margin: calc( $base * 5) 0 calc( $base * 2 ) 0
+      font-size: calc( $base * 6 )
+      margin: calc( $base * 2 ) 0
+      line-height: normal
   h2
       @include infoSpan
+      display: inline-block
       font-weight: normal
-      line-height: calc( $base * 6 )
-      margin: calc( $base * 1.5 ) 0 calc( $base * 2.5 ) 0
+      line-height: normal
+      margin: calc( $base * 1 ) 0
       white-space: break-spaces
       font-style: italic
-      // width: 80%
+      font-size: calc($base * 3)
       opacity: 0.5
+      
   h3
       font-size: 20px
       margin: calc( $base * 2 ) 0 calc( $base * 3 ) 0
@@ -136,30 +145,21 @@ export default {
       border-bottom: .5px solid rgba($dark-clr ,0.5 )
   a
       @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
+      display: block
+      width: fit-content
+      margin: calc($base * 1.5) 0
+
   span
     font-size: 12px
-  @media (min-width: 500px)
+  @media (min-width: 1000px)
     .wrapper
       display: flex
       > div
-        &:first-of-type
-          width: 20%
-          img
-            width: 70%
-            max-width: 200px
-    .project
-      margin: 0
-    //   padding-left: 280px
-    // .wrapper
-    //   > div
-    //     &:first-of-type           
-    //       position: absolute
-    //       top: 40px
-    //       left: 20px
-    //       z-index: 3
-    //       pointer-events: none
-    //       img
-    //         max-width: 240px
-    //     a
-    //       pointer-events: auto
+        margin-top: calc($base * 4)
+    h1
+      font-size: calc( $base * 8 )
+    h2
+      display: block
+    a
+      margin-top: calc($base * 3)
 </style>

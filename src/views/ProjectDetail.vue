@@ -55,7 +55,8 @@ export default {
 <style lang="sass" scoped>
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
-
+  .wrapper
+    padding: 0 calc($base * 4)
   p, span
     display: block
   nav

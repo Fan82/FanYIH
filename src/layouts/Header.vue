@@ -51,5 +51,4 @@ export default {
           &:focus-visible,
           &:active
             text-decoration: underline
-          
 </style>

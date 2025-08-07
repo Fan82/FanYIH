@@ -23,7 +23,7 @@ export default {
   .project-img
       background-color: transparent
       box-shadow: none
-  @media (max-width: 500px)
+  @media (max-width: 1000px)
     div
       overflow: hidden
       overflow-x: auto 
