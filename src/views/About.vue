@@ -3,7 +3,7 @@
     <div>
       <img :src="profileImage" alt="Profile Image">
       <div>
-        <h1>Fan YiHsuan</h1>
+        <h1>Fan YiH</h1>
         <h2>
           UI/ UX Designer |
         </h2>
@@ -11,31 +11,23 @@
           Front-End Developer |
         </h2>
         <h2>
-          Graphic Designer |
+          Design Developer |
         </h2>
         <a :href="resumeUrl" download="resume.pdf">Resume</a>
       </div>
     </div>
     <div class="project">
-      <p>With 4+ years of UI/UX design experience and 3 years in commercial design, I specialize in user experience
-        optimization, design system development, and front-end collaboration. I am passionate about creating intuitive,
-        user-centered designs that seamlessly combine functionality and aesthetics. I excel at executing projects
+      <p>Hello this is Fan ,with 7 years of UI/UX design experience, I specialize in user experience optimization,
+        design system development, and front-end collaboration. I am passionate about creating intuitive, user-centered
+        designs that seamlessly combine functionality and aesthetics. I excel at executing projects
         independently while thriving in team environments to enhance product quality.
-        <br>
-        <br>
-        My expertise includes using tools like Figma and Adobe XD, as well as front-end technologies such as React, Vue,
-        and JavaScript to bring designs to life. I take pride in optimizing user flows and creating consistent, scalable
-        design systems that
-        ensure long-term product success. Throughout my career, I have successfully led and contributed to several
-        projects that improved user engagement and streamlined complex interfaces.
       </p>
       <div class="project-content">
         <h3>Skills</h3>
         <ul>
           <li>UI/UX Design</li>
-          <li>HTML / CSS / Vue / React / JavaScript</li>
+          <li>HTML / Vue / React / JavaScript</li>
           <li>Responsive Web Design</li>
-          <li>Wireframing & Prototyping</li>
           <li>Design System Development</li>
         </ul>
       </div>
@@ -43,10 +35,8 @@
       <div class="project-content">
         <h3>Tools</h3>
         <ul>
-          <li>VSCode</li>
           <li>Figma</li>
           <li>Jira / GitHub</li>
-          <li>Illustrator / Photoshop</li>
         </ul>
       </div>
 

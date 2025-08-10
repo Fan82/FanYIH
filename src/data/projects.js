@@ -5,9 +5,14 @@ export default [
     detail:
       "Automatically create tasks from your user account's calendar, mail, text messaging, or other everyday applications.",
     image: "/projects/takeTask/MockUp.png",
+    hero: "/projects/takeTask/hero-mockup.png",
     flowImage: "/projects/takeTask/userFlow.png",
     logo: "/projects/takeTask/logo.png",
+    userMock: "/projects/bookFlight/using-mockup.jpeg",
+    inspiration: "/projects/bookFlight/mockShow.png",
     content: {
+      client: "Flight company",
+      solutions: "Rebranding | Ux Search | Brand Design | Design Think",
       background:
         "Modern professionals and students seek efficient ways to manage tasks and boost productivity. This project introduces an intelligent task management app that automates task generation, prioritization, and organization, helping users stay on top of their goals.",
       problem:
@@ -43,6 +48,8 @@ export default [
             "Conducted usability tests and iterated on UI elements based on user feedback to enhance task management efficiency.",
         },
       ],
+      inspiration:
+        "more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project /more detail and inspiration about this project / more detail and inspiration",
     },
   },
   {
@@ -51,9 +58,14 @@ export default [
     detail:
       "A user-friendly flight booking experience designed to streamline searching, selecting, and purchasing airline tickets",
     image: "/projects/bookFlight/MockUp.png",
+    hero: "/projects/bookFlight/hero-mockup.png",
     flowImage: "/projects/bookFlight/userFlow.png",
     logo: "/projects/bookFlight/logo.png",
+    userMock: "/projects/bookFlight/using-mockup.jpeg",
+    inspiration: "/projects/bookFlight/mockShow.png",
     content: {
+      client: "Flight company",
+      solutions: "Rebranding | Ux Search | Brand Design | Design Think",
       background:
         "Travelers often find flight booking systems overly complex and difficult to navigate. This project aims to simplify the process by providing a streamlined and intuitive booking experience.",
       problem:
@@ -89,6 +101,8 @@ export default [
             "Collected feedback and refined the UI and interactions to improve the overall experience.",
         },
       ],
+      inspiration:
+        "more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project /more detail and inspiration about this project / more detail and inspiration",
     },
   },
   {
@@ -98,7 +112,11 @@ export default [
     image: "/projects/easyBank/MockUp.png",
     flowImage: "/projects/easyBank/userFlow.png",
     logo: "/projects/easyBank/logo.png",
+    userMock: "/projects/bookFlight/using-mockup.jpeg",
+    inspiration: "/projects/bookFlight/mockShow.png",
     content: {
+      client: "Flight company",
+      solutions: "Rebranding | Ux Search | Brand Design | Design Think",
       background:
         "Traditional banking methods are often inconvenient and time-consuming. This project aims to provide a seamless digital banking experience, allowing users to manage their finances anytime, anywhere.",
       problem:
@@ -134,6 +152,8 @@ export default [
             "Conducted usability testing and improved key features based on user feedback.",
         },
       ],
+      inspiration:
+        "more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project /more detail and inspiration about this project / more detail and inspiration",
     },
   },
 
@@ -143,9 +163,14 @@ export default [
     detail:
       "Enhancing urban mobility with an efficient transport booking system",
     image: "/projects/publicTransp/MockUp.png",
+    hero: "/projects/takeTask/hero-mockup.png",
     flowImage: "/projects/publicTransp/userFlow.png",
     logo: "/projects/publicTransp/logo.png",
+    userMock: "/projects/bookFlight/using-mockup.jpeg",
+    inspiration: "/projects/bookFlight/mockShow.png",
     content: {
+      client: "Flight company",
+      solutions: "Rebranding | Ux Search | Brand Design | Design Think",
       background:
         "Public transportation users often experience difficulties in route planning, ticket purchasing, and real-time tracking. This project aims to simplify and optimize the public transport booking process.",
       problem:
@@ -181,6 +206,8 @@ export default [
             "Tested usability with public transport commuters and refined key pain points based on feedback.",
         },
       ],
+      inspiration:
+        "more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project /more detail and inspiration about this project / more detail and inspiration",
     },
   },
   {
@@ -188,9 +215,14 @@ export default [
     name: "Let's Travel",
     detail: "Time to experience a different life",
     image: "/projects/goTravel/MockUp.png",
+    hero: "/projects/takeTask/hero-mockup.png",
     flowImage: "/projects/goTravel/userFlow.png",
     logo: "/projects/goTravel/logo.png",
+    userMock: "/projects/bookFlight/using-mockup.jpeg",
+    inspiration: "/projects/bookFlight/mockShow.png",
     content: {
+      client: "Flight company",
+      solutions: "Rebranding | Ux Search | Brand Design | Design Think",
       background:
         "Planning trips can be overwhelming due to scattered travel information and lack of itinerary management tools. This project aims to simplify travel planning with a user-friendly platform.",
       problem:
@@ -226,6 +258,8 @@ export default [
             "Collected user feedback and improved the trip management flow for better usability.",
         },
       ],
+      inspiration:
+        "more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project /more detail and inspiration about this project / more detail and inspiration",
     },
   },
 ];

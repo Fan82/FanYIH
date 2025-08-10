@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import Project from "@/components/Project.vue";
+import Project from "@/layouts/Project.vue";
 import projects from "@/data/projects.js"; // 引入專案資料
 
 export default {

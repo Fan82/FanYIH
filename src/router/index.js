@@ -4,7 +4,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 import About from "@/views/About.vue";
 import Project from "@/views/ProjectList.vue";
-import ProjectDetail from "@/views/ProjectDetail.vue";
+import ProjectDetail from "@/views/ProjectInfo.vue";
+// import ProjectDetail from "@/views/ProjectDetail.vue";
 
 const routes = [
   { path: "/", name: "Home", component: Home },
