@@ -1,3 +1,5 @@
+<!--  delete -->
+
 <template>
   <div class="grid">
     <img v-for="(image, index) in images" :key="index" class="project-img" :src="image" alt="Project screen" />

@@ -42,20 +42,24 @@ export default {
   @use '@/assets/styles/_variables.sass' as *
 
   img
-    max-height: 520px
-    width: 100%
+    max-height: 580px
+    @include picImg(100%)
     @include imgDefault(cover)
-    object-position: center 40%
+    object-position: center 50%
     margin: calc($base * 10) 0
-
+    @media (max-width: 1000px)
+        max-height: 410px
   p
-    margin: calc( $base * 1 ) 0 calc( $base * 6 )
+    margin: $base 0 $base6
     font-weight: 200
 
   div
     display: inline-flex
     flex-direction: column
-    width: calc(50% - ($base * 4))
-    margin: $base calc($base * 4) calc($base * 4) 0
+    width: calc(50% - $base4 )
+    margin: $base $base4 $base4 0
+    @media (max-width: 500px)
+        display: flex
+        width: 100%
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <section>
     <div>
       <img :src="profileImage" alt="Profile Image">
       <div>
@@ -78,7 +78,7 @@
         <img :src="googleCertificate" alt="Google UX Design Certificate">
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -101,8 +101,8 @@ export default {
 <style lang="sass" scoped>
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
-  .wrapper
-    padding: 0 calc($base * 4)
+  // section
+  //   padding: $base4
   img
     border-radius: calc($borderRadius * 100)
     @include imgDefault(cover)
@@ -110,28 +110,28 @@ export default {
     ~ div
       display: inline-block
       vertical-align: bottom
-      margin-left: calc($base * 2)
-  ul, span
-    display: block
+      margin-left: $base2
+  // ul, span
+  //   display: block
   h1
-      font-size: calc( $base * 6 )
-      margin: calc( $base * 2 ) 0
+      font-size: $base6
+      margin: $base2 0
       line-height: normal
   h2
       @include infoSpan
       display: inline-block
       font-weight: normal
       line-height: normal
-      margin: calc( $base * 1 ) 0
+      margin: $base 0
       white-space: break-spaces
       font-style: italic
-      font-size: calc($base * 3)
+      font-size: $base3
       opacity: 0.5
       
   h3
       font-size: 20px
-      margin: calc( $base * 2 ) 0 calc( $base * 3 ) 0
-      padding: calc( $base * 2 ) 0
+      margin: $base2 0 $base3 0
+      padding: $base2 0
       border-bottom: .5px solid rgba($dark-clr ,0.5 )
   a
       @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
@@ -139,17 +139,29 @@ export default {
       width: fit-content
       margin: calc($base * 1.5) 0
 
-  span
-    font-size: 12px
+  // span
+  //   font-size: 12px
+  ul li::before
+            content: ""
+            display: inline-block
+            width: $base
+            height: $base
+            background-color: $grey-clr
+            vertical-align: middle
+            margin-right: $base
+            border-radius: $base
+            position: absolute
+            left: -14px
+            top: 12px
   @media (min-width: 1000px)
-    .wrapper
+    section
       display: flex
       > div
-        margin-top: calc($base * 4)
+        margin-top: $base4
     h1
-      font-size: calc( $base * 8 )
+      font-size: $base8
     h2
       display: block
     a
-      margin-top: calc($base * 3)
+      margin-top: $base3
 </style>

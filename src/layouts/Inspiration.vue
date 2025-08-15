@@ -1,8 +1,9 @@
 <template>
     <div>
+        <h3>Inspiration</h3>
         <p>{{ projectData?.content?.inspiration }}</p>
-        <img :src="project.inspiration" :alt="`${project.name}`" />
     </div>
+    <img :src="project.inspiration" :alt="`${project.name}`" />
 </template>
 
 <script>
@@ -21,21 +22,20 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
-  @use '@/assets/styles/_mixins.sass' as *
-  @use '@/assets/styles/_variables.sass' as *
+    @use '@/assets/styles/_mixins.sass' as *
+    @use '@/assets/styles/_variables.sass' as *
 
-  div
-    text-align: center
     img
-        @include imgDefault(contain)
-        width: 40%
-        margin: 0 auto
         text-align: center
-        margin: calc($base * 10) 0
-
-    p
-        width: 50%
-        text-align: center
-        margin: 0 auto
-
+        max-width: 100%
+        margin: calc($base * 10) auto
+    div
+        margin: calc($base * 10) auto
+        p
+            font-size: $base5
+            line-height: calc($base * 10)
+            font-weight: 200
+        @media (max-width: 1000px)
+            p
+                width: 80%
 </style>

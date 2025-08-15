@@ -1,3 +1,4 @@
+<!--  delete -->
 <template>
     <div class="project">
         <h3>Project Background</h3>
@@ -38,7 +39,7 @@ export default {
   @use '@/assets/styles/_variables.sass' as *
 
   p
-    margin: calc( $base * 1 ) 0 calc( $base * 6 )
+    margin: $base 0 $base6
     font-weight: 200
   ul
     display: block

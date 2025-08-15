@@ -1,24 +1,31 @@
 @use 'mixins' as *
 @use 'variables' as *
 // ------------------------------------------------------------------
-.wrapper.grid
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
-    gap: 20px
-    @media (min-width: 500px)
-        grid-template-columns: repeat(auto-fit, minmax(calc(100% / 2 - 60px), 1fr))
-
+body
+    width: 100%
+    max-width: 1400px
+    margin: 0 auto
+    min-height: 100vh
+    padding-top: 60px
+    padding-bottom: 120px
+    scroll-behavior: smooth
+    background-color: $light-clr
+h3
+    font-size: $base5
+    line-height: calc($base * 10)
+p
+    @include infoP
+span
+    @include infoSpan
 // project, about
 .project
     position: relative
     width: 100%
     letter-spacing: $letterspace
-    margin: calc( $base * 5 ) 0
-    @media (max-width: 1000px)
-        margin: calc( $base * 8 ) 0
-    span
-        @include infoSpan
-    .project-box
-        display: block
+    margin: $base5 0
+    @media (max-width: 1000px ) and ( min-width: 500px )
+        margin: $base8 0
+
     .project-img
         cursor: pointer
         transition: filter 0.2s, transform 0.4s
@@ -26,10 +33,7 @@
 
     .project-content
         position: relative
-        margin-bottom: calc( $base * 7 )
-        p
-            @include infoP
-
+        margin-bottom: $base7
         img
             position: relative
             width: 95px
@@ -37,57 +41,14 @@
             border-radius: 0
             transition: all 0.2s linear
 
-        ul, ol
+        ul
             @include infoP
-            padding-left: calc( $base * 5 )
+            padding-left: $base5
             li
                 @include infoType
-                margin: calc( $base * 2 ) 0
+                margin: $base2 0
 
                 small
-                    margin: 0 calc( $base * 2 )
+                    margin: 0 $base2
                     font-size: 10px
                     opacity: 0.5
-        ul
-            > li::before
-                content: ""
-                display: $inlineBlock
-                width: $base
-                height: $base
-                background-color: $grey-clr
-                vertical-align: middle
-                margin-right: $base
-                border-radius: $base
-                position: absolute
-                left: -14px
-                top: 12px
-            li
-
-                > div
-                    display: inline-block
-                    @include infoP
-        ol li
-                    font-weight: 200
-    @for $i from 1 through 10
-        ol
-            li:nth-child(#{$i})::before
-                content: "#{$i}."
-                margin-right: $base
-                @include infoSpan
-                color: $grey-clr
-                position: absolute
-                left: -17px
-                top: 7px
-
-.tab-content
-    width: 100%
-    > div
-        gap: calc( $base * 2.5 ) $base
-        width: 100%
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
-        gap: calc( $base * 2 ) calc( $base * 3 )
-        img
-            width: 100%
-            border-radius: $borderRadius
-            box-shadow: $imgBox
-            background-color: rgba($grey-clr ,0.2 )

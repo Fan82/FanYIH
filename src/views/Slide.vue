@@ -37,7 +37,7 @@ export default {
     left: 0
     width: 100%
     height: 70%
-    padding: calc( $base * 5 )
+    padding: $base5
     opacity: 0
     transform: scale(0.95)
     transition: all .5s ease
@@ -54,15 +54,11 @@ export default {
       transform: scale(1)
       z-index: 1
       
-      span
+      span, p
         transform: translateY(0)
         opacity: 1
       
-      p
-        transform: translateY(0)
-        opacity: 1
-      
-    span
+    span, p
       transform: translateY(100%)
       display: inline-block
       opacity: 0
@@ -74,21 +70,13 @@ export default {
       margin-right: 10px
       @media (max-width: 500px)
         font-size: calc($base * 10)
-
-  
+    span
+      line-height: calc($base * 40)
     p
-      transform: translateY(100%)
-      opacity: 0
-      color: $dark-clr
-      transition: all 0.5s ease
-      transition-delay: 0.5s
-      font-size: calc($base * 8)
+      font-size: $base7
       font-weight: normal
-      letter-spacing: $letterspace
-      margin: 0
-      line-height: 1.4
-      opacity: 0.7
       @media (max-width: 500px)
-        font-size: calc($base * 5)
-        white-space: break-spaces
+        font-size: $base5
+
+
 </style>

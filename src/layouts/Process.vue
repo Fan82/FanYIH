@@ -1,18 +1,12 @@
 <template>
-    <div>
-        <h3>Design Process</h3>
-        <ul>
-            <li v-for="(step, index) in projectData?.content?.designProcess" :key="index">
-                <div>{{ step.title }} :</div>
-                <p v-if="step.description">{{ step.description }}</p>
-                <ol v-if="step.details">
-                    <li v-for="(detail, i) in step.details" :key="i">
-                        <p>{{ detail }}</p>
-                    </li>
-                </ol>
-            </li>
-        </ul>
-    </div>
+    <ul>
+        <li v-for="(step, index) in projectData?.content?.designProcess" :key="index">
+            <h3>{{ step.title }}</h3>
+            <p v-if="step.description">{{ step.description }}</p>
+            <p v-if="step.details">{{ step.details }}</p>
+
+        </li>
+    </ul>
 </template>
 
 <script>
@@ -28,15 +22,25 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
-  @use '@/assets/styles/_mixins.sass' as *
-  @use '@/assets/styles/_variables.sass' as *
+    @use '@/assets/styles/_mixins.sass' as *
+    @use '@/assets/styles/_variables.sass' as *
 
-  p
-    margin: calc( $base * 1 ) 0 calc( $base * 6 )
-    font-weight: 200
-  ul
-    display: block
-    margin-top: calc($base * 4)
+    ul
+        margin: $base6 0
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        gap: $base8
+        p
+            font-weight: 200
+            margin: $base 0
 
-
+        li
+            width: 45%
+            display: inline-block
+            vertical-align: top
+        @media (max-width: 500px)
+            flex-direction: column
+            li
+                width: 100%
 </style>

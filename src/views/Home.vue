@@ -1,12 +1,12 @@
 <template>
-  <div class="wrapper">
+  <main>
     <ScrollBtn />
     <div class="slider" @wheel="handleScroll" @keydown="handleKey" tabindex="0" ref="sliderRef"
       :class="{ 'slides-completed': slidesCompleted }">
       <Slide v-for="(slide, index) in extendedSlides" :key="`slide-${index}`" :slide="slide"
         :active="index === currentExtendedIndex" />
     </div>
-  </div>
+  </main>
   <ProjectList />
 </template>
 
@@ -155,7 +155,7 @@ export default {
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
 
-.wrapper
+
   .slider
     position: relative
     height: calc( 100vh - 100px )

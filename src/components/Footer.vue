@@ -44,7 +44,7 @@ export default {
 
   button
     position: fixed
-    bottom: calc( $base * 5)
+    bottom: $base5
     left: 50%
     transform: translateX(-50%)
     width: calc( $base * 50)
@@ -66,13 +66,13 @@ export default {
         bottom: 60px
         width: 100%
         background-color: $light-clr
-        border-radius: calc( $base * 2)
-        padding: calc( $base * 2)
+        border-radius: $base2
+        padding: $base2
         box-shadow: 0px 0px 5px rgba($light-clr, 0.05), inset 0px 0 1px rgba($dark-clr, 0.5)
         z-index: 10
         a
             display: block
-            padding: calc( $base * 2)
+            padding: $base2
             border-radius: $base
             width: 100%
             text-align: center

@@ -1,6 +1,6 @@
 <template>
   <div class="project">
-    <router-link :to="`/projects/${project.id}`" class="project-box">
+    <router-link :to="`/projects/${project.id}`">
       <img class="project-img" :src="project.image" :alt="project.name" />
     </router-link>
     <div class="project-content">
@@ -44,10 +44,14 @@ export default {
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
   .project
+    display: block
     cursor: pointer
     text-align: center
     background-color: #fff
-    border-radius: calc( $base * 10 )
+    border-radius: calc($borderRadius * 2)
+    padding: $base8
+    overflow: hidden
+    box-shadow: 0 2px 13px rgb(0 ,0 ,0, 8%)
     &::before
       content:''
       position: absolute
@@ -57,7 +61,6 @@ export default {
       width: 100%
       height: 100%
       background-color: rgba($dark-clr, 0.7)
-      border-radius: calc( $base * 10 )
       backdrop-filter: blur(5px)
       transition: all 0.5s ease
       pointer-events: none
@@ -67,25 +70,22 @@ export default {
       &::before
         display: block
       .project-content
-        bottom: 10%
         transform: translateY(-50%)
         opacity: 1
         z-index: 2
     @media (max-width: 1000px)
-      border-radius: 0
-      &::before
-        border-radius: 0
       &:hover
         .project-content
           transform: translateY(0)
 
     .project-img
-      width: 60%
+      max-height: 420px
+      width: fit-content
       margin: 0 auto
     .project-content
       position: absolute
       margin: 0
-      padding: calc( $base * 2 )
+      padding: $base2
       left: 0
       bottom: 0
       width: 100%
@@ -101,25 +101,33 @@ export default {
           @include picImg(60px)
           cursor: pointer
       p
-        font-size: calc( $base * 8 )
-        margin: calc( $base * 4 ) 0
+        font-size: $base8
+        margin: $base4 0
       span
-        display: block
+        // display: block
         width: 50%
         margin: 0 auto
         font-weight: lighter
-        letter-spacing: calc($base * 0.1)
-        font-size: calc( $base * 6 )
+        letter-spacing: $letterspace
+        font-size: $base4
+        display: -webkit-box
+        -webkit-box-orient: vertical
+        -webkit-line-clamp: 2
+        overflow: hidden
+        text-overflow: ellipsis
       @media (max-width: 1000px)
         span, p
-          font-size: calc( $base * 3 )
+          font-size: $base3
           width: 100%
-          letter-spacing: calc($base * 0.01)
+          letter-spacing: $letterspace
           line-height: normal
         p
-          margin: calc($base * 2) 0
+          margin: $base2 0
         img
           @include picImg(45px)
-
-
+  section
+    .project
+      .project-content
+        span
+          display: none
 </style>

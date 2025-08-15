@@ -51,4 +51,8 @@ export default {
           &:focus-visible,
           &:active
             text-decoration: underline
+  nav
+      a
+          @include button(#fff, $dark-clr, $dark-clr, $light-clr)
+          margin-right: calc( $base * 2 )
 </style>

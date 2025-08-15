@@ -1,5 +1,6 @@
+<!-- delete -->
 <template>
-  <div class="wrapper" v-if="project">
+  <section v-if="project">
     <div class="project">
       <img :src="project.logo" :alt="`${project.name} logo`" />
       <p>{{ project.name }}</p>
@@ -21,7 +22,7 @@
       <Overview v-if="activeTab === 'Overview'" :projectId="project.id" />
       <UserFlow v-if="activeTab === 'User Flow'" :project="project" />
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -51,14 +52,14 @@ export default {
 <style lang="sass" scoped>
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
-  .wrapper
-    padding: 0 calc($base * 4)
+  section
+    padding: 0 $base4
   p, span
     display: block
   nav
-    margin: calc( $base * 2 ) auto calc( $base * 6 )
+    margin: $base2 auto $base6
     a
-      padding: calc( $base * 2 ) calc( $base * 3.2 )
+      padding: $base2 $base3
   .project
     img
       @include imgDefault(contain)
@@ -66,13 +67,13 @@ export default {
     p
       font-size: 20px
       font-weight: 400
-      margin: calc( $base * 2 ) 0 $base
+      margin: $base2 0 $base
     span
         white-space: pre-wrap
   @media (min-width: 500px)
-    .wrapper
+    section
       .project
-        margin: calc( $base * 1 ) auto calc( $base * 5 ) auto
+        margin: $base auto $base5 auto
         padding-left: 70px
         img
           position: absolute
@@ -86,8 +87,8 @@ export default {
         .project
           padding: 0
   @media (min-width: 1020px)
-    .wrapper
+    section
       .project
-        margin-bottom: calc( $base * 8 )
+        margin-bottom: $base8
   
 </style>

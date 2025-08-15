@@ -1,3 +1,5 @@
+<!--  delete -->
+
 <template>
   <div>
     <img class="project-img" :src="project.flowImage" :alt="project.name" />

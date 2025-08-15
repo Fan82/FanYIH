@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" v-if="project">
+  <section v-if="project">
     <div class="project">
       <div>
         <img :src="project.logo" :alt="`${project.name} logo`" />
@@ -10,19 +10,26 @@
     </div>
     <Statement v-if="project" :projectId="project.id" />
     <Inspiration v-if="project" :projectId="project.id" />
+    <VideoFlow v-if="project" :projectId="project.id" />
     <Process v-if="project" :projectId="project.id" />
-  </div>
+    <ProjectList v-if="project" :projectId="project.id" />
+    <!-- <moreProject v-if="project" :projectId="project.id" /> -->
+  </section>
 </template>
 
 <script>
 import projects from "@/data/projects.js";
 import Statement from "@/layouts/Statement.vue";
+import VideoFlow from "@/layouts/VideoFlow.vue";
 import Inspiration from "@/layouts/Inspiration.vue";
 import Process from "@/layouts/Process.vue";
+import ProjectList from "@/views/ProjectList.vue";
+
+// import moreProject from "@/layouts/moreProject.vue";
 
 
 export default {
-  components: { Statement, Process, Inspiration },
+  components: { Statement, Process, Inspiration, VideoFlow, ProjectList },
   computed: {
     // 從 Vue Router 取得當前的 projectId
     projectId() {
@@ -39,36 +46,69 @@ export default {
 <style lang="sass" scoped>
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
-  .wrapper
-    padding: 0 calc($base * 4)
+  section
+    padding: 0 $base4
     img
       @include imgDefault(contain)
       @include picImg(40px)
-  
+
   .project
     display: flex
     align-items: center
     justify-content: space-between
+    margin-bottom: $base8
     > img
-      width: 45%
-      animation: scrollMove 7s linear 4
-      transform-origin: center
-
+      width: 50%
+      margin: $base8 0
     p
-      font-size: calc($base * 6)
+      font-size: $base6
       font-weight: bolder
       display: inline-block
-      margin-left: calc($base * 4)
+      margin-left: $base4
       line-height: 40px
       vertical-align: bottom
     span
         white-space: pre-wrap
         display: block
-        margin-top: calc($base * 6)
-        font-size: calc($base * 6)
-        line-height: calc($base * 12)
-        font-weight: lighter
-  
+        margin-top: $base6
+        font-size: $base5
+        line-height: calc($base * 10)
+        font-weight: 300
+    @media (max-width: 1000px)
+      span
+        font-size: $base4
+        line-height: $base6
+    @media (max-width: 500px)
+      flex-direction: column
+      align-items: start
+      gap: $base6
+      margin-bottom: $base6
+      > img
+        width: 100%
+      span
+        line-height: $base5
+        margin-top: $base2
+  // -- project -------------------------------------------
+  #bookFlight, #publicTransp
+    .project
+      > img
+        animation: scrollMove 7s linear 4
+        transform-origin: center
+  #easyBank
+    .project
+      padding-top: calc($base * 10)
+      flex-direction: column
+      > div
+        text-align: center
+      > img
+        position: relative
+        width: 100%
+        max-height: 450px
+        animation: none
+        object-fit: cover
+        aspect-ratio: auto
+        margin: calc($base * 20) 0
+  // ------------------------------------------------------
   @keyframes scrollMove
     0%, 100%
       transform: translateY(0)

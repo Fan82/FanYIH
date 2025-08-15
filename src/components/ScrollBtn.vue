@@ -20,13 +20,12 @@ export default {
     flex-direction: column
     align-items: center
     justify-content: end
-    gap: calc( $base * 4 )
+    gap: $base4
     transform: translate(-50%, -50%) 
     width: calc( $base * 20 )
     height: calc( $base * 20 )
     transition: opacity 0.3s ease
     overflow: hidden
-    // margin: calc( $base * 5 )
     z-index: 100
     &::before
       content: ''
