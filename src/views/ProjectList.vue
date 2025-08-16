@@ -25,11 +25,6 @@ export default {
   div
     position: sticky
     top: 0
-  //   display: grid
-  //   grid-template-columns: repeat(2, 1fr)
-  //   -webkit-box-pack: justify
-  //   justify-content: space-between
-  //   gap: $base8
   section
     div
       position: relative
@@ -37,20 +32,23 @@ export default {
       overflow: hidden
       overflow-x: scroll
       margin-top: calc( $base8 * 2)
-      &::before
-        content: 'More Projects'
-        position: sticky
-        left: 0
-        top: 0
-        white-space: nowrap
-        font-size: $base5
       .project
         min-width: 30%
         max-width: 30%
         
     > div
-        margin-top: calc( $base8 * 4)
+        margin: calc( $base8 * 2) 0 calc( $base8 * 2) calc( $base8 * -2)
         background-color: #fff
         padding: $base8
-        border-radius: $borderRadius
+        border-radius: 0 $borderRadius $borderRadius 0
+        &::before
+          content: 'More projects'
+          position: sticky
+          left: 30px
+          top: 0
+          white-space: nowrap
+          font-size: $base5
+          line-height: normal
+        .project
+          height: auto
 </style>

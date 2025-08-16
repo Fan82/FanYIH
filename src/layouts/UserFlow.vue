@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <img class="project-img" :src="project.flowImage" :alt="project.name" />
+    <img :src="project.flowImage" :alt="project.name" />
   </div>
 </template>
 
@@ -22,7 +22,7 @@ export default {
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
 
-  .project-img
+  img
       background-color: transparent
       box-shadow: none
   @media (max-width: 1000px)
@@ -30,7 +30,7 @@ export default {
       overflow: hidden
       overflow-x: auto 
       height: 100vh
-    .project-img
+    img
       transform: scale(2.5)
       transform-origin: left top
 </style>

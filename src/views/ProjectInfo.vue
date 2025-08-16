@@ -47,7 +47,7 @@ export default {
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
   section
-    padding: 0 $base4
+    padding: 0 calc($base8 * 2)
     img
       @include imgDefault(contain)
       @include picImg(40px)

@@ -21,7 +21,7 @@
       <h3>Work Experience</h3>
       <ul>
         <li>
-          <h4>UI Designer</h4>
+          <h4>UX/UI Designer / Front-End Developer</h4>
           <small>NEUTEC Co., Ltd.</small>
           <span>Feb 2022 - Feb 2025</span>
         </li>
@@ -83,33 +83,40 @@ export default {
     > small
       font-size: $base8
       opacity: 0.2
-  div, p
+  div, p, h3, ul
     margin: $base8 0 $base
   h1
     font-size:  calc($base8 * 3)
     margin: $base2 0
     line-height: normal
-    // &::before
-    //   content: 'Fan'
-    //   position: absolute
-    //   top: calc($base8 * 7)
-    //   font-size:  calc($base8 * 10)
-    //   margin: $base2 0
-    //   line-height: normal
-    //   mix-blend-mode: overlay
-    //   opacity: 0.5
   h2
     font-size:  $base8
     display: inline-block
     padding: $base
   h4
     display: block
-    font-size:  $base6
+    font-size:  $base5
     font-weight: normal
-    margin-bottom: 0
+    margin: $base2 0
   a
       @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
       margin: calc($base * 1.5) 0
       vertical-align: middle
-
+  span
+    margin-left: $base4
+    &::before
+      content: ''
+      position: relative
+      display: inline-block
+      vertical-align: middle
+      margin-right: $base2
+      width: 4px
+      height: 4px
+      background-color: $dark-clr
+      border-radius: $borderRadius
+  
+  small,
+  span
+    opacity: 0.4
+    font-size: $base4
 </style>

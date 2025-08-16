@@ -1,7 +1,7 @@
 <template>
   <div class="project">
     <router-link :to="`/projects/${project.id}`">
-      <img class="project-img" :src="project.image" :alt="project.name" />
+      <img :src="project.image" :alt="project.name" />
       <video :src="project.videoMock" autoplay loop muted playsinline></video>
     </router-link>
     <div class="project-content">
@@ -61,9 +61,6 @@ export default {
     background-color: #fff
     height: 100vh
     overflow: hidden
-    // border-radius: calc($borderRadius * 2)
-    // padding: $base8
-    // box-shadow: 0 2px 13px rgb(0 ,0 ,0, 8%)
     &::before
       content:''
       position: absolute
@@ -91,12 +88,12 @@ export default {
         .project-content
           transform: translateY(0)
 
-    .project-img
-      // max-height: 600px
+    img
       width: fit-content
       margin: 0 auto
       position: relative
       z-index: 1
+
     .project-content
       position: absolute
       margin: 0
@@ -111,7 +108,6 @@ export default {
       color: $light-clr
       pointer-events: none
       cursor: none
-
       img
           @include picImg(60px)
           cursor: pointer
@@ -119,7 +115,6 @@ export default {
         font-size: $base8
         margin: $base4 0
       span
-        // display: block
         width: 50%
         margin: 0 auto
         font-weight: lighter
@@ -142,9 +137,16 @@ export default {
           @include picImg(45px)
   section
     .project
+      &:hover
+        .project-content
+          bottom: 0
+      a img
+        height: 30vh
       .project-content
         span
           display: none
+          
+        
   video
     opacity: 1
     filter: brightness(0.25)
@@ -154,5 +156,6 @@ export default {
     transform: translateY(-50%)
     width: 100%
     pointer-events: none
+    cursor: none
     z-index: 0
 </style>

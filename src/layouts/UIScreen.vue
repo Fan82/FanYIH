@@ -2,7 +2,7 @@
 
 <template>
   <div class="grid">
-    <img v-for="(image, index) in images" :key="index" class="project-img" :src="image" alt="Project screen" />
+    <img v-for="(image, index) in images" :key="index" :src="image" alt="Project screen" />
   </div>
 </template>
 
