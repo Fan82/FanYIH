@@ -36,9 +36,6 @@ export default {
       height: 28px
       transform: translateY(-100%)
       width: 1.5px
-    &::after
-      content: 'scroll'
-      color: #3b3b3b
   @keyframes sdb
     0%
       opacity: 1

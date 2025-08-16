@@ -96,55 +96,55 @@ export default [
         "Beyond technical planning, I focused on user experience. I designed the interface to provide clear error messages and intuitive interactions, such as a user-friendly calendar, to make the entire process straightforward. This project reinforced the idea that a great application requires not only solid technical skills but also a deep understanding of user needs.",
     },
   },
-  {
-    id: "nunu",
-    name: "nunu Wheel Cake",
-    detail:
-      "Made to Warm Your Heart - Every dessert is a small piece of happiness, crafted from natural ingredients and a lot of love",
-    image: "/projects/nunuCake/MockUp.png",
-    hero: "/projects/nunuCake/hero-mockup.webp",
-    logo: "/projects/nunuCake/logo.png",
-    userMock: "/projects/nunuCake/using-mockup.png",
-    inspiration: "/projects/nunuCake/userFlow.png",
-    videoMock: "/projects/nunuCake/MP4.mp4",
-    content: {
-      client: "nunu WheelCake Shop",
-      solutions: "Branding Design | Ux Search | Brand Design | Design Think",
-      background:
-        "The sense of smell connects our emotions and memories—familiar scents can instantly transport us back to long-forgotten moments.When I was a child, my mom would always buy me wheel cake for an after-school snack. Sometimes wishing for more even after I would finished! Looking back now, I realize maybe it wasn't just the creamy wheel cake I loved so much—it was how my mom knew exactly what I liked and bought it specially for me.",
-      problem:
-        "It is difficult to buy freshly made table wheel cakes locally and promote to everywhere.",
-      designProcess: [
-        {
-          title: "Define target audience",
-          description:
-            "Taiwanese in the world, local young people who love Asian desserts, dessert control, and delivery people who pay attention to fresh quality.",
-        },
-        {
-          title: "Core Values",
-          description:
-            "Made to Warm Your Heart - Every dessert is a small piece of happiness, crafted from natural ingredients and a lot of love.",
-        },
-        {
-          title: "Product differentiation",
-          details:
-            "Singapore's first dessert brand to focus on tabletop wheels and support online ordering and same-day delivery.",
-        },
-        {
-          title: "Target market positioning",
-          details:
-            "The mid-to-high-end dessert market focuses on quality and service experience.",
-        },
-        {
-          title: "User Testing & Optimization",
-          description:
-            "Collected feedback and refined the UI and interactions to improve the overall experience.",
-        },
-      ],
-      inspiration:
-        "more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project /more detail and inspiration about this project / more detail and inspiration",
-    },
-  },
+  // {
+  //   id: "nunu",
+  //   name: "nunu Wheel Cake",
+  //   detail:
+  //     "Made to Warm Your Heart - Every dessert is a small piece of happiness, crafted from natural ingredients and a lot of love",
+  //   image: "/projects/nunuCake/MockUp.png",
+  //   hero: "/projects/nunuCake/hero-mockup.webp",
+  //   logo: "/projects/nunuCake/logo.png",
+  //   userMock: "/projects/nunuCake/using-mockup.png",
+  //   inspiration: "/projects/nunuCake/userFlow.png",
+  //   videoMock: "/projects/nunuCake/MP4.mp4",
+  //   content: {
+  //     client: "nunu WheelCake Shop",
+  //     solutions: "Branding Design | Ux Search | Brand Design | Design Think",
+  //     background:
+  //       "The sense of smell connects our emotions and memories—familiar scents can instantly transport us back to long-forgotten moments.When I was a child, my mom would always buy me wheel cake for an after-school snack. Sometimes wishing for more even after I would finished! Looking back now, I realize maybe it wasn't just the creamy wheel cake I loved so much—it was how my mom knew exactly what I liked and bought it specially for me.",
+  //     problem:
+  //       "It is difficult to buy freshly made table wheel cakes locally and promote to everywhere.",
+  //     designProcess: [
+  //       {
+  //         title: "Define target audience",
+  //         description:
+  //           "Taiwanese in the world, local young people who love Asian desserts, dessert control, and delivery people who pay attention to fresh quality.",
+  //       },
+  //       {
+  //         title: "Core Values",
+  //         description:
+  //           "Made to Warm Your Heart - Every dessert is a small piece of happiness, crafted from natural ingredients and a lot of love.",
+  //       },
+  //       {
+  //         title: "Product differentiation",
+  //         details:
+  //           "Singapore's first dessert brand to focus on tabletop wheels and support online ordering and same-day delivery.",
+  //       },
+  //       {
+  //         title: "Target market positioning",
+  //         details:
+  //           "The mid-to-high-end dessert market focuses on quality and service experience.",
+  //       },
+  //       {
+  //         title: "User Testing & Optimization",
+  //         description:
+  //           "Collected feedback and refined the UI and interactions to improve the overall experience.",
+  //       },
+  //     ],
+  //     inspiration:
+  //       "more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project / more detail and inspiration about this project /more detail and inspiration about this project / more detail and inspiration",
+  //   },
+  // },
   {
     id: "easyBank",
     name: "Easy Bank",

@@ -2,6 +2,7 @@
   <div class="project">
     <router-link :to="`/projects/${project.id}`">
       <img class="project-img" :src="project.image" :alt="project.name" />
+      <video :src="project.videoMock" autoplay loop muted playsinline></video>
     </router-link>
     <div class="project-content">
       <img :src="project.logo" :alt="`${project.name} logo`" />
@@ -15,12 +16,22 @@
 
 <script>
 export default {
+  props: ["projectId"],
+  computed: {
+    project() {
+      return projects.find((p) => p.id === this.projectId) || null;
+    },
+    projectData() {
+      return projects.find((project) => project.id === this.projectId) || null;
+    },
+  },
   props: {
     project: {
       type: Object,
       required: true,
     },
   },
+
   data() {
     return {
       isScrolled: false,
@@ -48,10 +59,11 @@ export default {
     cursor: pointer
     text-align: center
     background-color: #fff
-    border-radius: calc($borderRadius * 2)
-    padding: $base8
+    height: 100vh
     overflow: hidden
-    box-shadow: 0 2px 13px rgb(0 ,0 ,0, 8%)
+    // border-radius: calc($borderRadius * 2)
+    // padding: $base8
+    // box-shadow: 0 2px 13px rgb(0 ,0 ,0, 8%)
     &::before
       content:''
       position: absolute
@@ -65,11 +77,12 @@ export default {
       transition: all 0.5s ease
       pointer-events: none
       cursor: none
-      z-index: 1
+      z-index: 2
     &:hover
       &::before
         display: block
       .project-content
+        bottom: 25%
         transform: translateY(-50%)
         opacity: 1
         z-index: 2
@@ -79,9 +92,11 @@ export default {
           transform: translateY(0)
 
     .project-img
-      max-height: 420px
+      // max-height: 600px
       width: fit-content
       margin: 0 auto
+      position: relative
+      z-index: 1
     .project-content
       position: absolute
       margin: 0
@@ -130,4 +145,14 @@ export default {
       .project-content
         span
           display: none
+  video
+    opacity: 1
+    filter: brightness(0.25)
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+    width: 100%
+    pointer-events: none
+    z-index: 0
 </style>

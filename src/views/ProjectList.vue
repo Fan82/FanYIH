@@ -23,11 +23,13 @@ export default {
   @use '@/assets/styles/_variables.sass' as *
 
   div
-    display: grid
-    grid-template-columns: repeat(2, 1fr)
-    -webkit-box-pack: justify
-    justify-content: space-between
-    gap: $base8
+    position: sticky
+    top: 0
+  //   display: grid
+  //   grid-template-columns: repeat(2, 1fr)
+  //   -webkit-box-pack: justify
+  //   justify-content: space-between
+  //   gap: $base8
   section
     div
       position: relative

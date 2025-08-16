@@ -50,13 +50,13 @@ export default {
     width: calc( $base * 50)
     height: 50px
     border-radius: calc( $borderRadius * 4 )
-    backdrop-filter: blur(14px)
-    -webkit-backdrop-filter: blur(14px)
-    background-color: rgba($light-clr, .05)
+    // backdrop-filter: blur(14px)
+    // -webkit-backdrop-filter: blur(14px)
+    background-color: $light-clr
     cursor: pointer
-    box-shadow: 0 4px 8px rgba($dark-clr, 0.1)
+    box-shadow: 0 0 20px rgba($dark-clr, 0.3)
     outline: none
-    z-index: 100
+    z-index: 101
     &:hover,
     &:active,
     &:focus

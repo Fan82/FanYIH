@@ -30,22 +30,27 @@ export default {
 
   div
       position: fixed
-      width: 100%
-      max-width: 1400px
       top: 0
-      padding: 10px 20px
+      width: 100%
+      // max-width: 1400px
+      padding: $base4 $base5
       display: flex
       justify-content: space-between
       align-items: center
       z-index: 100
-      backdrop-filter: blur(14px)
-      -webkit-backdrop-filter: blur(14px)
-      background-color: rgba($light-clr, .05)
-      box-shadow: 0 1px 0px rgba($dark-clr, .04)
+      mix-blend-mode: difference
+      will-change: transfer
+      // mix-blend-mode: difference
+      // will-change: transform
+      // backdrop-filter: blur(14px)
+      // -webkit-backdrop-filter: blur(14px)
+      // background-color: rgba($light-clr, .05)
+      // box-shadow: 0 1px 0px rgba($dark-clr, .04)
+      // background-attachment: scroll
       > a
           font-weight: 500
           font-size: 1.375rem
-          color: $dark-clr
+          color: $light-clr
           line-height: 40px
           &:hover,
           &:focus-visible,
@@ -53,6 +58,7 @@ export default {
             text-decoration: underline
   nav
       a
-          @include button(#fff, $dark-clr, $dark-clr, $light-clr)
+          @include button($dark-clr, $light-clr, $light-clr, $dark-clr)
+          box-shadow: inset 0 0 0 .2px rgba($light-clr, 0.2)
           margin-right: calc( $base * 2 )
 </style>

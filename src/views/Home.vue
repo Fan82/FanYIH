@@ -119,7 +119,7 @@ export default {
     resetSlideDelay() {
       setTimeout(() => {
         this.isSliding = false
-      }, 1200) // 與動畫時間同步
+      }, 1000) // 與動畫時間同步
     },
     handleGlobalWheel(event) {
       // Only handle if the event target is within our slider
@@ -162,4 +162,5 @@ export default {
     outline: none
     cursor: none
     overflow: hidden
+    margin-bottom: calc($base8 * 5)
 </style>

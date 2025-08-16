@@ -1,89 +1,52 @@
 <template>
   <section>
+    <h1>Fan YiH
+      <a :href="resumeUrl" target="_blank">Resume</a>
+    </h1>
+    <h2>
+      UI/ UX Designer |
+    </h2>
+    <h2>
+      Front-End Developer |
+    </h2>
+    <h2>
+      Design Developer
+    </h2>
+    <p>Hellooooo I'm a UI/UX designer and front-end developer from Taiwan, currently in London. I focus on blending
+      design
+      aesthetics with functional, user-centered code. I have experience in Vue and am now sharpening my skills in
+      React, Tailwind, and animation with GSAP to create engaging, high-quality digital experiences.
+    </p>
     <div>
-      <img :src="profileImage" alt="Profile Image">
-      <div>
-        <h1>Fan YiH</h1>
-        <h2>
-          UI/ UX Designer |
-        </h2>
-        <h2>
-          Front-End Developer |
-        </h2>
-        <h2>
-          Design Developer |
-        </h2>
-        <a :href="resumeUrl" download="resume.pdf">Resume</a>
-      </div>
-    </div>
-    <div class="project">
-      <p>Hello this is Fan ,with 7 years of UI/UX design experience, I specialize in user experience optimization,
-        design system development, and front-end collaboration. I am passionate about creating intuitive, user-centered
-        designs that seamlessly combine functionality and aesthetics. I excel at executing projects
-        independently while thriving in team environments to enhance product quality.
-      </p>
-      <div class="project-content">
-        <h3>Skills</h3>
-        <ul>
-          <li>UI/UX Design</li>
-          <li>HTML / Vue / React / JavaScript</li>
-          <li>Responsive Web Design</li>
-          <li>Design System Development</li>
-        </ul>
-      </div>
-
-      <div class="project-content">
-        <h3>Tools</h3>
-        <ul>
-          <li>Figma</li>
-          <li>Jira / GitHub</li>
-        </ul>
-      </div>
-
-      <div class="project-content">
-        <h3>Work Experience</h3>
-        <ul>
-          <li>
-            <div>UI Designer</div>
-            <small>NEUTEC Co., Ltd.</small>
-            <span>Feb 2022 - Feb 2025</span>
-          </li>
-          <li>
-            <div>UI Designer</div>
-            <small>GOTRUST Co., Ltd.</small>
-            <span>Apr 2021 - Feb 2022</span>
-          </li>
-          <li>
-            <div>Web Designer</div>
-            <small>CBES Co., Ltd.</small>
-            <span>Feb 2019 - Mar 2021</span>
-          </li>
-          <li>
-            <div>Art Teacher</div>
-            <small>Global ART Co., Ltd.</small>
-            <span>Sep 2017 - Feb 2018</span>
-          </li>
-        </ul>
-      </div>
-      <div class="project-content">
-        <h3>Languages</h3>
-        <ul>
-          <li>English</li>
-          <li>Mandarin</li>
-        </ul>
-      </div>
-
-      <div class="project-content">
-        <h3>Certifications</h3>
-        <img :src="googleCertificate" alt="Google UX Design Certificate">
-      </div>
+      <h3>Work Experience</h3>
+      <ul>
+        <li>
+          <h4>UI Designer</h4>
+          <small>NEUTEC Co., Ltd.</small>
+          <span>Feb 2022 - Feb 2025</span>
+        </li>
+        <li>
+          <h4>UI Designer</h4>
+          <small>GOTRUST Co., Ltd.</small>
+          <span>Apr 2021 - Feb 2022</span>
+        </li>
+        <li>
+          <h4>Web Designer</h4>
+          <small>CBES Co., Ltd.</small>
+          <span>Feb 2019 - Mar 2021</span>
+        </li>
+        <li>
+          <h4>Art Teacher</h4>
+          <small>Global ART Co., Ltd.</small>
+          <span>Sep 2017 - Feb 2018</span>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
 
 <script>
 import profileImage from '@/public/main.webp';
-import googleCertificate from '@/public/googleCertificate.webp';
 const resumeUrl = new URL('@/public/files/resume.pdf', import.meta.url).href;
 
 export default {
@@ -92,7 +55,6 @@ export default {
     return {
       resumeUrl,
       profileImage,
-      googleCertificate,
     };
   },
 };
@@ -101,67 +63,53 @@ export default {
 <style lang="sass" scoped>
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
-  // section
-  //   padding: $base4
-  img
-    border-radius: calc($borderRadius * 100)
-    @include imgDefault(cover)
-    width: 120px
-    ~ div
-      display: inline-block
-      vertical-align: bottom
-      margin-left: $base2
-  // ul, span
-  //   display: block
+  
+  section
+    padding: calc($base8 * 16) $base8
+    max-width: 1200px
+    margin: 0 auto
+    color: $dark-clr
+    background-attachment: scroll
+    &::before
+      content:''
+      position: absolute
+      top: 80px
+      left: 0
+      width: 100%
+      height: 40vh
+      background-image: url("/public/profolio.gif")
+      background-position: -230px center
+      z-index: -1
+    > small
+      font-size: $base8
+      opacity: 0.2
+  div, p
+    margin: $base8 0 $base
   h1
-      font-size: $base6
-      margin: $base2 0
-      line-height: normal
+    font-size:  calc($base8 * 3)
+    margin: $base2 0
+    line-height: normal
+    // &::before
+    //   content: 'Fan'
+    //   position: absolute
+    //   top: calc($base8 * 7)
+    //   font-size:  calc($base8 * 10)
+    //   margin: $base2 0
+    //   line-height: normal
+    //   mix-blend-mode: overlay
+    //   opacity: 0.5
   h2
-      @include infoSpan
-      display: inline-block
-      font-weight: normal
-      line-height: normal
-      margin: $base 0
-      white-space: break-spaces
-      font-style: italic
-      font-size: $base3
-      opacity: 0.5
-      
-  h3
-      font-size: 20px
-      margin: $base2 0 $base3 0
-      padding: $base2 0
-      border-bottom: .5px solid rgba($dark-clr ,0.5 )
+    font-size:  $base8
+    display: inline-block
+    padding: $base
+  h4
+    display: block
+    font-size:  $base6
+    font-weight: normal
+    margin-bottom: 0
   a
       @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
-      display: block
-      width: fit-content
       margin: calc($base * 1.5) 0
+      vertical-align: middle
 
-  // span
-  //   font-size: 12px
-  ul li::before
-            content: ""
-            display: inline-block
-            width: $base
-            height: $base
-            background-color: $grey-clr
-            vertical-align: middle
-            margin-right: $base
-            border-radius: $base
-            position: absolute
-            left: -14px
-            top: 12px
-  @media (min-width: 1000px)
-    section
-      display: flex
-      > div
-        margin-top: $base4
-    h1
-      font-size: $base8
-    h2
-      display: block
-    a
-      margin-top: $base3
 </style>
