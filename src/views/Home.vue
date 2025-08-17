@@ -1,7 +1,7 @@
 <template>
   <main>
     <ScrollBtn />
-    <div class="slider" @wheel="handleScroll" @keydown="handleKey" tabindex="0" ref="sliderRef"
+    <div class="slider" @wheel="handleScroll" tabindex="0" ref="sliderRef"
       :class="{ 'slides-completed': slidesCompleted }">
       <Slide v-for="(slide, index) in extendedSlides" :key="`slide-${index}`" :slide="slide"
         :active="index === currentExtendedIndex" />
@@ -91,7 +91,6 @@ export default {
     handleScroll(event) {
       // If slides are completed, allow normal page scrolling
       if (this.slidesCompleted) {
-        this.scrollToNextSection()
         return
       }
 
@@ -119,7 +118,7 @@ export default {
     resetSlideDelay() {
       setTimeout(() => {
         this.isSliding = false
-      }, 1000) // 與動畫時間同步
+      }, 100) // 與動畫時間同步
     },
     handleGlobalWheel(event) {
       // Only handle if the event target is within our slider
@@ -138,12 +137,9 @@ export default {
     // 聚焦以接收鍵盤事件
     this.$refs.sliderRef.focus()
 
-    // Add global wheel event listener as fallback
-    document.addEventListener('wheel', this.handleGlobalWheel, { passive: false })
   },
   beforeUnmount() {
     // Clean up global event listener
-    document.removeEventListener('wheel', this.handleGlobalWheel)
     if (this.wheelTimeout) {
       clearTimeout(this.wheelTimeout)
     }
@@ -158,9 +154,9 @@ export default {
 
   .slider
     position: relative
-    height: calc( 100vh - 100px )
+    // height: calc(100vh - 72px)
+    height: 100vh
     outline: none
     cursor: none
     overflow: hidden
-    margin-bottom: calc($base8 * 5)
 </style>

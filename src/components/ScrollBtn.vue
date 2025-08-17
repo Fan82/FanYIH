@@ -32,10 +32,20 @@ export default {
       position: absolute
       top: 0
       animation: sdb 2s ease infinite
-      background-color: #3b3b3b
+      background-color: $grey-clr
       height: 28px
-      transform: translateY(-100%)
+      // transform: translateY(-100%)
       width: 1.5px
+    &::after
+      content: ''
+      position: absolute
+      left: 50%
+      bottom: 20px
+      transform: translateX(-50%) rotate(-135deg)
+      width: 8px
+      height: 8px
+      border-top: 1px solid $grey-clr
+      border-left: 1px solid $grey-clr
   @keyframes sdb
     0%
       opacity: 1

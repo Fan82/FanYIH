@@ -32,7 +32,6 @@ export default {
       position: fixed
       top: 0
       width: 100%
-      // max-width: 1400px
       padding: $base4 $base5
       display: flex
       justify-content: space-between
@@ -40,13 +39,6 @@ export default {
       z-index: 100
       mix-blend-mode: difference
       will-change: transfer
-      // mix-blend-mode: difference
-      // will-change: transform
-      // backdrop-filter: blur(14px)
-      // -webkit-backdrop-filter: blur(14px)
-      // background-color: rgba($light-clr, .05)
-      // box-shadow: 0 1px 0px rgba($dark-clr, .04)
-      // background-attachment: scroll
       > a
           font-weight: 500
           font-size: 1.375rem

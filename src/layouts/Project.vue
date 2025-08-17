@@ -89,11 +89,15 @@ export default {
           transform: translateY(0)
 
     img
+      position: relative
       width: fit-content
       margin: 0 auto
-      position: relative
       z-index: 1
-
+    a > img
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
     .project-content
       position: absolute
       margin: 0

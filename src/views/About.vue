@@ -1,8 +1,6 @@
 <template>
   <section>
-    <h1>Fan YiH
-      <a :href="resumeUrl" target="_blank">Resume</a>
-    </h1>
+    <h1>Fan YiH</h1>
     <h2>
       UI/ UX Designer |
     </h2>
@@ -13,8 +11,7 @@
       Design Developer
     </h2>
     <p>Hellooooo I'm a UI/UX designer and front-end developer from Taiwan, currently in London. I focus on blending
-      design
-      aesthetics with functional, user-centered code. I have experience in Vue and am now sharpening my skills in
+      design aesthetics with functional, user-centered code. I have experience in Vue and am now sharpening my skills in
       React, Tailwind, and animation with GSAP to create engaging, high-quality digital experiences.
     </p>
     <div>
@@ -41,6 +38,23 @@
           <span>Sep 2017 - Feb 2018</span>
         </li>
       </ul>
+    </div>
+    <div>
+      <h3>Contact me</h3>
+      <ol>
+        <li>
+          <a :href="resumeUrl" target="_blank">Resume</a>
+        </li>
+        <li>
+          <a href="mailto:fys840802@gmail.com?subject=Looking forward to see you soon">Email</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/fanyihsuan/">LinkedIn</a>
+        </li>
+        <li>
+          <a href="https://www.behance.net/congee_88">Behance</a>
+        </li>
+      </ol>
     </div>
   </section>
 </template>
@@ -83,7 +97,7 @@ export default {
     > small
       font-size: $base8
       opacity: 0.2
-  div, p, h3, ul
+  div, p, h3
     margin: $base8 0 $base
   h1
     font-size:  calc($base8 * 3)
@@ -93,7 +107,7 @@ export default {
     font-size:  $base8
     display: inline-block
     padding: $base
-  h4
+  h4, p
     display: block
     font-size:  $base5
     font-weight: normal
@@ -102,6 +116,9 @@ export default {
       @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
       margin: calc($base * 1.5) 0
       vertical-align: middle
+  li
+    margin-top: $base6
+    margin-bottom: $base8
   span
     margin-left: $base4
     &::before
@@ -119,4 +136,7 @@ export default {
   span
     opacity: 0.4
     font-size: $base4
+  ol
+    display: flex
+    gap: $base5
 </style>

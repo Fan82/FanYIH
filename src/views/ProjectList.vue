@@ -36,19 +36,19 @@ export default {
         min-width: 30%
         max-width: 30%
         
-    > div
-        margin: calc( $base8 * 2) 0 calc( $base8 * 2) calc( $base8 * -2)
-        background-color: #fff
-        padding: $base8
-        border-radius: 0 $borderRadius $borderRadius 0
-        &::before
-          content: 'More projects'
-          position: sticky
-          left: 30px
-          top: 0
-          white-space: nowrap
-          font-size: $base5
-          line-height: normal
-        .project
-          height: auto
+    // > div
+    //     margin: calc( $base8 * 2) 0 calc( $base8 * 2) calc( $base8 * -2)
+    //     background-color: #fff
+    //     padding: $base8
+    //     border-radius: 0 $borderRadius $borderRadius 0
+    //     &::before
+    //       content: 'More projects'
+    //       position: sticky
+    //       left: 30px
+    //       top: 0
+    //       white-space: nowrap
+    //       font-size: $base5
+    //       line-height: normal
+    //     .project
+    //       height: auto
 </style>

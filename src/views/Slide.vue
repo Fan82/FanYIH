@@ -34,7 +34,7 @@ export default {
   .slide
     position: absolute
     bottom: $base
-    left: 0
+    left: $base5
     width: 100%
     height: 70%
     padding: $base5

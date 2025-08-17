@@ -10,9 +10,9 @@
     </div>
     <Statement v-if="project" :projectId="project.id" />
     <Inspiration v-if="project" :projectId="project.id" />
-    <VideoFlow v-if="project" :projectId="project.id" />
     <Process v-if="project" :projectId="project.id" />
-    <ProjectList v-if="project" :projectId="project.id" />
+    <VideoFlow v-if="project" :projectId="project.id" />
+    <!-- <ProjectList v-if="project" :projectId="project.id" /> -->
     <!-- <moreProject v-if="project" :projectId="project.id" /> -->
   </section>
 </template>
@@ -23,13 +23,13 @@ import Statement from "@/layouts/Statement.vue";
 import VideoFlow from "@/layouts/VideoFlow.vue";
 import Inspiration from "@/layouts/Inspiration.vue";
 import Process from "@/layouts/Process.vue";
-import ProjectList from "@/views/ProjectList.vue";
+// import ProjectList from "@/views/ProjectList.vue";
 
 // import moreProject from "@/layouts/moreProject.vue";
 
 
 export default {
-  components: { Statement, Process, Inspiration, VideoFlow, ProjectList },
+  components: { Statement, Process, Inspiration, VideoFlow },
   computed: {
     // 從 Vue Router 取得當前的 projectId
     projectId() {
@@ -96,7 +96,7 @@ export default {
         transform-origin: center
   #easyBank
     .project
-      padding-top: calc($base * 10)
+      padding-top: calc($base8 * 4)
       flex-direction: column
       > div
         text-align: center

@@ -42,7 +42,7 @@ export default {
   @use '@/assets/styles/_variables.sass' as *
 
   img
-    max-height: 580px
+    max-height: 620px
     @include picImg(100%)
     @include imgDefault(cover)
     object-position: center 50%

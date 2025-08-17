@@ -1,7 +1,7 @@
 <template>
   <Header />
-  <Footer />
   <router-view /> <!-- 根據當前路由顯示不同的組件 -->
+  <Footer />
 </template>
 
 <script>

@@ -2,6 +2,7 @@
   <button ref="menuButton" @click="toggleMenu">
     Contact
     <div v-show="isMenuVisible">
+      <a :href="resumeUrl" target="_blank">Resume</a>
       <a href="mailto:fys840802@gmail.com?subject=Looking forward to see you soon">Email</a>
       <a href="https://www.linkedin.com/in/fanyihsuan/">LinkedIn</a>
       <a href="https://www.behance.net/congee_88">Behance</a>
@@ -10,11 +11,14 @@
 </template>
 
 <script>
+const resumeUrl = new URL('@/public/files/resume.pdf', import.meta.url).href;
+
 export default {
   name: 'Footer',
   data() {
     return {
       isMenuVisible: false,
+      resumeUrl,
     };
   },
   methods: {
@@ -43,39 +47,72 @@ export default {
   @use '@/assets/styles/_variables.sass' as *
 
   button
-    position: fixed
+    position: sticky
     bottom: $base5
     left: 50%
     transform: translateX(-50%)
     width: calc( $base * 50)
     height: 50px
     border-radius: calc( $borderRadius * 4 )
-    // backdrop-filter: blur(14px)
-    // -webkit-backdrop-filter: blur(14px)
     background-color: $light-clr
     cursor: pointer
     box-shadow: 0 0 20px rgba($dark-clr, 0.3)
     outline: none
     z-index: 101
-    &:hover,
-    &:active,
-    &:focus
-        box-shadow: inset 0px 0 1px rgba($dark-clr, 0.5)
     div
         position: absolute
-        bottom: 60px
-        width: 100%
-        background-color: $light-clr
-        border-radius: $base2
-        padding: $base2
-        box-shadow: 0px 0px 5px rgba($light-clr, 0.05), inset 0px 0 1px rgba($dark-clr, 0.5)
+        bottom: -20px
+        width: 100vw
+        left: 50%
+        height: 100vh
+        transform: translateX(-50%)
+        transition: all 0.2s linear
+        transform-origin: center bottom
+        background-color: $dark-clr
+        padding: $base8 calc($base8 * 2)
+        transition: display 1s linear
         z-index: 10
+        &::before
+          content: 'Contact'
+          display: block
+          width: 100%
+          font-size: calc($base8 * 2)
+          color: rgba($light-clr, 0.5)
+          padding: calc($base8 * 2) $base8 $base4 $base8
+          text-align: left
+        &::after
+          content: '← Back'
+          position: absolute
+          top: $base4
+          left: calc($base8 * 2)
+          display: block
+          width: 100%
+          font-size: $base8
+          color: rgba($light-clr, 0.25)
+          padding:  calc($base4 * 2)
+          text-align: left
+          cursor: pointer
         a
+            position: relative
             display: block
             padding: $base2
-            border-radius: $base
-            width: 100%
-            text-align: center
+            width: 80%
+            text-align: left
+            font-size: calc($base8 * 2)
+            color: $light-clr
+            padding:  calc($base4 * 2)
+            font-weight: bolder
+            &::before
+              content: ''
+              position: absolute
+              bottom: 0px
+              width: 0
+              height: 4px
+              background-color: $main
+              transition: width 0.2s linear
             &:hover
-                color: $main
+              color: $main
+              &::before
+                width: 100%
+                      
 </style>
