@@ -46,8 +46,8 @@ export default {
 <style lang="sass" scoped>
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
+
   section
-    padding: 0 calc($base8 * 2)
     img
       @include imgDefault(contain)
       @include picImg(40px)
@@ -68,26 +68,12 @@ export default {
       line-height: 40px
       vertical-align: bottom
     span
-        white-space: pre-wrap
-        display: block
-        margin-top: $base6
-        font-size: $base5
-        line-height: calc($base * 10)
-        font-weight: 300
-    @media (max-width: 1000px)
-      span
-        font-size: $base4
-        line-height: $base6
-    @media (max-width: 500px)
-      flex-direction: column
-      align-items: start
-      gap: $base6
-      margin-bottom: $base6
-      > img
-        width: 100%
-      span
-        line-height: $base5
-        margin-top: $base2
+      white-space: pre-wrap
+      display: block
+      margin-top: $base6
+      font-size: $base5
+      line-height: calc($base * 10)
+      font-weight: 300
   // -- project -------------------------------------------
   #bookFlight, #publicTransp
     .project
@@ -114,5 +100,23 @@ export default {
       transform: translateY(0)
     50%
       transform: translateY(5%)
+  // ------------------------------------------------------
+  @media (max-width: 1000px)
+    .project
+      flex-direction: column
+      margin: 0
+      margin-top: calc($base8 * 2)
+      div
+        p
+          margin-left: 0
+          margin-top: $base2
+          display: block
+      span
+        line-height: 1.5
+        font-size: $base4
+        margin: 0
+      > img
+        width: 100%
+        aspect-ratio: auto
   
 </style>

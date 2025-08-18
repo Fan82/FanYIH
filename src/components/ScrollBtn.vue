@@ -14,7 +14,7 @@ export default {
   @use '@/assets/styles/_variables.sass' as *
   div
     position: absolute
-    bottom: 12%
+    top: 80vh
     left: 50%
     display: flex
     flex-direction: column

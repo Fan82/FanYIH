@@ -28,7 +28,7 @@ export default {
         height: 100%
         max-height: 900px
         text-align: center
-        margin: 0 auto calc($base * 20)
+        margin: calc($base8 * 2) auto calc($base * 20)
         padding: calc($base * 15)
         background-color: #fff
         border-radius: $borderRadius
@@ -38,8 +38,12 @@ export default {
             max-height: 700px
             border-radius: calc($borderRadius * 4)
             box-shadow: 0 0 8px #3A3A3A31
-            @media (max-width: 1000px)
-                max-height: 530px
+            @media (max-width: 500px)
+                max-height: 50vh
+                border-radius: calc($borderRadius * 2)
+            @media (max-width: 1000px) and (min-width: 500px)
+                max-height: 100vh
+                border-radius: calc($borderRadius * 2)
     #takeTask
         div
             background-color: #d9dbe8

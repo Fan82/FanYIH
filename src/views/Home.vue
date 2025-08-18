@@ -1,17 +1,24 @@
 <template>
   <main>
     <ScrollBtn />
-    <div class="slider" @wheel="handleScroll" tabindex="0" ref="sliderRef"
-      :class="{ 'slides-completed': slidesCompleted }">
-      <Slide v-for="(slide, index) in extendedSlides" :key="`slide-${index}`" :slide="slide"
-        :active="index === currentExtendedIndex" />
+
+    <!-- Slides section - only shows on first visit -->
+    <div v-if="!hasViewedSlides" class="slides-section" @scroll="handleScroll" ref="slidesSection">
+      <div class="scroll-spacer"></div>
+      <div class="slide-wrapper" :style="slideStyles">
+        <Slide :slide="currentSlide" :active="true" :progress="scrollProgress" />
+      </div>
     </div>
+    <div v-if="hasViewedSlides" class="final-slide">
+      <Slide :slide="finalSlide" :active="true" :progress="1" />
+    </div>
+
+    <!-- Rest of the page content -->
+    <ProjectList />
   </main>
-  <ProjectList />
 </template>
 
 <script>
-// 引入 ProjectList 組件
 import ScrollBtn from '../components/ScrollBtn.vue';
 import Slide from './Slide.vue'
 import ProjectList from './ProjectList.vue';
@@ -25,15 +32,13 @@ export default {
   },
   data() {
     return {
-      currentIndex: 0,
-      currentExtendedIndex: 0,
-      isSliding: false,
-      wheelTimeout: null,
-      slidesCompleted: false,
-      viewedSlides: new Set(),
+      scrollProgress: 0,
+      currentSlideIndex: 0,
+      isScrolling: false,
+      hasViewedSlides: false, // Track if user has seen slides
       slides: [
         {
-          title: 'UI/ UX Design.',
+          title: 'UI/UX Design.',
           slogan: 'Bridging Vision and Execution in Every Product.'
         },
         {
@@ -52,96 +57,112 @@ export default {
     }
   },
   computed: {
-    // Create extended slides array for seamless looping
-    extendedSlides() {
-      return [...this.slides, ...this.slides, ...this.slides, ...this.slides]
+    currentSlide() {
+      return this.slides[this.currentSlideIndex];
+    },
+    finalSlide() {
+      // Return the last slide (4th slide)
+      return this.slides[this.slides.length - 1];
+    },
+    slideStyles() {
+      // Create dynamic styles based on scroll progress
+      const scale = 1 + (this.scrollProgress * 0.5);
+
+      return {
+        transform: `scale(${scale})`,
+        transition: this.isScrolling ? 'none' : 'all 0.3s ease-out'
+      };
     }
   },
   methods: {
-    goToNext() {
-      if (this.isSliding) return
-      this.isSliding = true
-
-      // Track viewed slides
-      this.viewedSlides.add(this.currentIndex)
-
-      this.currentIndex = (this.currentIndex + 1) % this.slides.length
-      this.currentExtendedIndex = this.currentExtendedIndex + 1
-
-      // Check if all slides have been viewed
-      this.checkSlidesCompletion()
-
-      // Reset to middle section when reaching the end
-      if (this.currentExtendedIndex >= this.slides.length * 3) {
-        setTimeout(() => {
-          this.currentExtendedIndex = this.currentIndex + this.slides.length
-        }, 1200) // Wait for transition to complete
-      }
-
-      this.resetSlideDelay()
-    },
-    checkSlidesCompletion() {
-      // Check if all slides have been viewed
-      if (this.viewedSlides.size >= this.slides.length) {
-        this.slidesCompleted = true
-        // Remove wheel event listener to allow normal scrolling
-        document.removeEventListener('wheel', this.handleGlobalWheel)
-      }
-    },
     handleScroll(event) {
-      // If slides are completed, allow normal page scrolling
-      if (this.slidesCompleted) {
-        return
+      this.isScrolling = true;
+
+      const container = event.target;
+      const scrollTop = container.scrollTop;
+      const scrollHeight = container.scrollHeight - container.clientHeight;
+
+      // Calculate scroll progress (0 to 1)
+      this.scrollProgress = Math.min(scrollTop / scrollHeight, 1);
+
+      // Change slide based on scroll progress
+      const slideIndex = Math.floor(this.scrollProgress * this.slides.length);
+      this.currentSlideIndex = Math.min(slideIndex, this.slides.length - 1);
+
+      // Check if slides are completed (user has scrolled to the end)
+      if (this.scrollProgress >= 0.95) {
+        this.completeSlides();
       }
 
-      // Prevent default browser behavior
-      event.preventDefault()
-
-      if (this.isSliding) return
-
-      // Add a small delay to prevent rapid firing
-      if (this.wheelTimeout) {
-        clearTimeout(this.wheelTimeout)
-      }
-
-      this.wheelTimeout = setTimeout(() => {
-        event.deltaY > 0 ? this.goToNext() : this.goToPrev()
-      }, 100)
+      // Clear scrolling state after a delay
+      clearTimeout(this.scrollTimeout);
+      this.scrollTimeout = setTimeout(() => {
+        this.isScrolling = false;
+      }, 100);
     },
-    scrollToNextSection() {
-      // Scroll to the next section (ProjectList)
-      const projectList = document.querySelector('.project-list')
-      if (projectList) {
-        projectList.scrollIntoView({ behavior: 'smooth' })
-      }
-    },
-    resetSlideDelay() {
+
+    completeSlides() {
+      // Mark slides as viewed and save to localStorage
+      this.hasViewedSlides = true;
+      localStorage.setItem('hasViewedSlides', 'true');
+
+      // Smooth transition to normal page
       setTimeout(() => {
-        this.isSliding = false
-      }, 100) // 與動畫時間同步
+        this.scrollToProjects();
+      }, 500);
     },
-    handleGlobalWheel(event) {
-      // Only handle if the event target is within our slider
-      if (this.$refs.sliderRef && this.$refs.sliderRef.contains(event.target)) {
-        this.handleScroll(event)
+
+    scrollToProjects() {
+      // Scroll to projects section smoothly
+      const projectList = document.querySelector('.project');
+      if (projectList) {
+        projectList.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Fallback: scroll to top of page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     },
+
+    checkIfSlidesViewed() {
+      // Check localStorage to see if user has already viewed slides
+      const viewed = localStorage.getItem('hasViewedSlides');
+      if (viewed === 'true') {
+        this.hasViewedSlides = true;
+      }
+    },
+
+    resetSlides() {
+      // Optional method to reset slides (for testing)
+      this.hasViewedSlides = false;
+      localStorage.removeItem('hasViewedSlides');
+      this.scrollProgress = 0;
+      this.currentSlideIndex = 0;
+    }
   },
   mounted() {
-    // Initialize extended index to middle section
-    this.currentExtendedIndex = this.currentIndex + this.slides.length
+    // Check if user has already viewed slides
+    this.checkIfSlidesViewed();
 
-    // Add the first slide to viewed slides
-    this.viewedSlides.add(this.currentIndex)
+    this.$nextTick(() => {
+      // Only setup scroll if slides haven't been viewed
+      if (!this.hasViewedSlides && this.$refs.slidesSection) {
+        this.$refs.slidesSection.scrollTop = 0;
+      }
+    });
 
-    // 聚焦以接收鍵盤事件
-    this.$refs.sliderRef.focus()
-
+    // Optional: Add keyboard shortcut to reset (for development)
+    // Press 'R' key to reset slides
+    if (process.env.NODE_ENV === 'development') {
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'r' || e.key === 'R') {
+          this.resetSlides();
+        }
+      });
+    }
   },
   beforeUnmount() {
-    // Clean up global event listener
-    if (this.wheelTimeout) {
-      clearTimeout(this.wheelTimeout)
+    if (this.scrollTimeout) {
+      clearTimeout(this.scrollTimeout);
     }
   }
 }
@@ -151,12 +172,36 @@ export default {
   @use '@/assets/styles/_mixins.sass' as *
   @use '@/assets/styles/_variables.sass' as *
 
-
-  .slider
+  main
     position: relative
-    // height: calc(100vh - 72px)
+
+  .slides-section
+    position: relative
     height: 100vh
-    outline: none
-    cursor: none
-    overflow: hidden
+    overflow-y: auto
+    scroll-behavior: smooth
+    
+    .scroll-spacer
+      height: 400vh
+      width: 1px
+
+  .slide-wrapper
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    pointer-events: none
+    transform-origin: left
+    z-index: 10
+
+  .final-slide
+    height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
 </style>

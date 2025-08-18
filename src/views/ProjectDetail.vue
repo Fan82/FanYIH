@@ -70,25 +70,5 @@ export default {
       margin: $base2 0 $base
     span
         white-space: pre-wrap
-  @media (min-width: 500px)
-    section
-      .project
-        margin: $base auto $base5 auto
-        padding-left: 70px
-        img
-          position: absolute
-          left: 0
-          top: 0
-        p 
-          font-weight: 600
-        span
-          font-size: 14px
-      .tab-content
-        .project
-          padding: 0
-  @media (min-width: 1020px)
-    section
-      .project
-        margin-bottom: $base8
   
 </style>

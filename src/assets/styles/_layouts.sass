@@ -15,14 +15,19 @@ p
     @include infoP
 span
     @include infoSpan
+section
+    padding: 0 calc($base8 * 2)
+    @media (max-width: 1000px)
+        padding: 0 $base8
+
 // project, about
 .project
     position: relative
     width: 100%
     letter-spacing: $letterspace
-    padding: $base8
-    @media (max-width: 1000px ) and ( min-width: 500px )
-        margin: $base8 0
+    padding: $base8 0
+    // @media (max-width: 1000px ) and ( min-width: 500px )
+    //     margin: $base8 0
     a
         width: 100%
         height: 100%

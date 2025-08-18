@@ -39,8 +39,16 @@ export default {
             width: 45%
             display: inline-block
             vertical-align: top
-        @media (max-width: 500px)
+    @media (max-width: 500px)
+        ul
             flex-direction: column
             li
                 width: 100%
+                h3
+                    line-height: 2
+                    font-size: $base4
+                p
+                    font-weight: normal
+                    font-size: $base3
+                    margin: 0
 </style>

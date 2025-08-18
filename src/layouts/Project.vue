@@ -83,30 +83,25 @@ export default {
         transform: translateY(-50%)
         opacity: 1
         z-index: 2
-    @media (max-width: 1000px)
-      &:hover
-        .project-content
-          transform: translateY(0)
 
     img
       position: relative
       width: fit-content
       margin: 0 auto
       z-index: 1
+
     a > img
       position: absolute
       left: 50%
       top: 50%
+      width: 30%
       transform: translate(-50%, -50%)
     .project-content
       position: absolute
       margin: 0
       padding: $base2
       left: 0
-      bottom: 0
       width: 100%
-      transform: translateY(100%)
-      opacity: 0
       transition: all 0.5s ease
       transition-delay: .1s
       color: $light-clr
@@ -121,7 +116,6 @@ export default {
       span
         width: 50%
         margin: 0 auto
-        font-weight: lighter
         letter-spacing: $letterspace
         font-size: $base4
         display: -webkit-box
@@ -129,16 +123,6 @@ export default {
         -webkit-line-clamp: 2
         overflow: hidden
         text-overflow: ellipsis
-      @media (max-width: 1000px)
-        span, p
-          font-size: $base3
-          width: 100%
-          letter-spacing: $letterspace
-          line-height: normal
-        p
-          margin: $base2 0
-        img
-          @include picImg(45px)
   section
     .project
       &:hover
@@ -149,8 +133,6 @@ export default {
       .project-content
         span
           display: none
-          
-        
   video
     opacity: 1
     filter: brightness(0.25)
@@ -162,4 +144,31 @@ export default {
     pointer-events: none
     cursor: none
     z-index: 0
+
+  @media (hover: hover) and (pointer: fine)
+    .project
+      &:hover
+        &::before
+          display: block
+        .project-content
+          bottom: 25%
+          transform: translateY(-50%)
+          opacity: 1
+          z-index: 2
+
+      .project-content
+        bottom: 0
+        transform: translateY(100%)
+        opacity: 0
+
+  @media (hover: none) and (pointer: coarse) 
+    .project
+      a > img
+        display: none
+      .project-content  
+        bottom: 25%
+        transform: translateY(-50%)
+        opacity: 1
+        z-index: 2
+
 </style>

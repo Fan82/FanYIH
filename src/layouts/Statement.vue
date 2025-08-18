@@ -38,28 +38,33 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
-  @use '@/assets/styles/_mixins.sass' as *
-  @use '@/assets/styles/_variables.sass' as *
+    @use '@/assets/styles/_mixins.sass' as *
+    @use '@/assets/styles/_variables.sass' as *
 
-  img
-    max-height: 620px
-    @include picImg(100%)
-    @include imgDefault(cover)
-    object-position: center 50%
-    margin: calc($base * 10) 0
+    img
+        max-height: 620px
+        @include picImg(100%)
+        @include imgDefault(cover)
+        object-position: center 50%
+        margin: calc($base * 10) 0
+    p
+        margin: $base 0 $base6
+        font-weight: 200
+
+    div
+        display: inline-flex
+        flex-direction: column
+        width: calc(50% - $base4 )
+        margin: $base $base4 $base4 0
     @media (max-width: 1000px)
-        max-height: 410px
-  p
-    margin: $base 0 $base6
-    font-weight: 200
-
-  div
-    display: inline-flex
-    flex-direction: column
-    width: calc(50% - $base4 )
-    margin: $base $base4 $base4 0
-    @media (max-width: 500px)
-        display: flex
-        width: 100%
+        h3
+            line-height: 2
+            font-size: $base4
+        p
+            font-weight: normal
+            font-size: $base3   
+        div
+            margin: 0
+            width: 100%
 
 </style>

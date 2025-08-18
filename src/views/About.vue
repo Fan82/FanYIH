@@ -79,7 +79,7 @@ export default {
   @use '@/assets/styles/_variables.sass' as *
   
   section
-    padding: calc($base8 * 16) $base8
+    padding-top: 50vh
     max-width: 1200px
     margin: 0 auto
     color: $dark-clr

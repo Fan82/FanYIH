@@ -36,6 +36,12 @@ export default {
             line-height: calc($base * 10)
             font-weight: 200
         @media (max-width: 1000px)
+        @media (max-width: 1000px)
+            h3
+                line-height: 2
+                font-size: $base4
             p
-                width: 80%
+                font-size: $base3
+                line-height: 1.8
+                font-weight: normal
 </style>

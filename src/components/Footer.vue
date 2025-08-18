@@ -60,59 +60,63 @@ export default {
     outline: none
     z-index: 101
     div
+      position: absolute
+      bottom: -20px
+      width: 100vw
+      left: 50%
+      height: 100vh
+      transform: translateX(-50%)
+      transform-origin: center bottom
+      background-color: $dark-clr
+      padding: $base8 calc($base8 * 2)
+      transition: display 1s linear
+      z-index: 10
+      &::before
+        content: 'Contact'
+        display: block
+        font-size: calc($base8 * 2)
+        color: rgba($light-clr, 0.5)
+        padding: calc($base8 * 2) $base8 $base4 $base8
+        text-align: left
+      &::after
+        content: '← Back'
         position: absolute
-        bottom: -20px
-        width: 100vw
-        left: 50%
-        height: 100vh
-        transform: translateX(-50%)
-        transition: all 0.2s linear
-        transform-origin: center bottom
-        background-color: $dark-clr
-        padding: $base8 calc($base8 * 2)
-        transition: display 1s linear
-        z-index: 10
+        top: $base4
+        left: calc($base8 * 2)
+        display: block
+        font-size: $base8
+        color: rgba($light-clr, 0.25)
+        padding:  calc($base4 * 2)
+        text-align: left
+        cursor: pointer
+      a
+        position: relative
+        display: block
+        text-align: left
+        font-size: calc($base8 * 2)
+        color: $light-clr
+        padding: $base4 $base8
+        font-weight: bolder
         &::before
-          content: 'Contact'
-          display: block
-          width: 100%
-          font-size: calc($base8 * 2)
-          color: rgba($light-clr, 0.5)
-          padding: calc($base8 * 2) $base8 $base4 $base8
-          text-align: left
-        &::after
-          content: '← Back'
+          content: ''
           position: absolute
-          top: $base4
-          left: calc($base8 * 2)
-          display: block
-          width: 100%
-          font-size: $base8
-          color: rgba($light-clr, 0.25)
-          padding:  calc($base4 * 2)
-          text-align: left
-          cursor: pointer
+          bottom: 0px
+          width: 0
+          height: 4px
+          background-color: $main
+          transition: width 0.2s linear
+        &:hover
+          color: $main
+          &::before
+            width: 100%
+    @media (max-width: 900px)
+      div
+        &::before,
+        &:after
+          padding-left: 0
+          font-size: $base5
         a
-            position: relative
-            display: block
-            padding: $base2
-            width: 80%
-            text-align: left
-            font-size: calc($base8 * 2)
-            color: $light-clr
-            padding:  calc($base4 * 2)
-            font-weight: bolder
-            &::before
-              content: ''
-              position: absolute
-              bottom: 0px
-              width: 0
-              height: 4px
-              background-color: $main
-              transition: width 0.2s linear
-            &:hover
-              color: $main
-              &::before
-                width: 100%
-                      
+          font-size: $base8
+          padding: $base3 $base3 $base3 0
+            
 </style>
