@@ -118,5 +118,15 @@ export default {
       > img
         width: 100%
         aspect-ratio: auto
+        margin: $base6 0
+    #easyBank
+      .project
+        padding-top: $base8
+        > img
+          margin: $base6 0
+    #bookFlight, #publicTransp
+      .project
+        > img
+          width: 60%
   
 </style>

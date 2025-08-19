@@ -66,5 +66,7 @@ export default {
         div
             margin: 0
             width: 100%
+        img
+            margin: $base2 0
 
 </style>

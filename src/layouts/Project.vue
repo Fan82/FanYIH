@@ -166,9 +166,12 @@ export default {
       a > img
         display: none
       .project-content  
-        bottom: 25%
+        bottom: 20%
         transform: translateY(-50%)
         opacity: 1
         z-index: 2
+        span
+          width: 80%
+          -webkit-line-clamp: 3
 
 </style>

@@ -81,7 +81,7 @@ export default {
   section
     padding-top: 50vh
     max-width: 1200px
-    margin: 0 auto
+    margin: 0 auto calc($base8 * 4)
     color: $dark-clr
     background-attachment: scroll
     &::before
@@ -104,20 +104,26 @@ export default {
     margin: $base2 0
     line-height: normal
   h2
-    font-size:  $base8
+    font-size:  $base7
     display: inline-block
     padding: $base
-  h4, p
+  h4
     display: block
     font-size:  $base5
-    font-weight: normal
+    font-weight: 400
     margin: $base2 0
+  p
+    line-height: $base8
+    font-size:  $base5
+    font-weight: 200
+    margin: $base4 0
+    letter-spacing: 1.6px
   a
       @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
       margin: calc($base * 1.5) 0
       vertical-align: middle
-  li
-    margin-top: $base6
+  ul li
+    margin-top: $base3
     margin-bottom: $base8
   span
     margin-left: $base4
@@ -138,5 +144,9 @@ export default {
     font-size: $base4
   ol
     display: flex
-    gap: $base5
+    flex-wrap: wrap
+    gap: 20px 40px
+    margin-top: $base4
+    li
+      margin: $base 0
 </style>

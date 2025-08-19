@@ -42,8 +42,8 @@ export default {
                 max-height: 50vh
                 border-radius: calc($borderRadius * 2)
             @media (max-width: 1000px) and (min-width: 500px)
-                max-height: 100vh
-                border-radius: calc($borderRadius * 2)
+                max-height: 60vh
+                border-radius: calc($borderRadius * 4)
     #takeTask
         div
             background-color: #d9dbe8

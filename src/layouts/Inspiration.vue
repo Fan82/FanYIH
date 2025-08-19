@@ -37,6 +37,8 @@ export default {
             font-weight: 200
         @media (max-width: 1000px)
         @media (max-width: 1000px)
+            margin: $base4 auto
+
             h3
                 line-height: 2
                 font-size: $base4

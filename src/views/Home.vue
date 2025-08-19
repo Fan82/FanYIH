@@ -196,7 +196,7 @@ export default {
     justify-content: center
     pointer-events: none
     transform-origin: left
-    z-index: 10
+    // z-index: 10
 
   .final-slide
     height: 100vh
