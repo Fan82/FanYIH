@@ -41,7 +41,7 @@ export default {
 
             h3
                 line-height: 2
-                font-size: $base4
+                font-size: $base5
             p
                 font-size: $base4
                 line-height: 1.8

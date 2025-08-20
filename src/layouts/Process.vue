@@ -45,7 +45,7 @@ export default {
                 width: 100%
                 h3
                     line-height: 2
-                    font-size: $base4
+                    font-size: $base5
                 p
                     font-weight: normal
                     font-size: $base4
