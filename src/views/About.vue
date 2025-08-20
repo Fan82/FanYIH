@@ -61,7 +61,7 @@
 
 <script>
 import profileImage from '@/public/main.webp';
-const resumeUrl = new URL('@/public/files/resume.pdf', import.meta.url).href;
+const resumeUrl = new URL('@/public/files/FanYiH_resume.pdf', import.meta.url).href;
 
 export default {
   name: 'About',
