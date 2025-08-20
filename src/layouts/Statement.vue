@@ -62,7 +62,7 @@ export default {
             font-size: $base4
         p
             font-weight: normal
-            font-size: $base3   
+            font-size: $base4
         div
             margin: 0
             width: 100%

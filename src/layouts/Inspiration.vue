@@ -43,7 +43,7 @@ export default {
                 line-height: 2
                 font-size: $base4
             p
-                font-size: $base3
+                font-size: $base4
                 line-height: 1.8
                 font-weight: normal
 </style>

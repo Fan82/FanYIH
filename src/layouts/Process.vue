@@ -4,7 +4,6 @@
             <h3>{{ step.title }}</h3>
             <p v-if="step.description">{{ step.description }}</p>
             <p v-if="step.details">{{ step.details }}</p>
-
         </li>
     </ul>
 </template>
@@ -49,6 +48,6 @@ export default {
                     font-size: $base4
                 p
                     font-weight: normal
-                    font-size: $base3
+                    font-size: $base4
                     margin: 0
 </style>
