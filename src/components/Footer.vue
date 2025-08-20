@@ -1,24 +1,24 @@
 <template>
   <button ref="menuButton" @click="toggleMenu">
     Contact
-    <div v-show="isMenuVisible">
-      <a :href="resumeUrl" target="_blank">Resume</a>
-      <a href="mailto:fys840802@gmail.com?subject=Looking forward to see you soon">Email</a>
-      <a href="https://www.linkedin.com/in/fanyihsuan/">LinkedIn</a>
-      <a href="https://www.behance.net/congee_88">Behance</a>
-    </div>
   </button>
+  <div v-show="isMenuVisible" ref="menuContainer">
+    <div @click="closeMenu" aria-label="Close menu">← Back</div>
+    <a href="/files/FanYiH_resume.pdf" target="_blank">Resume</a>
+    <a href="mailto:fys840802@gmail.com?subject=Looking forward to see you soon">Email</a>
+    <a href="https://www.linkedin.com/in/fanyihsuan/">LinkedIn</a>
+    <a href="https://www.behance.net/congee_88">Behance</a>
+  </div>
 </template>
 
 <script>
-const resumeUrl = new URL('@/public/files/resume.pdf', import.meta.url).href;
+
 
 export default {
   name: 'Footer',
   data() {
     return {
       isMenuVisible: false,
-      resumeUrl,
     };
   },
   methods: {
@@ -27,16 +27,29 @@ export default {
     },
     handleClickOutside(event) {
       // 如果點擊的目標不是 button 或 menu 內部，就關閉
-      if (this.$refs.menuButton && !this.$refs.menuButton.contains(event.target)) {
+      const clickedInsideButton = this.$refs.menuButton && this.$refs.menuButton.contains(event.target);
+      const clickedInsideMenu = this.$refs.menuContainer && this.$refs.menuContainer.contains(event.target);
+      if (!clickedInsideButton && !clickedInsideMenu) {
         this.isMenuVisible = false;
+        document.body.classList.remove('no-scroll');
       }
     },
+    closeMenu() {
+      this.isMenuVisible = false;
+      document.body.classList.remove('no-scroll');
+    }
+  },
+  watch: {
+    isMenuVisible(newVal) {
+      document.body.classList.toggle('no-scroll', newVal);
+    }
   },
   mounted() {
     document.addEventListener("click", this.handleClickOutside);
   },
   beforeUnmount() {
     document.removeEventListener("click", this.handleClickOutside);
+    document.body.classList.remove('no-scroll');
   }
 };
 </script>
@@ -59,36 +72,26 @@ export default {
     box-shadow: 0 0 20px rgba($dark-clr, 0.3)
     outline: none
     z-index: 101
-    div
-      position: absolute
-      bottom: -20px
+    ~ div
+      position: fixed
+      top: 0
       width: 100vw
       left: 50%
       height: 100vh
+      overflow: auto
       transform: translateX(-50%)
       transform-origin: center bottom
       background-color: $dark-clr
       padding: $base8 calc($base8 * 2)
       transition: display 1s linear
-      z-index: 10
-      &::before
-        content: 'Contact'
-        display: block
-        font-size: calc($base8 * 2)
-        color: rgba($light-clr, 0.5)
-        padding: calc($base8 * 2) $base8 $base4 $base8
-        text-align: left
-      &::after
-        content: '← Back'
-        position: absolute
-        top: $base4
-        left: calc($base8 * 2)
-        display: block
-        font-size: $base8
-        color: rgba($light-clr, 0.25)
-        padding:  calc($base4 * 2)
-        text-align: left
+      z-index: 102
+      > div
+        background: transparent
+        color: rgba($light-clr, 0.6)
+        font-size: $base7
+        padding: calc($base4 * 2)
         cursor: pointer
+        text-align: left
       a
         position: relative
         display: block
@@ -109,14 +112,12 @@ export default {
           color: $main
           &::before
             width: 100%
-    @media (max-width: 900px)
-      div
-        &::before,
-        &:after
-          padding-left: 0
-          font-size: $base5
+      @media (max-width: 900px)
+        padding: $base7
+        > div
+          font-size: $base4
+          padding: $base5 0
         a
           font-size: $base8
-          padding: $base3 $base3 $base3 0
-            
+          padding: $base5 0
 </style>

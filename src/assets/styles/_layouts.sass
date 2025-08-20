@@ -2,12 +2,11 @@
 @use 'variables' as *
 // ------------------------------------------------------------------
 body
-    // width: 100%
-    // margin: 0 auto
     min-height: 100vh
-    // padding-bottom: 120px
     scroll-behavior: smooth
     background-color: $light-clr
+    &.no-scroll
+        overflow: hidden
 h3
     font-size: $base5
     line-height: calc($base * 10)
