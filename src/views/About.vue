@@ -1,5 +1,5 @@
 <template>
-  <section :style="backgroundStyle">
+  <section>
     <!-- <img src="/profolio.webp" alt="FanYiHsuan Web" /> -->
     <h1>Fan YiH</h1>
     <h2>
@@ -62,17 +62,9 @@
 </template>
 
 <script>
-import { computed } from 'vue'
-
 export default {
   name: 'About',
-  setup() {
-    const backgroundStyle = computed(() => ({
-      '--background-image': `url(public/profolio.webp)`
-    }))
 
-    return { backgroundStyle }
-  }
 }
 </script>
 
@@ -93,7 +85,7 @@ export default {
       left: 0
       width: 100%
       height: 40vh
-      background-image: var(--background-image)
+      background-image: url('/profolio.webp')
       background-size: contain
       background-repeat: repeat
       z-index: -1
