@@ -1,6 +1,6 @@
 <template>
-  <section>
-    <video src="/profolio.gif" alt="FanYiHsuan Web" />
+  <section :style="backgroundStyle">
+    <!-- <img src="/profolio.webp" alt="FanYiHsuan Web" /> -->
     <h1>Fan YiH</h1>
     <h2>
       UI/ UX Designer |
@@ -58,21 +58,22 @@
       </ol>
     </div>
   </section>
+
 </template>
 
 <script>
-// import profileImage from '@/public/profolio.gif';
-// const resumeUrl = new URL('@/public/files/FanYiH_resume.pdf', import.meta.url).href;
+import { computed } from 'vue'
 
 export default {
   name: 'About',
-  // data() {
-  //   return {
-  //     resumeUrl,
-  //     profileImage,
-  //   };
-  // },
-};
+  setup() {
+    const backgroundStyle = computed(() => ({
+      '--background-image': `url(/profolio.webp)`
+    }))
+
+    return { backgroundStyle }
+  }
+}
 </script>
 
 <style lang="sass" scoped>
@@ -85,16 +86,16 @@ export default {
     margin: 0 auto calc($base8 * 4)
     color: $dark-clr
     background-attachment: scroll
-    > video
+    &::before
+      content: ''
       position: absolute
       top: 80px
       left: 0
       width: 100%
       height: 40vh
-      background-image: url("/public/profolio.gif")
-      background-repeat: repeat-x
-      background-position: -230px center
+      background-image: var(--background-image)
       background-size: contain
+      background-repeat: repeat
       z-index: -1
     > small
       font-size: $base8
@@ -152,6 +153,10 @@ export default {
     li
       margin: $base 0
   @media (max-width: 500px)
+    section
+      padding-top: 40vh
+      &::before
+        height: 30vh
     h1
       font-size: calc( $base8 * 2 )
     h2
@@ -159,7 +164,7 @@ export default {
     p, h4
       font-size: $base4
       line-height: $base6
-    small, spa
+    small, span
       font-size: $base3
 
 </style>
