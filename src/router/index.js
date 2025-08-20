@@ -20,7 +20,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory("/FanYiHsuan_vue/"), // 提供專案名稱作為基本路徑
+  history: createWebHistory("/FanYiH/"), // 提供專案名稱作為基本路徑
   routes, // 這裡只留一個 routes 陣列
   scrollBehavior(to, from, savedPosition) {
     return new Promise((resolve) => {
