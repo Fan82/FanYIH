@@ -68,7 +68,7 @@ export default {
   name: 'About',
   setup() {
     const backgroundStyle = computed(() => ({
-      '--background-image': `url(/public/profolio.webp)`
+      '--background-image': `url(public/profolio.webp)`
     }))
 
     return { backgroundStyle }
