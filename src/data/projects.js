@@ -6,7 +6,6 @@ export default [
       "Free your hands! Our app automatically syncs with your calendar, email, messages, and other everyday apps, creating your daily to-do list for you so you can effortlessly stay on top of everything.",
     image: "/projects/takeTask/MockUp.png",
     hero: "/projects/takeTask/hero-mockup.png",
-    flowImage: "/projects/takeTask/userFlow.png", // delete
     logo: "/projects/takeTask/logo.png",
     userMock: "/projects/takeTask/using-mockup.png",
     inspiration: "/projects/takeTask/userFlow.png",
@@ -58,7 +57,6 @@ export default [
       "My goal was to explore how to transform a seemingly simple form into an intelligent interface that offers a seamless user experience. The core of this project lies in demonstrating my understanding of Vue.js's fundamental concepts and applying them to a real-world design challenge.",
     image: "/projects/bookFlight/MockUp.png",
     hero: "/projects/bookFlight/hero-mockup.png",
-    flowImage: "/projects/bookFlight/userFlow.png", // delete
     logo: "/projects/bookFlight/logo.png",
     userMock: "/projects/bookFlight/using-mockup.png",
     inspiration: "/projects/bookFlight/userFlow.png",
@@ -152,7 +150,6 @@ export default [
       "The primary goal of this project was to faithfully reproduce a modern financial service brand's image through a static website.",
     image: "/projects/easyBank/MockUp.png",
     hero: "/projects/easyBank/hero-mockup.png",
-    flowImage: "/projects/easyBank/userFlow.png", // delete
     logo: "/projects/easyBank/logo.png",
     userMock: "/projects/easyBank/using-mockup.png",
     inspiration: "/projects/easyBank/userFlow.png",
@@ -188,7 +185,6 @@ export default [
       "' How can I transform a vast and constantly changing stream of real-time bus data into a clear, intuitive, and efficient query tool?' This project was not only a test of my UI design skills but also an opportunity to gracefully handle asynchronous data flow and state management.",
     image: "/projects/publicTransp/MockUp.png",
     hero: "/projects/publicTransp/hero-mockup.png",
-    flowImage: "/projects/publicTransp/userFlow.png", // delete
     logo: "/projects/publicTransp/logo.png",
     userMock: "/projects/publicTransp/using-mockup.png",
     inspiration: "/projects/publicTransp/userFlow.png",
@@ -233,7 +229,6 @@ export default [
       "To create a site that not only clearly showcases travel services but also provides a smooth and engaging user experience. This project was a practical application of translating design concepts into a concrete web structure and layout.",
     image: "/projects/goTravel/MockUp.png",
     hero: "/projects/goTravel/hero-mockup.png",
-    flowImage: "/projects/goTravel/userFlow.png", // delete
     logo: "/projects/goTravel/logo.png",
     userMock: "/projects/goTravel/using-mockup.png",
     inspiration: "/projects/goTravel/userFlow.png",

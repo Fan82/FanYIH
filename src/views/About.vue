@@ -1,5 +1,6 @@
 <template>
   <section>
+    <video src="/profolio.gif" alt="FanYiHsuan Web" />
     <h1>Fan YiH</h1>
     <h2>
       UI/ UX Designer |
@@ -43,7 +44,7 @@
       <h3>Contact me</h3>
       <ol>
         <li>
-          <a :href="resumeUrl" target="_blank">Resume</a>
+          <a href="/files/FanYiH_resume.pdf" target="_blank">Resume</a>
         </li>
         <li>
           <a href="mailto:fys840802@gmail.com?subject=Looking forward to see you soon">Email</a>
@@ -60,17 +61,17 @@
 </template>
 
 <script>
-import profileImage from '@/public/main.webp';
-const resumeUrl = new URL('@/public/files/FanYiH_resume.pdf', import.meta.url).href;
+// import profileImage from '@/public/profolio.gif';
+// const resumeUrl = new URL('@/public/files/FanYiH_resume.pdf', import.meta.url).href;
 
 export default {
   name: 'About',
-  data() {
-    return {
-      resumeUrl,
-      profileImage,
-    };
-  },
+  // data() {
+  //   return {
+  //     resumeUrl,
+  //     profileImage,
+  //   };
+  // },
 };
 </script>
 
@@ -84,15 +85,16 @@ export default {
     margin: 0 auto calc($base8 * 4)
     color: $dark-clr
     background-attachment: scroll
-    &::before
-      content:''
+    > video
       position: absolute
       top: 80px
       left: 0
       width: 100%
       height: 40vh
       background-image: url("/public/profolio.gif")
+      background-repeat: repeat-x
       background-position: -230px center
+      background-size: contain
       z-index: -1
     > small
       font-size: $base8
@@ -115,9 +117,9 @@ export default {
   p
     line-height: $base8
     font-size:  $base5
-    font-weight: 200
+    font-weight: 300
     margin: $base4 0
-    letter-spacing: 1.6px
+    letter-spacing: 1.2px
   a
       @include button($dark-clr, $light-clr, $dark-clr, $light-clr)
       margin: calc($base * 1.5) 0
@@ -149,4 +151,15 @@ export default {
     margin-top: $base4
     li
       margin: $base 0
+  @media (max-width: 500px)
+    h1
+      font-size: calc( $base8 * 2 )
+    h2
+      font-size: $base5
+    p, h4
+      font-size: $base4
+      line-height: $base6
+    small, span
+      font-size: $base3
+
 </style>
