@@ -52,5 +52,5 @@ export default {
       a
           @include button($dark-clr, $light-clr, $light-clr, $dark-clr)
           box-shadow: inset 0 0 0 .2px rgba($light-clr, 0.2)
-          margin-right: calc( $base * 2 )
+          margin-right: $base2
 </style>

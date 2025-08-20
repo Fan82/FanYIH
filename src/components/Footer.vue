@@ -60,7 +60,7 @@ export default {
   @use '@/assets/styles/_variables.sass' as *
 
   button
-    position: sticky
+    position: fixed
     bottom: $base5
     left: 50%
     transform: translateX(-50%)

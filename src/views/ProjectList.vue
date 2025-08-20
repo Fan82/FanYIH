@@ -25,6 +25,7 @@ export default {
   div
     position: sticky
     top: 0
+    height: 100vh
   section
     div
       position: relative
