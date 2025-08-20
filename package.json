@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://fan82.github.io/FanYiHsuan_vue/",
+  "homepage": "https://fan82.github.io/FanYIH/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
