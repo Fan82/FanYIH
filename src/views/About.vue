@@ -159,7 +159,7 @@ export default {
     p, h4
       font-size: $base4
       line-height: $base6
-    small, span
+    small, spa
       font-size: $base3
 
 </style>
